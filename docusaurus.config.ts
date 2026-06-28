@@ -5,30 +5,26 @@ import type * as Preset from '@docusaurus/preset-classic';
 // This runs in Node.js - Don't use client-side code here (browser APIs, JSX...)
 
 const config: Config = {
-  title: 'Advanced Computing Lab',
-  tagline: 'IoT, Robotics, AI, and more!',
+  title: 'ACLAB',
+  tagline: 'Advanced Computing Lab — HCMUT',
   favicon: 'img/favicon.ico',
 
-  // Set the production url of your site here
   url: 'https://aclab-hcmut.github.io',
-  // Set the /<baseUrl>/ pathname under which your site is served
-  // For GitHub pages deployment, it is often '/<projectName>/'
   baseUrl: '/',
 
-  // GitHub pages deployment config.
-  // If you aren't using GitHub pages, you don't need these.
-  organizationName: 'ACLAB-HCMUT', // Usually your GitHub org/user name.
-  projectName: 'ACLAB-HCMUT.github.io', // Usually your repo name.
+  organizationName: 'ACLAB-HCMUT',
+  projectName: 'ACLAB-HCMUT.github.io',
 
   onBrokenLinks: 'throw',
   onBrokenMarkdownLinks: 'warn',
 
-  // Even if you don't use internationalization, you can use this field to set
-  // useful metadata like html lang. For example, if your site is Chinese, you
-  // may want to replace "en" with "zh-Hans".
   i18n: {
     defaultLocale: 'en',
-    locales: ['en'],
+    locales: ['en', 'vi'],
+    localeConfigs: {
+      en: {label: 'English', htmlLang: 'en'},
+      vi: {label: 'Tiếng Việt', htmlLang: 'vi'},
+    },
   },
 
   presets: [
@@ -36,23 +32,23 @@ const config: Config = {
       'classic',
       {
         docs: {
+          path: 'docs',
+          routeBasePath: 'docs',
           sidebarPath: './sidebars.ts',
-          // Please change this to your repo.
-          // Remove this to remove the "edit this page" links.
           editUrl:
-            'https://github.com/facebook/docusaurus/tree/main/packages/create-docusaurus/templates/shared/',
+            'https://github.com/ACLAB-HCMUT/ACLAB-HCMUT.github.io/tree/main/',
         },
         blog: {
           showReadingTime: true,
+          blogTitle: 'News & Events',
+          blogDescription: 'News, seminars, workshops and recruitment at ACLAB.',
+          postsPerPage: 6,
           feedOptions: {
             type: ['rss', 'atom'],
             xslt: true,
           },
-          // Please change this to your repo.
-          // Remove this to remove the "edit this page" links.
           editUrl:
-            'https://github.com/facebook/docusaurus/tree/main/packages/create-docusaurus/templates/shared/',
-          // Useful options to enforce blogging best practices
+            'https://github.com/ACLAB-HCMUT/ACLAB-HCMUT.github.io/tree/main/',
           onInlineTags: 'warn',
           onInlineAuthors: 'warn',
           onUntruncatedBlogPosts: 'warn',
@@ -65,85 +61,85 @@ const config: Config = {
   ],
 
   themeConfig: {
-    // Replace with your project's social card
     image: 'img/docusaurus-social-card.jpg',
+    colorMode: {
+      defaultMode: 'light',
+      respectPrefersColorScheme: true,
+    },
     navbar: {
-      title: 'Advanced Computing Lab',
+      title: 'ACLAB',
+      hideOnScroll: false,
       logo: {
-        alt: 'ACLAB Logo',
+        alt: 'ACLAB HCMUT Logo',
         src: 'img/logo.svg',
       },
       items: [
+        {to: '/about', label: 'About', position: 'left'},
+        {to: '/research', label: 'Research', position: 'left'},
+        {to: '/projects', label: 'Projects', position: 'left'},
+        {to: '/people', label: 'People', position: 'left'},
+        {to: '/blog', label: 'News & Events', position: 'left'},
         {
           type: 'docSidebar',
-          sidebarId: 'tutorialSidebar',
+          sidebarId: 'knowledgeBase',
           position: 'left',
-          label: 'Tutorial',
+          label: 'Knowledge Base',
         },
-        {to: '/blog', label: 'Blog', position: 'left'},
+        {to: '/contact', label: 'Contact', position: 'left'},
+        {type: 'localeDropdown', position: 'right'},
         {
           href: 'https://github.com/ACLAB-HCMUT',
-          label: 'GitHub',
           position: 'right',
+          className: 'header-github-link',
+          'aria-label': 'GitHub',
         },
+        {to: '/join', label: 'Join ACLAB', position: 'right', className: 'navbar__cta'},
       ],
     },
     footer: {
       style: 'dark',
       links: [
         {
-          title: 'About Us',
+          title: 'ACLAB',
           items: [
-            {
-              label: 'About ACLAB',
-              to: '/docs/intro',
-            },
-            {
-              label: 'Join Us',
-              to: '/docs/intro',
-            },
-            {
-              label: 'Contact Us',
-              to: '/docs/intro',
-            },
+            {label: 'About the Lab', to: '/about'},
+            {label: 'Research Areas', to: '/research'},
+            {label: 'Projects', to: '/projects'},
+            {label: 'People', to: '/people'},
           ],
         },
         {
-          title: 'Quick Guide',
+          title: 'Resources',
           items: [
-            {
-              label: 'How to get help',
-              href: 'https://stackoverflow.com/questions/tagged/aclab',
-            },
-            {
-              label: 'FAQs',
-              to: '/docs/intro',
-            },
-            {
-              label: 'Technical Support',
-              to: '/docs/intro',
-            },
+            {label: 'Knowledge Base', to: '/docs/intro'},
+            {label: 'News & Events', to: '/blog'},
+            {label: 'Join Us', to: '/join'},
+            {label: 'Contact', to: '/contact'},
           ],
         },
         {
-          title: 'More',
+          title: 'Connect',
+          items: [
+            {label: 'GitHub', href: 'https://github.com/ACLAB-HCMUT'},
+            {label: 'Facebook Page', href: 'https://www.facebook.com/aclabhcumt'},
+            {label: 'Facebook Group', href: 'https://www.facebook.com/groups/aclabbachkhoa'},
+            {label: 'LinkedIn', href: 'https://www.linkedin.com/'},
+            {label: 'YouTube', href: 'https://www.youtube.com/'},
+          ],
+        },
+        {
+          title: 'Contact',
           items: [
             {
-              label: 'ACLAB Facebook Page',
-              href: 'https://www.facebook.com/aclabhcumt/',
+              label: 'Ho Chi Minh City University of Technology (HCMUT)',
+              href: 'https://hcmut.edu.vn/',
             },
-            {
-              label: 'Facebook Group',
-              href: 'https://www.facebook.com/groups/aclabbachkhoa/',
-            },
-            {
-              label: 'GitHub',
-              href: 'https://github.com/ACLAB-HCMUT',
-            },
+            {label: '268 Ly Thuong Kiet, Dist. 10, HCMC', href: 'https://maps.google.com/?q=HCMUT'},
+            {label: 'aclab@hcmut.edu.vn', href: 'mailto:aclab@hcmut.edu.vn'},
           ],
         },
       ],
-      copyright: `Copyright © ${new Date().getFullYear()} Advanced Computing Lab, Inc. Built with Docusaurus.`,
+      copyright: `Copyright © ${new Date().getFullYear()} Advanced Computing Lab (ACLAB), HCMUT. Built with Docusaurus.`,
     },
     prism: {
       theme: prismThemes.github,

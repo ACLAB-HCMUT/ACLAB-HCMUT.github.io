@@ -1,0 +1,111 @@
+/* Page-specific layouts (About / Research / Projects / People / Join / Contact) */
+
+.lead { font-size: 1.15rem; line-height: 1.75; color: var(--aclab-body); max-width: 760px; }
+.prose { color: var(--aclab-body); line-height: 1.8; }
+.prose h2 { color: var(--aclab-ink); margin: 2.4rem 0 .8rem; font-size: 1.5rem; }
+.prose ul { padding-left: 1.2rem; }
+.prose li { margin: .3rem 0; }
+
+/* two-column info layout */
+.twoCol { display: grid; grid-template-columns: 1.5fr 1fr; gap: 2.5rem; align-items: start; }
+.infoCard {
+  background: var(--aclab-surface);
+  border: 1px solid var(--aclab-line);
+  border-radius: var(--aclab-radius);
+  padding: 1.5rem;
+  box-shadow: var(--aclab-shadow-sm);
+}
+.infoCard h3 { margin: 0 0 .8rem; font-size: 1.05rem; color: var(--aclab-ink); }
+.infoRow { display: flex; gap: .6rem; padding: .5rem 0; border-bottom: 1px solid var(--aclab-line); font-size: .92rem; }
+.infoRow:last-child { border-bottom: none; }
+.infoRow strong { color: var(--aclab-ink); min-width: 92px; }
+
+/* value / mission cards */
+.valueCard {
+  background: var(--aclab-surface);
+  border: 1px solid var(--aclab-line);
+  border-left: 3px solid var(--aclab-cyan);
+  border-radius: var(--aclab-radius-sm);
+  padding: 1.4rem;
+}
+.valueCard h3 { margin: 0 0 .5rem; color: var(--aclab-ink); font-size: 1.1rem; }
+.valueCard p { margin: 0; color: var(--aclab-body); line-height: 1.6; }
+
+/* timeline */
+.timeline { display: grid; gap: 1.1rem; }
+.timeItem { display: grid; grid-template-columns: 90px 1fr; gap: 1rem; align-items: start; }
+.timeYear { font-weight: 800; color: var(--aclab-blue); }
+.timeItem p { margin: 0; color: var(--aclab-body); }
+
+/* toolbar / filters */
+.toolbar { display: flex; flex-wrap: wrap; gap: .9rem; align-items: center; margin-bottom: 1.8rem; }
+.toolbarGroup { display: flex; flex-wrap: wrap; gap: .45rem; align-items: center; }
+.toolbarLabel { font-size: .78rem; font-weight: 800; text-transform: uppercase; letter-spacing: .06em; color: var(--aclab-muted); margin-right: .2rem; }
+.select {
+  border: 1px solid var(--aclab-line);
+  background: var(--aclab-surface);
+  color: var(--aclab-ink);
+  border-radius: 8px;
+  font-size: .9rem;
+  font-weight: 600;
+  padding: .45rem .7rem;
+}
+.searchBox {
+  display: flex; align-items: center; gap: .5rem;
+  border: 1px solid var(--aclab-line);
+  background: var(--aclab-surface);
+  border-radius: 8px;
+  padding: .45rem .75rem;
+  flex: 1;
+  min-width: 200px;
+}
+.searchBox input { border: none; outline: none; background: transparent; width: 100%; font-size: .92rem; color: var(--aclab-ink); }
+.resultCount { color: var(--aclab-muted); font-size: .88rem; margin-bottom: 1rem; }
+.empty { text-align: center; color: var(--aclab-muted); padding: 3rem 0; }
+
+/* people group nav */
+.groupTitle { font-size: 1.4rem; color: var(--aclab-ink); margin: 0 0 1.2rem; display: flex; align-items: center; gap: .6rem; }
+.groupCount { font-size: .8rem; font-weight: 700; color: var(--aclab-muted); background: var(--aclab-bg-soft); border-radius: 999px; padding: .15rem .55rem; }
+
+/* process steps (Join) */
+.steps { display: grid; gap: 1rem; counter-reset: step; }
+.step {
+  display: grid; grid-template-columns: 44px 1fr; gap: 1rem; align-items: start;
+  background: var(--aclab-surface); border: 1px solid var(--aclab-line);
+  border-radius: var(--aclab-radius-sm); padding: 1.2rem;
+}
+.stepNum {
+  width: 44px; height: 44px; border-radius: 50%;
+  display: flex; align-items: center; justify-content: center;
+  background: var(--aclab-cyan-soft); color: var(--aclab-blue); font-weight: 800;
+}
+.step h3 { margin: 0 0 .3rem; font-size: 1.05rem; color: var(--aclab-ink); }
+.step p { margin: 0; color: var(--aclab-body); line-height: 1.55; }
+
+/* positions (Join) */
+.positionCard {
+  background: var(--aclab-surface); border: 1px solid var(--aclab-line);
+  border-radius: var(--aclab-radius); padding: 1.4rem;
+}
+.positionCard h3 { margin: 0 0 .4rem; color: var(--aclab-ink); }
+.positionCard ul { margin: .6rem 0 0; padding-left: 1.1rem; color: var(--aclab-body); }
+.positionCard li { margin: .25rem 0; }
+
+/* contact + form */
+.form { display: grid; gap: .9rem; }
+.field { display: grid; gap: .35rem; }
+.field label { font-size: .85rem; font-weight: 700; color: var(--aclab-ink); }
+.field input, .field textarea {
+  border: 1px solid var(--aclab-line); border-radius: 8px;
+  padding: .65rem .8rem; font-size: .94rem; font-family: inherit;
+  background: var(--aclab-surface); color: var(--aclab-ink);
+}
+.field input:focus, .field textarea:focus { outline: 2px solid var(--aclab-cyan); border-color: transparent; }
+.mapEmbed {
+  width: 100%; aspect-ratio: 16 / 10; border: 0;
+  border-radius: var(--aclab-radius); filter: grayscale(.15);
+}
+
+@media (max-width: 900px) {
+  .twoCol { grid-template-columns: 1fr; }
+}

@@ -1,47 +1,36 @@
 ---
 sidebar_position: 1
+slug: /intro
+title: Knowledge Base
 ---
 
-# Tutorial Intro
+# ACLAB Knowledge Base
 
-Let's discover **Docusaurus in less than 5 minutes**.
+The internal knowledge base for **Advanced Computing Lab (ACLAB)** members — onboarding,
+lab rules, technical guides and project documentation. It is the single place to learn
+how we work and how to build things in the lab.
 
-## Getting Started
+## Categories
 
-Get started by **creating a new site**.
+| Category | What's inside |
+| --- | --- |
+| [Member Onboarding](/docs/onboarding) | First steps for new members |
+| [Lab Rules & Safety](/docs/lab-rules) | Rules, safety and equipment etiquette |
+| [Embedded Firmware](/docs/embedded-firmware) | MCU, RTOS, drivers and firmware |
+| [PCB Design & DFM](/docs/pcb-design) | Schematic, layout and design-for-manufacturing |
+| [Robotics & ROS](/docs/robotics-ros) | ROS 2, motion, perception, navigation |
+| [AI / Edge AI](/docs/ai-edge) | ML, computer vision, on-device inference |
+| [Lab Equipment Guides](/docs/equipment) | How to use lab tools and instruments |
+| [Project Documentation](/docs/project-docs) | How to document a project |
+| [DevOps & Research Infra](/docs/devops) | Git, CI, compute and infrastructure |
 
-Or **try Docusaurus immediately** with **[docusaurus.new](https://docusaurus.new)**.
+## How to use this wiki
 
-### What you'll need
+- **New here?** Start with [Member Onboarding](/docs/onboarding) and [Lab Rules & Safety](/docs/lab-rules).
+- **Building something?** Jump to the relevant technical category.
+- **Use search** (top right) to find a topic quickly.
 
-- [Node.js](https://nodejs.org/en/download/) version 18.0 or above:
-  - When installing Node.js, you are recommended to check all checkboxes related to dependencies.
+## Writing convention
 
-## Generate a new site
-
-Generate a new Docusaurus site using the **classic template**.
-
-The classic template will automatically be added to your project after you run the command:
-
-```bash
-npm init docusaurus@latest my-website classic
-```
-
-You can type this command into Command Prompt, Powershell, Terminal, or any other integrated terminal of your code editor.
-
-The command also installs all necessary dependencies you need to run Docusaurus.
-
-## Start your site
-
-Run the development server:
-
-```bash
-cd my-website
-npm run start
-```
-
-The `cd` command changes the directory you're working with. In order to work with your newly created Docusaurus site, you'll need to navigate the terminal there.
-
-The `npm run start` command builds your website locally and serves it through a development server, ready for you to view at http://localhost:3000/.
-
-Open `docs/intro.md` (this page) and edit some lines: the site **reloads automatically** and displays your changes.
+Every guide should follow: **Goal → Prerequisites → Steps → Result/Verification → References.**
+Use the **Edit this page** link at the bottom of any page to contribute via GitHub.

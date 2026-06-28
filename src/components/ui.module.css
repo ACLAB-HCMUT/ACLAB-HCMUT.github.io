@@ -1,0 +1,271 @@
+/* ============================================================
+   ACLAB shared UI — components + page primitives
+   ============================================================ */
+
+.container {
+  width: 100%;
+  max-width: var(--aclab-container);
+  margin-inline: auto;
+  padding-inline: 1.25rem;
+}
+
+/* ---------- Buttons ---------- */
+.btn {
+  display: inline-flex;
+  align-items: center;
+  gap: .5rem;
+  border-radius: 9px;
+  font-weight: 700;
+  font-size: .95rem;
+  padding: .72rem 1.25rem;
+  text-decoration: none;
+  border: 1px solid transparent;
+  cursor: pointer;
+  transition: transform .18s ease, background .18s ease, border-color .18s ease, color .18s ease;
+}
+.btn:hover { text-decoration: none; transform: translateY(-1px); }
+.btnPrimary { background: var(--aclab-blue); color: #fff; }
+.btnPrimary:hover { background: var(--aclab-navy); color: #fff; }
+.btnOutline { background: transparent; color: var(--aclab-ink); border-color: var(--aclab-line); }
+.btnOutline:hover { border-color: var(--aclab-blue); color: var(--aclab-blue); }
+.btnGhost { background: rgba(255, 255, 255, .12); color: #fff; border-color: rgba(255, 255, 255, .35); }
+.btnGhost:hover { background: rgba(255, 255, 255, .2); color: #fff; }
+.arrow { transition: transform .2s ease; }
+.btn:hover .arrow, .cardLink:hover .arrow { transform: translateX(3px); }
+
+/* ---------- Section ---------- */
+.section { padding: 5rem 0; }
+.sectionAlt { background: var(--aclab-bg-soft); }
+.sectionSurface { background: var(--aclab-surface); }
+.kicker {
+  color: var(--aclab-blue);
+  font-size: .76rem;
+  font-weight: 800;
+  letter-spacing: .14em;
+  text-transform: uppercase;
+  margin: 0 0 .7rem;
+}
+.sectionHead { max-width: 720px; margin-bottom: 2.6rem; }
+.sectionHeadRow {
+  display: flex;
+  justify-content: space-between;
+  align-items: flex-end;
+  gap: 2rem;
+  flex-wrap: wrap;
+  margin-bottom: 2.6rem;
+}
+.sectionTitle {
+  font-size: clamp(1.7rem, 3.2vw, 2.5rem);
+  color: var(--aclab-ink);
+  margin: 0;
+  line-height: 1.1;
+}
+.sectionIntro { color: var(--aclab-body); font-size: 1.05rem; line-height: 1.7; margin: .9rem 0 0; max-width: 560px; }
+
+/* ---------- Grids ---------- */
+.grid { display: grid; gap: 1.25rem; }
+.grid2 { grid-template-columns: repeat(2, 1fr); }
+.grid3 { grid-template-columns: repeat(3, 1fr); }
+.grid4 { grid-template-columns: repeat(4, 1fr); }
+
+/* ---------- Tags / chips ---------- */
+.tagRow { display: flex; flex-wrap: wrap; gap: .4rem; }
+.tag {
+  display: inline-flex;
+  align-items: center;
+  background: var(--aclab-cyan-soft);
+  color: #0a6c86;
+  border-radius: 999px;
+  font-size: .72rem;
+  font-weight: 700;
+  letter-spacing: .01em;
+  padding: .25rem .6rem;
+  white-space: nowrap;
+}
+.chip {
+  display: inline-flex;
+  align-items: center;
+  gap: .35rem;
+  border: 1px solid var(--aclab-line);
+  background: var(--aclab-surface);
+  color: var(--aclab-body);
+  border-radius: 999px;
+  font-size: .85rem;
+  font-weight: 600;
+  padding: .4rem .85rem;
+  cursor: pointer;
+  transition: all .15s ease;
+}
+.chip:hover { border-color: var(--aclab-blue); color: var(--aclab-blue); }
+.chipActive { background: var(--aclab-blue); color: #fff; border-color: var(--aclab-blue); }
+
+/* ---------- Status badge ---------- */
+.status {
+  display: inline-flex;
+  align-items: center;
+  gap: .4rem;
+  font-size: .72rem;
+  font-weight: 800;
+  letter-spacing: .03em;
+  text-transform: uppercase;
+  padding: .2rem .55rem;
+  border-radius: 6px;
+}
+.status::before { content: ''; width: 7px; height: 7px; border-radius: 50%; background: currentColor; }
+.statusActive { color: #0a7d4f; background: #e3f7ec; }
+.statusOngoing { color: #0a6c86; background: var(--aclab-cyan-soft); }
+.statusCompleted { color: #5a6b7c; background: #eef2f6; }
+.statusPlanned { color: #9a6a07; background: #fdf3e0; }
+
+/* ---------- Generic card ---------- */
+.card {
+  background: var(--aclab-surface);
+  border: 1px solid var(--aclab-line);
+  border-radius: var(--aclab-radius);
+  box-shadow: var(--aclab-shadow-sm);
+  transition: transform .2s ease, box-shadow .2s ease, border-color .2s ease;
+  color: inherit;
+  text-decoration: none;
+  display: flex;
+  flex-direction: column;
+}
+.cardHover:hover {
+  transform: translateY(-4px);
+  box-shadow: var(--aclab-shadow-md);
+  border-color: #c6d8e8;
+  text-decoration: none;
+  color: inherit;
+}
+.cardLink { color: var(--aclab-blue-600); font-weight: 700; font-size: .9rem; margin-top: auto; display: inline-flex; gap: .35rem; align-items: center; }
+
+/* ---------- Research card ---------- */
+.researchCard { padding: 1.6rem; }
+.researchIcon {
+  width: 52px; height: 52px;
+  display: flex; align-items: center; justify-content: center;
+  border-radius: 12px;
+  background: linear-gradient(135deg, var(--aclab-blue), var(--aclab-cyan));
+  color: #fff;
+  font-size: 1.5rem;
+  margin-bottom: 1.1rem;
+}
+.researchCard h3 { font-size: 1.15rem; color: var(--aclab-ink); margin: 0 0 .5rem; }
+.researchCard p { color: var(--aclab-body); font-size: .94rem; line-height: 1.6; margin: 0 0 1rem; }
+
+/* ---------- Project card ---------- */
+.projectCard { overflow: hidden; }
+.projectMedia {
+  position: relative;
+  aspect-ratio: 16 / 9;
+  display: flex; align-items: center; justify-content: center;
+  background:
+    radial-gradient(120% 120% at 0% 0%, rgba(6,182,212,.35), transparent 55%),
+    linear-gradient(135deg, var(--aclab-navy), var(--aclab-blue));
+  color: rgba(255,255,255,.92);
+  font-weight: 800;
+  font-size: 1.8rem;
+  letter-spacing: .04em;
+}
+.projectMedia span { opacity: .9; }
+.projectStatus { position: absolute; top: .8rem; left: .8rem; }
+.projectBody { padding: 1.3rem; display: flex; flex-direction: column; gap: .65rem; flex: 1; }
+.projectBody h3 { font-size: 1.12rem; color: var(--aclab-ink); margin: 0; }
+.projectBody p { color: var(--aclab-body); font-size: .92rem; line-height: 1.6; margin: 0; }
+
+/* ---------- Member card ---------- */
+.memberCard { padding: 1.4rem; text-align: center; align-items: center; }
+.memberPhoto {
+  width: 92px; height: 92px; border-radius: 50%;
+  display: flex; align-items: center; justify-content: center;
+  background: linear-gradient(135deg, var(--aclab-blue), var(--aclab-cyan));
+  color: #fff; font-size: 1.6rem; font-weight: 800;
+  margin-bottom: 1rem;
+}
+.memberCard h3 { font-size: 1.05rem; margin: 0 0 .15rem; color: var(--aclab-ink); }
+.memberRole { color: var(--aclab-blue); font-weight: 700; font-size: .85rem; margin: 0 0 .6rem; }
+.memberInterests { color: var(--aclab-muted); font-size: .85rem; line-height: 1.5; margin: 0 0 .9rem; }
+.memberLinks { display: flex; gap: .8rem; }
+.memberLinks a { color: var(--aclab-muted); font-size: .8rem; font-weight: 700; text-decoration: none; }
+.memberLinks a:hover { color: var(--aclab-blue); }
+
+/* ---------- News card ---------- */
+.newsCard { padding: 1.4rem; }
+.newsMeta { display: flex; gap: .7rem; align-items: center; font-size: .78rem; color: var(--aclab-muted); margin-bottom: .7rem; }
+.newsCat { color: var(--aclab-blue); font-weight: 800; text-transform: uppercase; letter-spacing: .05em; }
+.newsCard h3 { font-size: 1.05rem; color: var(--aclab-ink); margin: 0 0 .5rem; line-height: 1.35; }
+.newsCard p { color: var(--aclab-body); font-size: .9rem; line-height: 1.6; margin: 0 0 1rem; }
+
+/* ---------- Stats ---------- */
+.statItem { text-align: center; padding: 1.25rem .5rem; }
+.statValue { font-size: clamp(2.1rem, 4vw, 3rem); font-weight: 800; color: var(--aclab-ink); line-height: 1; letter-spacing: -.03em; }
+.statValue em { color: var(--aclab-cyan); font-style: normal; }
+.statLabel { color: var(--aclab-muted); font-size: .92rem; font-weight: 600; margin-top: .5rem; }
+
+/* ---------- Partners ---------- */
+.partner {
+  display: flex; align-items: center; justify-content: center;
+  min-height: 84px;
+  border: 1px solid var(--aclab-line);
+  border-radius: 10px;
+  background: var(--aclab-surface);
+  color: var(--aclab-muted);
+  font-weight: 700;
+  text-align: center;
+  padding: 1rem;
+  font-size: .95rem;
+}
+
+/* ---------- CTA banner ---------- */
+.cta {
+  position: relative;
+  overflow: hidden;
+  border-radius: 18px;
+  background: linear-gradient(125deg, var(--aclab-navy), var(--aclab-blue));
+  color: #eaf4fb;
+  padding: clamp(2rem, 5vw, 3.4rem);
+  display: grid;
+  grid-template-columns: 1.4fr auto;
+  gap: 2rem;
+  align-items: center;
+}
+.cta::after {
+  content: ''; position: absolute; right: -120px; top: -150px;
+  width: 360px; height: 360px; border-radius: 50%;
+  border: 1px solid rgba(255,255,255,.14);
+}
+.cta h2 { color: #fff; margin: 0 0 .6rem; font-size: clamp(1.5rem, 3vw, 2.1rem); }
+.cta p { color: #cfe2f0; margin: 0; line-height: 1.6; max-width: 560px; }
+.ctaActions { display: flex; gap: .8rem; flex-wrap: wrap; position: relative; z-index: 1; }
+
+/* ---------- Page hero (sub-pages) ---------- */
+.pageHero {
+  background: linear-gradient(180deg, var(--aclab-bg-soft), var(--aclab-bg));
+  border-bottom: 1px solid var(--aclab-line);
+  padding: 2.6rem 0 3rem;
+}
+.pageHero h1 { font-size: clamp(2rem, 4vw, 3rem); margin: .4rem 0 .6rem; color: var(--aclab-ink); }
+.pageHero p { color: var(--aclab-body); font-size: 1.1rem; line-height: 1.65; max-width: 720px; margin: 0; }
+
+/* ---------- Breadcrumb ---------- */
+.breadcrumb { display: flex; gap: .45rem; align-items: center; font-size: .82rem; color: var(--aclab-muted); }
+.breadcrumb a { color: var(--aclab-muted); text-decoration: none; }
+.breadcrumb a:hover { color: var(--aclab-blue); }
+.breadcrumb span { color: var(--aclab-line); }
+
+/* ---------- Prose helper ---------- */
+.prose p { color: var(--aclab-body); line-height: 1.75; }
+.prose h2 { margin-top: 2.2rem; }
+
+/* ============================================================
+   Responsive
+   ============================================================ */
+@media (max-width: 996px) {
+  .grid4 { grid-template-columns: repeat(2, 1fr); }
+  .grid3 { grid-template-columns: repeat(2, 1fr); }
+  .cta { grid-template-columns: 1fr; }
+}
+@media (max-width: 640px) {
+  .section { padding: 3.4rem 0; }
+  .grid2, .grid3, .grid4 { grid-template-columns: 1fr; }
+  .sectionHeadRow { flex-direction: column; align-items: flex-start; }
+}

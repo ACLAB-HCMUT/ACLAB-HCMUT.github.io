@@ -1,30 +1,119 @@
 /**
- * Any CSS included here will be global. The classic template
- * bundles Infima by default. Infima is a CSS framework designed to
- * work well for content-centric websites.
+ * ACLAB HCMUT — Design System
+ * Academic-tech minimalism · HCMUT blue · light background · cyan accent
  */
 
-/* You can override the default Infima variables here. */
 :root {
-  --ifm-color-primary: #2e8555;
-  --ifm-color-primary-dark: #29784c;
-  --ifm-color-primary-darker: #277148;
-  --ifm-color-primary-darkest: #205d3b;
-  --ifm-color-primary-light: #33925d;
-  --ifm-color-primary-lighter: #359962;
-  --ifm-color-primary-lightest: #3cad6e;
-  --ifm-code-font-size: 95%;
-  --docusaurus-highlighted-code-line-bg: rgba(0, 0, 0, 0.1);
+  /* Brand — HCMUT blue family */
+  --ifm-color-primary: #0b4f93;
+  --ifm-color-primary-dark: #0a4784;
+  --ifm-color-primary-darker: #09437c;
+  --ifm-color-primary-darkest: #073766;
+  --ifm-color-primary-light: #0c57a2;
+  --ifm-color-primary-lighter: #0d5baa;
+  --ifm-color-primary-lightest: #1069c2;
+
+  /* ACLAB tokens */
+  --aclab-navy: #062a4f;
+  --aclab-blue: #0b4f93;
+  --aclab-blue-600: #0c57a2;
+  --aclab-cyan: #06b6d4;
+  --aclab-cyan-soft: #e2f6fb;
+  --aclab-ink: #0a1f33;
+  --aclab-body: #3f5468;
+  --aclab-muted: #6b8197;
+  --aclab-line: #e2e9f0;
+  --aclab-surface: #ffffff;
+  --aclab-bg: #f5f8fb;
+  --aclab-bg-soft: #eef4f9;
+
+  --aclab-radius: 14px;
+  --aclab-radius-sm: 9px;
+  --aclab-shadow-sm: 0 1px 2px rgba(10, 31, 51, .06), 0 4px 16px rgba(10, 31, 51, .05);
+  --aclab-shadow-md: 0 14px 38px rgba(8, 42, 79, .12);
+  --aclab-container: 1180px;
+
+  --ifm-font-family-base: Inter, ui-sans-serif, system-ui, -apple-system, BlinkMacSystemFont, "Segoe UI", sans-serif;
+  --ifm-heading-font-family: var(--ifm-font-family-base);
+  --ifm-background-color: var(--aclab-bg);
+  --ifm-navbar-background-color: rgba(255, 255, 255, .92);
+  --ifm-navbar-shadow: inset 0 -1px 0 var(--aclab-line);
+  --ifm-code-font-size: 92%;
+  --ifm-heading-color: var(--aclab-ink);
+  --ifm-font-color-base: var(--aclab-body);
+  --docusaurus-highlighted-code-line-bg: rgba(11, 79, 147, 0.1);
+  --ifm-link-color: var(--aclab-blue-600);
 }
 
-/* For readability concerns, you should choose a lighter palette in dark mode. */
 [data-theme='dark'] {
-  --ifm-color-primary: #25c2a0;
-  --ifm-color-primary-dark: #21af90;
-  --ifm-color-primary-darker: #1fa588;
-  --ifm-color-primary-darkest: #1a8870;
-  --ifm-color-primary-light: #29d5b0;
-  --ifm-color-primary-lighter: #32d8b4;
-  --ifm-color-primary-lightest: #4fddbf;
-  --docusaurus-highlighted-code-line-bg: rgba(0, 0, 0, 0.3);
+  --ifm-color-primary: #4aa3e8;
+  --ifm-color-primary-dark: #2f93e3;
+  --ifm-color-primary-darker: #1f8be1;
+  --ifm-color-primary-darkest: #1672bd;
+  --ifm-color-primary-light: #65b3ed;
+  --ifm-color-primary-lighter: #74bbef;
+  --ifm-color-primary-lightest: #9fd0f4;
+
+  --aclab-navy: #04101f;
+  --aclab-ink: #eaf2fa;
+  --aclab-body: #b3c4d4;
+  --aclab-muted: #8298ac;
+  --aclab-line: #1d2c3c;
+  --aclab-surface: #0f1d2c;
+  --aclab-bg: #0a1521;
+  --aclab-bg-soft: #0d1a28;
+  --aclab-cyan-soft: #0d2c38;
+
+  --ifm-background-color: var(--aclab-bg);
+  --ifm-navbar-background-color: rgba(10, 21, 33, .9);
+  --ifm-navbar-shadow: inset 0 -1px 0 var(--aclab-line);
+  --docusaurus-highlighted-code-line-bg: rgba(255, 255, 255, 0.08);
 }
+
+html { scroll-behavior: smooth; }
+body { -webkit-font-smoothing: antialiased; }
+
+h1, h2, h3 { letter-spacing: -0.02em; }
+
+/* ---------- Navbar ---------- */
+.navbar { backdrop-filter: saturate(140%) blur(8px); }
+.navbar__title { font-weight: 800; letter-spacing: -0.02em; }
+.navbar__link { font-weight: 600; font-size: .94rem; }
+
+/* "Join ACLAB" call-to-action button in the navbar */
+.navbar__cta {
+  --ifm-navbar-link-hover-color: #fff;
+  background: var(--aclab-blue);
+  color: #fff !important;
+  border-radius: 8px;
+  padding: .42rem .95rem;
+  margin-left: .35rem;
+  font-weight: 700;
+  transition: background .18s ease, transform .18s ease;
+}
+.navbar__cta:hover { background: var(--aclab-navy); transform: translateY(-1px); }
+
+/* ---------- Footer ---------- */
+.footer--dark {
+  --ifm-footer-background-color: var(--aclab-navy);
+  --ifm-footer-color: #b9cfe2;
+  --ifm-footer-link-color: #cfe0ee;
+  --ifm-footer-title-color: #ffffff;
+}
+
+/* GitHub icon link in navbar */
+.header-github-link::before {
+  content: '';
+  width: 22px;
+  height: 22px;
+  display: flex;
+  background: var(--aclab-ink);
+  -webkit-mask-image: url("data:image/svg+xml,%3Csvg viewBox='0 0 24 24' xmlns='http://www.w3.org/2000/svg'%3E%3Cpath d='M12 .297c-6.63 0-12 5.373-12 12 0 5.303 3.438 9.8 8.205 11.385.6.113.82-.258.82-.577 0-.285-.01-1.04-.015-2.04-3.338.724-4.042-1.61-4.042-1.61C4.422 18.07 3.633 17.7 3.633 17.7c-1.087-.744.084-.729.084-.729 1.205.084 1.838 1.236 1.838 1.236 1.07 1.835 2.809 1.305 3.495.998.108-.776.417-1.305.76-1.605-2.665-.3-5.466-1.332-5.466-5.93 0-1.31.465-2.38 1.235-3.22-.135-.303-.54-1.523.105-3.176 0 0 1.005-.322 3.3 1.23.96-.267 1.98-.399 3-.405 1.02.006 2.04.138 3 .405 2.28-1.552 3.285-1.23 3.285-1.23.645 1.653.24 2.873.12 3.176.765.84 1.23 1.91 1.23 3.22 0 4.61-2.805 5.625-5.475 5.92.42.36.81 1.096.81 2.22 0 1.606-.015 2.896-.015 3.286 0 .315.21.69.825.57C20.565 22.092 24 17.592 24 12.297c0-6.627-5.373-12-12-12'/%3E%3C/svg%3E") no-repeat center / contain;
+  mask-image: url("data:image/svg+xml,%3Csvg viewBox='0 0 24 24' xmlns='http://www.w3.org/2000/svg'%3E%3Cpath d='M12 .297c-6.63 0-12 5.373-12 12 0 5.303 3.438 9.8 8.205 11.385.6.113.82-.258.82-.577 0-.285-.01-1.04-.015-2.04-3.338.724-4.042-1.61-4.042-1.61C4.422 18.07 3.633 17.7 3.633 17.7c-1.087-.744.084-.729.084-.729 1.205.084 1.838 1.236 1.838 1.236 1.07 1.835 2.809 1.305 3.495.998.108-.776.417-1.305.76-1.605-2.665-.3-5.466-1.332-5.466-5.93 0-1.31.465-2.38 1.235-3.22-.135-.303-.54-1.523.105-3.176 0 0 1.005-.322 3.3 1.23.96-.267 1.98-.399 3-.405 1.02.006 2.04.138 3 .405 2.28-1.552 3.285-1.23 3.285-1.23.645 1.653.24 2.873.12 3.176.765.84 1.23 1.91 1.23 3.22 0 4.61-2.805 5.625-5.475 5.92.42.36.81 1.096.81 2.22 0 1.606-.015 2.896-.015 3.286 0 .315.21.69.825.57C20.565 22.092 24 17.592 24 12.297c0-6.627-5.373-12-12-12'/%3E%3C/svg%3E") no-repeat center / contain;
+  transition: opacity .2s ease;
+}
+.header-github-link:hover::before { opacity: .7; }
+
+/* ---------- Shared helpers (used by React pages) ---------- */
+.button--primary { background: var(--aclab-blue); border-color: var(--aclab-blue); }
+.button--primary:hover { background: var(--aclab-navy); border-color: var(--aclab-navy); }

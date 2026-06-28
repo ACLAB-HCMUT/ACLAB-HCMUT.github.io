@@ -1,0 +1,5 @@
+{
+  "label": "DevOps & Research Infrastructure",
+  "position": 10,
+  "link": {"type": "doc", "id": "devops/index"}
+}

@@ -1,19 +1,24 @@
-facebook:
-  label: Facebook
-  permalink: /facebook
-  description: Facebook tag description
+news:
+  label: News
+  permalink: /news
+  description: Lab news and announcements
 
-hello:
-  label: Hello
-  permalink: /hello
-  description: Hello tag description
+seminar:
+  label: Seminar
+  permalink: /seminar
+  description: Talks and seminars
 
-docusaurus:
-  label: Docusaurus
-  permalink: /docusaurus
-  description: Docusaurus tag description
+workshop:
+  label: Workshop
+  permalink: /workshop
+  description: Hands-on workshops
 
-hola:
-  label: Hola
-  permalink: /hola
-  description: Hola tag description
+competition:
+  label: Competition
+  permalink: /competition
+  description: Competitions and contests
+
+recruitment:
+  label: Recruitment
+  permalink: /recruitment
+  description: Recruitment and openings

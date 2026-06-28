@@ -1,36 +1,138 @@
-/**
- * CSS files with the .module.css suffix will be treated as CSS modules
- * and scoped locally.
- */
-
-.heroBanner {
-  padding: 4rem 0;
-  text-align: center;
+/* ============================================================
+   Home — Hero
+   ============================================================ */
+.hero {
   position: relative;
   overflow: hidden;
+  background:
+    radial-gradient(60% 80% at 85% 0%, rgba(6, 182, 212, .12), transparent 60%),
+    linear-gradient(180deg, var(--aclab-bg-soft), var(--aclab-bg));
+  border-bottom: 1px solid var(--aclab-line);
 }
-.Site_Title {
-  font-size: 2.5rem;
-  margin-bottom: 1rem;
+.heroGrid {
+  display: grid;
+  grid-template-columns: minmax(0, 1.1fr) minmax(300px, .9fr);
+  gap: 3rem;
+  align-items: center;
+  padding: clamp(3rem, 7vw, 6rem) 0;
 }
-/* src/Banner.css */
-.banner {
-  background-color: #1e4d6a; /* Teal color matching the image */
-  color: white;
-  text-align: center;
-  padding: 10px 20px;
-  font-size: 14px;
-  font-weight: bold;
+.eyebrow {
+  display: inline-flex;
+  align-items: center;
+  gap: .5rem;
+  background: var(--aclab-surface);
+  border: 1px solid var(--aclab-line);
+  color: var(--aclab-blue);
+  font-size: .76rem;
+  font-weight: 800;
+  letter-spacing: .1em;
+  text-transform: uppercase;
+  padding: .35rem .75rem;
+  border-radius: 999px;
 }
-@media screen and (max-width: 996px) {
-  .heroBanner {
-    padding: 2rem;
-  }
+.eyebrow::before { content: ''; width: 7px; height: 7px; border-radius: 50%; background: var(--aclab-cyan); }
+.heroTitle {
+  font-size: clamp(2.3rem, 5vw, 3.8rem);
+  line-height: 1.04;
+  color: var(--aclab-ink);
+  margin: 1.2rem 0 0;
+  letter-spacing: -.03em;
 }
+.heroTitle em { color: var(--aclab-blue); font-style: normal; }
+.heroSubtitle {
+  color: var(--aclab-body);
+  font-size: clamp(1.05rem, 2vw, 1.22rem);
+  line-height: 1.65;
+  margin: 1.25rem 0 1.9rem;
+  max-width: 560px;
+}
+.heroActions { display: flex; flex-wrap: wrap; gap: .8rem; }
+.heroMeta {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 1.4rem;
+  margin-top: 2.2rem;
+  padding-top: 1.6rem;
+  border-top: 1px solid var(--aclab-line);
+}
+.heroMeta div span { display: block; }
+.heroMeta .metaValue { font-size: 1.45rem; font-weight: 800; color: var(--aclab-ink); }
+.heroMeta .metaLabel { font-size: .82rem; color: var(--aclab-muted); font-weight: 600; }
 
-.buttons {
+/* ---------- Knowledge graph visual ---------- */
+.graph {
+  position: relative;
+  width: min(100%, 420px);
+  aspect-ratio: 1;
+  justify-self: end;
+  margin-inline: auto;
+}
+.orbit {
+  position: absolute;
+  border: 1px dashed rgba(11, 79, 147, .22);
+  border-radius: 50%;
+}
+.orbitOuter { inset: 0; animation: spin 60s linear infinite; }
+.orbitInner { inset: 18%; border-style: solid; border-color: rgba(6, 182, 212, .25); }
+.core {
+  position: absolute;
+  inset: 38%;
+  border-radius: 50%;
   display: flex;
   align-items: center;
   justify-content: center;
+  background: linear-gradient(135deg, var(--aclab-navy), var(--aclab-blue));
+  color: #fff;
+  font-weight: 800;
+  font-size: 1.15rem;
+  letter-spacing: .04em;
+  box-shadow: 0 18px 40px rgba(8, 42, 79, .28);
 }
+.node {
+  position: absolute;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  background: var(--aclab-surface);
+  border: 1px solid var(--aclab-line);
+  box-shadow: var(--aclab-shadow-sm);
+  color: var(--aclab-blue);
+  font-weight: 700;
+  font-size: .8rem;
+  padding: .4rem .7rem;
+  border-radius: 999px;
+  white-space: nowrap;
+}
+.nodeTop { top: 2%; left: 50%; transform: translateX(-50%); }
+.nodeBottom { bottom: 2%; left: 50%; transform: translateX(-50%); }
+.nodeLeft { left: -4%; top: 50%; transform: translateY(-50%); }
+.nodeRight { right: -4%; top: 50%; transform: translateY(-50%); }
+.nodeTL { top: 16%; left: 6%; }
+.nodeBR { bottom: 16%; right: 6%; }
 
+@keyframes spin { to { transform: rotate(360deg); } }
+@media (prefers-reduced-motion: reduce) { .orbitOuter { animation: none; } }
+
+/* ---------- Top announcement banner ---------- */
+.banner {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  gap: .6rem;
+  background: var(--aclab-navy);
+  color: #dcebf7;
+  font-size: .88rem;
+  padding: .55rem 1rem;
+  text-align: center;
+}
+.banner a { color: #fff; font-weight: 700; text-decoration: none; }
+.banner a:hover { text-decoration: underline; }
+
+@media (max-width: 996px) {
+  .heroGrid { grid-template-columns: 1fr; gap: 2.5rem; }
+  .graph { order: -1; max-width: 320px; }
+}
+@media (max-width: 640px) {
+  .banner { flex-direction: column; gap: .15rem; }
+  .heroActions a { flex: 1; justify-content: center; }
+}

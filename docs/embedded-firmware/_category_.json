@@ -1,0 +1,5 @@
+{
+  "label": "Embedded Firmware",
+  "position": 4,
+  "link": {"type": "doc", "id": "embedded-firmware/index"}
+}

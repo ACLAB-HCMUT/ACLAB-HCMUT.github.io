@@ -1,0 +1,5 @@
+{
+  "label": "Robotics & ROS",
+  "position": 6,
+  "link": {"type": "doc", "id": "robotics-ros/index"}
+}
