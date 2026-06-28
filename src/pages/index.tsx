@@ -1,5 +1,4 @@
 import React from 'react';
-import Link from '@docusaurus/Link';
 import Layout from '@theme/Layout';
 
 import {
@@ -9,7 +8,6 @@ import {
   CTABanner,
   Grid,
   MemberCard,
-  NewsCard,
   Partner,
   ProjectCard,
   ResearchCard,
@@ -20,7 +18,7 @@ import {
 import {researchAreas} from '../data/research';
 import {featuredProjects} from '../data/projects';
 import {peopleHighlight} from '../data/people';
-import {stats, partners, latestNews} from '../data/site';
+import {stats, partners} from '../data/site';
 
 import styles from './index.module.css';
 
@@ -81,11 +79,6 @@ export default function Home(): JSX.Element {
     <Layout
       title="Advanced Computing Lab (ACLAB) — HCMUT"
       description="ACLAB HCMUT — applied research in intelligent robotics, embedded systems, edge AI, IoT and hardware-software co-design.">
-      <div className={styles.banner}>
-        <span>ACLAB is recruiting student members for 2026.</span>
-        <Link to="/join">Join ACLAB <Arrow /></Link>
-      </div>
-
       <main>
         <HomeHero />
 
@@ -134,23 +127,8 @@ export default function Home(): JSX.Element {
           </Grid>
         </Section>
 
-        {/* 6 — Latest News & Events */}
+        {/* 6 — People Highlight */}
         <Section variant="alt">
-          <SectionHead
-            row
-            kicker="News & Events"
-            title="Latest from the lab."
-            aside={<Btn to="/blog" variant="outline">All news <Arrow /></Btn>}
-          />
-          <Grid cols={3}>
-            {latestNews.map((n) => (
-              <NewsCard key={n.title} item={n} />
-            ))}
-          </Grid>
-        </Section>
-
-        {/* 7 — People Highlight */}
-        <Section variant="surface">
           <SectionHead
             row
             kicker="People"
@@ -164,8 +142,8 @@ export default function Home(): JSX.Element {
           </Grid>
         </Section>
 
-        {/* 8 — Partners */}
-        <Section variant="alt">
+        {/* 7 — Partners */}
+        <Section variant="surface">
           <SectionHead
             kicker="Partners & Affiliations"
             title="We collaborate broadly."
@@ -178,8 +156,8 @@ export default function Home(): JSX.Element {
           </Grid>
         </Section>
 
-        {/* 9 — CTA */}
-        <Section variant="surface">
+        {/* 8 — CTA */}
+        <Section variant="alt">
           <CTABanner
             kicker="Get involved"
             title="Join ACLAB or collaborate with us."

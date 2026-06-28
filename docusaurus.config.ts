@@ -20,10 +20,9 @@ const config: Config = {
 
   i18n: {
     defaultLocale: 'en',
-    locales: ['en', 'vi'],
+    locales: ['en'],
     localeConfigs: {
       en: {label: 'English', htmlLang: 'en'},
-      vi: {label: 'Tiếng Việt', htmlLang: 'vi'},
     },
   },
 
@@ -64,7 +63,7 @@ const config: Config = {
     image: 'img/docusaurus-social-card.jpg',
     colorMode: {
       defaultMode: 'light',
-      respectPrefersColorScheme: true,
+      respectPrefersColorScheme: false,
     },
     navbar: {
       title: 'ACLAB',
@@ -86,7 +85,6 @@ const config: Config = {
           label: 'Knowledge Base',
         },
         {to: '/contact', label: 'Contact', position: 'left'},
-        {type: 'localeDropdown', position: 'right'},
         {
           href: 'https://github.com/ACLAB-HCMUT',
           position: 'right',
