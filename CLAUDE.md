@@ -16,6 +16,11 @@ Technology (HCMUT). Built with **Docusaurus** (TypeScript + React) and deployed 
 - `npm run typecheck` — `tsc`. Run after editing any `.ts`/`.tsx`.
 - `npm run serve` — serve the built site.
 
+**Deploy:** `.github/workflows/deploy.yml` builds and deploys to GitHub Pages on push to
+`main` (and manual dispatch). Requires repo **Settings → Pages → Source = "GitHub Actions"**.
+`/build` is gitignored. `onBrokenAnchors: 'ignore'` because anchor ids on custom React pages
+(`/research`, `/projects`) are set at runtime and the static checker can't see them.
+
 Before finishing a change, run `npm run typecheck` and (if links/docs/config changed)
 `npm run build`.
 

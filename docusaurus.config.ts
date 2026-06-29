@@ -17,6 +17,9 @@ const config: Config = {
 
   onBrokenLinks: 'throw',
   onBrokenMarkdownLinks: 'warn',
+  // Anchor ids on custom React pages (e.g. /research, /projects) are set at runtime,
+  // so the static checker can't see them — ignore to keep builds clean.
+  onBrokenAnchors: 'ignore',
 
   i18n: {
     defaultLocale: 'en',
@@ -162,10 +165,9 @@ const config: Config = {
           title: 'Connect',
           items: [
             {label: 'GitHub', href: 'https://github.com/ACLAB-HCMUT'},
+            {label: 'YouTube (ChipFC)', href: 'https://www.youtube.com/@chipfc'},
             {label: 'Facebook Page', href: 'https://www.facebook.com/aclabhcumt'},
             {label: 'Facebook Group', href: 'https://www.facebook.com/groups/aclabbachkhoa'},
-            {label: 'LinkedIn', href: 'https://www.linkedin.com/'},
-            {label: 'YouTube', href: 'https://www.youtube.com/'},
           ],
         },
         {
