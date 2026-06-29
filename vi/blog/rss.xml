@@ -4,10 +4,39 @@
         <title>ACLAB Blog</title>
         <link>https://aclab-hcmut.github.io/vi/blog</link>
         <description>ACLAB Blog</description>
-        <lastBuildDate>Wed, 20 May 2026 00:00:00 GMT</lastBuildDate>
+        <lastBuildDate>Tue, 09 Jun 2026 00:00:00 GMT</lastBuildDate>
         <docs>https://validator.w3.org/feed/docs/rss2.html</docs>
         <generator>https://github.com/jpmonette/feed</generator>
         <language>vi</language>
+        <item>
+            <title><![CDATA[Chung kết Robocon ORC Toàn quốc 2025–2026 quy tụ gần 200 đội thi]]></title>
+            <link>https://aclab-hcmut.github.io/vi/blog/robocon-orc-national-finals-2025-2026</link>
+            <guid>https://aclab-hcmut.github.io/vi/blog/robocon-orc-national-finals-2025-2026</guid>
+            <pubDate>Tue, 09 Jun 2026 00:00:00 GMT</pubDate>
+            <description><![CDATA[Chung kết Robocon ORC Toàn quốc 2025–2026 đã khép lại vào ngày 6–7/6/2026 tại]]></description>
+            <content:encoded><![CDATA[<p><strong>Chung kết Robocon ORC Toàn quốc 2025–2026</strong> đã khép lại vào <strong>ngày 6–7/6/2026</strong> tại
+Trường Đại học Sư phạm Kỹ thuật TP.HCM, quy tụ <strong>gần 200 đội thi đến từ hơn 100 trường</strong> trên
+khắp Việt Nam — một điểm nhấn của cộng đồng STEM Robotics đang phát triển mạnh trong nước.</p>
+<h2 class="anchor anchorWithStickyNavbar_LWe7" id="tổng-quan">Tổng quan<a href="https://aclab-hcmut.github.io/vi/blog/robocon-orc-national-finals-2025-2026#t%E1%BB%95ng-quan" class="hash-link" aria-label="Đường dẫn trực tiếp đến Tổng quan" title="Đường dẫn trực tiếp đến Tổng quan">​</a></h2>
+<ul>
+<li><strong>Thời gian:</strong> 6–7/6/2026</li>
+<li><strong>Địa điểm:</strong> Trường Đại học Sư phạm Kỹ thuật TP.HCM</li>
+<li><strong>Quy mô:</strong> gần 200 đội từ hơn 100 trường trên cả nước, từ bậc tiểu học đến đại học</li>
+<li><strong>Hình thức:</strong> nhiều bảng đấu theo độ tuổi/kinh nghiệm; các đội được đánh giá về khả năng lắp
+ráp và lập trình robot, tư duy chiến thuật, xử lý tình huống và làm việc nhóm</li>
+<li><strong>Hành trình:</strong> vòng chung kết khép lại một mùa giải kéo dài cả năm với các vòng đấu trực
+tuyến và khu vực</li>
+</ul>
+<p>Sự kiện do Viện Nghiên cứu Thiết kế Trường học (thuộc Bộ Giáo dục và Đào tạo) tổ chức, đồng tổ
+chức cùng Trường Đại học Phan Thiết, và được tài trợ bởi <strong>OhStem Education</strong> — một trong những
+<a href="https://aclab-hcmut.github.io/vi/partners">đối tác của ACLAB</a> trong lĩnh vực STEM và thi đấu robotics — cùng với Lidinco.</p>
+<div class="theme-admonition theme-admonition-note admonition_xJq3 alert alert--secondary"><div class="admonitionHeading_Gvgb"><span class="admonitionIcon_Rf37"><svg viewBox="0 0 14 16"><path fill-rule="evenodd" d="M6.3 5.69a.942.942 0 0 1-.28-.7c0-.28.09-.52.28-.7.19-.18.42-.28.7-.28.28 0 .52.09.7.28.18.19.28.42.28.7 0 .28-.09.52-.28.7a1 1 0 0 1-.7.3c-.28 0-.52-.11-.7-.3zM8 7.99c-.02-.25-.11-.48-.31-.69-.2-.19-.42-.3-.69-.31H6c-.27.02-.48.13-.69.31-.2.2-.3.44-.31.69h1v3c.02.27.11.5.31.69.2.2.42.31.69.31h1c.27 0 .48-.11.69-.31.2-.19.3-.42.31-.69H8V7.98v.01zM7 2.3c-3.14 0-5.7 2.54-5.7 5.68 0 3.14 2.56 5.7 5.7 5.7s5.7-2.55 5.7-5.7c0-3.15-2.56-5.69-5.7-5.69v.01zM7 .98c3.86 0 7 3.14 7 7s-3.14 7-7 7-7-3.12-7-7 3.14-7 7-7z"></path></svg></span>Vì sao chúng tôi chia sẻ điều này</div><div class="admonitionContent_BuS1"><p>ACLAB hợp tác với OhStem trong các hoạt động robotics thực hành và thi đấu. Những sự kiện như
+thế này nuôi dưỡng nguồn nhân lực mà chúng tôi rất mong được chào đón về lab. Bạn muốn chế tạo
+robot thi đấu? <a href="https://aclab-hcmut.github.io/vi/join">Tham gia ACLAB</a>.</p></div></div>
+<p>Nguồn: <a href="https://www.orc.vn/chung-ket-robocon-orc-toan-quoc-2025-2026-quy-tu-gan-200-doi-thi-tren-ca-nuoc/" target="_blank" rel="noopener noreferrer">orc.vn</a></p>]]></content:encoded>
+            <category>Competition</category>
+            <category>News</category>
+        </item>
         <item>
             <title><![CDATA[Seminar: Edge AI for real-time visual inspection]]></title>
             <link>https://aclab-hcmut.github.io/vi/blog/seminar-edge-ai-inspection</link>
