@@ -5,6 +5,7 @@ import {
   Arrow,
   Btn,
   Container,
+  CountUp,
   CTABanner,
   Grid,
   MemberCard,
@@ -43,15 +44,15 @@ function HomeHero() {
             </div>
             <div className={styles.heroMeta}>
               <div>
-                <span className={styles.metaValue}>6</span>
+                <CountUp className={styles.metaValue} value="6" />
                 <span className={styles.metaLabel}>Research areas</span>
               </div>
               <div>
-                <span className={styles.metaValue}>25+</span>
+                <CountUp className={styles.metaValue} value="25+" />
                 <span className={styles.metaLabel}>Active projects</span>
               </div>
               <div>
-                <span className={styles.metaValue}>40+</span>
+                <CountUp className={styles.metaValue} value="40+" />
                 <span className={styles.metaLabel}>Members</span>
               </div>
             </div>

@@ -17,7 +17,7 @@ Tools and practices for collaboration, reproducibility and shared compute.
 
 ## Contributing to this site
 
-```bash
+```bash title="Terminal"
 git clone https://github.com/ACLAB-HCMUT/ACLAB-HCMUT.github.io.git
 cd ACLAB-HCMUT.github.io
 npm install

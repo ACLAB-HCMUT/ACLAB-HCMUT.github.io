@@ -17,8 +17,19 @@
   --aclab-navy: #062a4f;
   --aclab-blue: #0b4f93;
   --aclab-blue-600: #0c57a2;
-  --aclab-cyan: #06b6d4;
-  --aclab-cyan-soft: #e2f6fb;
+  /* Single accent — reuse the brand blue everywhere (no second hue).
+     `cyan*` names kept so existing rules need no churn. */
+  --aclab-cyan: var(--aclab-blue);
+  --aclab-cyan-soft: #eef3f9;
+  /* Semantic colors — used ONLY for warnings/errors, nowhere decorative */
+  --aclab-warning: #b9770e;
+  --aclab-danger: #c0362c;
+
+  /* Admonition tints — each callout is ONE hue (faint bg + bar + title) */
+  --adm-note-bg: #f3f5f8;    --adm-note-bar: #8593a3;
+  --adm-info-bg: #eef4fc;    --adm-info-bar: var(--aclab-blue);
+  --adm-warn-bg: #fdf7ec;    --adm-warn-bar: #b9770e;
+  --adm-danger-bg: #fcf1ef;  --adm-danger-bar: #c0362c;
   --aclab-ink: #0a1f33;
   --aclab-body: #3f5468;
   --aclab-muted: #6b8197;
@@ -29,6 +40,11 @@
 
   --aclab-radius: 14px;
   --aclab-radius-sm: 9px;
+
+  /* Motion — one easing + duration scale shared across the whole UI */
+  --aclab-ease: cubic-bezier(.4, 0, .2, 1);
+  --aclab-dur: .2s;
+  --aclab-dur-slow: .35s;
   --aclab-shadow-sm: 0 1px 2px rgba(10, 31, 51, .06), 0 4px 16px rgba(10, 31, 51, .05);
   --aclab-shadow-md: 0 14px 38px rgba(8, 42, 79, .12);
   --aclab-container: 1180px;
@@ -43,6 +59,14 @@
   --ifm-font-color-base: var(--aclab-body);
   --docusaurus-highlighted-code-line-bg: rgba(11, 79, 147, 0.1);
   --ifm-link-color: var(--aclab-blue-600);
+
+  /* Code-block "IDE window" chrome */
+  --code-chrome-bg: #e9eef4;
+  --code-chrome-border: var(--aclab-line);
+  /* Monochrome window dots — keep the IDE motif without adding colors */
+  --code-dot-red: #cdd5de;
+  --code-dot-yellow: #cdd5de;
+  --code-dot-green: #cdd5de;
 }
 
 [data-theme='dark'] {
@@ -62,12 +86,26 @@
   --aclab-surface: #0f1d2c;
   --aclab-bg: #0a1521;
   --aclab-bg-soft: #0d1a28;
-  --aclab-cyan-soft: #0d2c38;
+  --aclab-cyan: var(--ifm-color-primary);
+  --aclab-cyan-soft: #102a40;
+  --aclab-warning: #d8941f;
+  --aclab-danger: #e0564a;
+
+  --adm-note-bg: rgba(255, 255, 255, .045);  --adm-note-bar: #647585;
+  --adm-info-bg: rgba(74, 163, 232, .1);     --adm-info-bar: var(--ifm-color-primary);
+  --adm-warn-bg: rgba(216, 148, 31, .1);     --adm-warn-bar: #d8941f;
+  --adm-danger-bg: rgba(224, 86, 74, .1);    --adm-danger-bar: #e0564a;
 
   --ifm-background-color: var(--aclab-bg);
   --ifm-navbar-background-color: rgba(10, 21, 33, .9);
   --ifm-navbar-shadow: inset 0 -1px 0 var(--aclab-line);
   --docusaurus-highlighted-code-line-bg: rgba(255, 255, 255, 0.08);
+
+  --code-chrome-bg: #21222c;
+  --code-chrome-border: #383a4a;
+  --code-dot-red: #3a4452;
+  --code-dot-yellow: #3a4452;
+  --code-dot-green: #3a4452;
 }
 
 html { scroll-behavior: smooth; }
@@ -107,9 +145,9 @@ h1, h2, h3 { letter-spacing: -0.02em; }
   width: 22px;
   height: 22px;
   display: flex;
-  background: var(--aclab-ink);
-  -webkit-mask-image: url("data:image/svg+xml,%3Csvg viewBox='0 0 24 24' xmlns='http://www.w3.org/2000/svg'%3E%3Cpath d='M12 .297c-6.63 0-12 5.373-12 12 0 5.303 3.438 9.8 8.205 11.385.6.113.82-.258.82-.577 0-.285-.01-1.04-.015-2.04-3.338.724-4.042-1.61-4.042-1.61C4.422 18.07 3.633 17.7 3.633 17.7c-1.087-.744.084-.729.084-.729 1.205.084 1.838 1.236 1.838 1.236 1.07 1.835 2.809 1.305 3.495.998.108-.776.417-1.305.76-1.605-2.665-.3-5.466-1.332-5.466-5.93 0-1.31.465-2.38 1.235-3.22-.135-.303-.54-1.523.105-3.176 0 0 1.005-.322 3.3 1.23.96-.267 1.98-.399 3-.405 1.02.006 2.04.138 3 .405 2.28-1.552 3.285-1.23 3.285-1.23.645 1.653.24 2.873.12 3.176.765.84 1.23 1.91 1.23 3.22 0 4.61-2.805 5.625-5.475 5.92.42.36.81 1.096.81 2.22 0 1.606-.015 2.896-.015 3.286 0 .315.21.69.825.57C20.565 22.092 24 17.592 24 12.297c0-6.627-5.373-12-12-12'/%3E%3C/svg%3E") no-repeat center / contain;
-  mask-image: url("data:image/svg+xml,%3Csvg viewBox='0 0 24 24' xmlns='http://www.w3.org/2000/svg'%3E%3Cpath d='M12 .297c-6.63 0-12 5.373-12 12 0 5.303 3.438 9.8 8.205 11.385.6.113.82-.258.82-.577 0-.285-.01-1.04-.015-2.04-3.338.724-4.042-1.61-4.042-1.61C4.422 18.07 3.633 17.7 3.633 17.7c-1.087-.744.084-.729.084-.729 1.205.084 1.838 1.236 1.838 1.236 1.07 1.835 2.809 1.305 3.495.998.108-.776.417-1.305.76-1.605-2.665-.3-5.466-1.332-5.466-5.93 0-1.31.465-2.38 1.235-3.22-.135-.303-.54-1.523.105-3.176 0 0 1.005-.322 3.3 1.23.96-.267 1.98-.399 3-.405 1.02.006 2.04.138 3 .405 2.28-1.552 3.285-1.23 3.285-1.23.645 1.653.24 2.873.12 3.176.765.84 1.23 1.91 1.23 3.22 0 4.61-2.805 5.625-5.475 5.92.42.36.81 1.096.81 2.22 0 1.606-.015 2.896-.015 3.286 0 .315.21.69.825.57C20.565 22.092 24 17.592 24 12.297c0-6.627-5.373-12-12-12'/%3E%3C/svg%3E") no-repeat center / contain;
+  background-color: var(--aclab-ink);
+  -webkit-mask: url("data:image/svg+xml,%3Csvg viewBox='0 0 24 24' xmlns='http://www.w3.org/2000/svg'%3E%3Cpath d='M12 .297c-6.63 0-12 5.373-12 12 0 5.303 3.438 9.8 8.205 11.385.6.113.82-.258.82-.577 0-.285-.01-1.04-.015-2.04-3.338.724-4.042-1.61-4.042-1.61C4.422 18.07 3.633 17.7 3.633 17.7c-1.087-.744.084-.729.084-.729 1.205.084 1.838 1.236 1.838 1.236 1.07 1.835 2.809 1.305 3.495.998.108-.776.417-1.305.76-1.605-2.665-.3-5.466-1.332-5.466-5.93 0-1.31.465-2.38 1.235-3.22-.135-.303-.54-1.523.105-3.176 0 0 1.005-.322 3.3 1.23.96-.267 1.98-.399 3-.405 1.02.006 2.04.138 3 .405 2.28-1.552 3.285-1.23 3.285-1.23.645 1.653.24 2.873.12 3.176.765.84 1.23 1.91 1.23 3.22 0 4.61-2.805 5.625-5.475 5.92.42.36.81 1.096.81 2.22 0 1.606-.015 2.896-.015 3.286 0 .315.21.69.825.57C20.565 22.092 24 17.592 24 12.297c0-6.627-5.373-12-12-12'/%3E%3C/svg%3E") no-repeat center / contain;
+  mask: url("data:image/svg+xml,%3Csvg viewBox='0 0 24 24' xmlns='http://www.w3.org/2000/svg'%3E%3Cpath d='M12 .297c-6.63 0-12 5.373-12 12 0 5.303 3.438 9.8 8.205 11.385.6.113.82-.258.82-.577 0-.285-.01-1.04-.015-2.04-3.338.724-4.042-1.61-4.042-1.61C4.422 18.07 3.633 17.7 3.633 17.7c-1.087-.744.084-.729.084-.729 1.205.084 1.838 1.236 1.838 1.236 1.07 1.835 2.809 1.305 3.495.998.108-.776.417-1.305.76-1.605-2.665-.3-5.466-1.332-5.466-5.93 0-1.31.465-2.38 1.235-3.22-.135-.303-.54-1.523.105-3.176 0 0 1.005-.322 3.3 1.23.96-.267 1.98-.399 3-.405 1.02.006 2.04.138 3 .405 2.28-1.552 3.285-1.23 3.285-1.23.645 1.653.24 2.873.12 3.176.765.84 1.23 1.91 1.23 3.22 0 4.61-2.805 5.625-5.475 5.92.42.36.81 1.096.81 2.22 0 1.606-.015 2.896-.015 3.286 0 .315.21.69.825.57C20.565 22.092 24 17.592 24 12.297c0-6.627-5.373-12-12-12'/%3E%3C/svg%3E") no-repeat center / contain;
   transition: opacity .2s ease;
 }
 .header-github-link:hover::before { opacity: .7; }
@@ -117,3 +155,298 @@ h1, h2, h3 { letter-spacing: -0.02em; }
 /* ---------- Shared helpers (used by React pages) ---------- */
 .button--primary { background: var(--aclab-blue); border-color: var(--aclab-blue); }
 .button--primary:hover { background: var(--aclab-navy); border-color: var(--aclab-navy); }
+
+/* ===========================================================================
+   Documentation content — the heavily-used building blocks of every doc page:
+   admonitions, tables, blockquotes, code, cards. Tuned to the ACLAB tokens
+   above (rounded corners, soft shadows, blue/cyan palette).
+   =========================================================================== */
+
+/* ---------- Headings: scannable hierarchy ---------- */
+.markdown > h2 {
+  margin-top: 2.6rem;
+  padding-bottom: .4rem;
+  border-bottom: 1px solid var(--aclab-line);
+}
+.markdown > h3 { margin-top: 1.9rem; }
+
+/* ---------- Admonitions (:::info / tip / caution / warning / danger / note) ----------
+   Each callout is ONE hue end-to-end — a faint same-color tint, a left bar and a
+   title in that color — so warm and cool accents never sit on a clashing ground.
+   Palette stays limited to blue / amber / red / gray. */
+.theme-admonition {
+  --adm-bg: var(--adm-note-bg);
+  --adm-bar: var(--adm-note-bar);
+  background: var(--adm-bg) !important;
+  border: 0;
+  border-left: 3px solid var(--adm-bar);
+  border-radius: var(--aclab-radius-sm);
+  box-shadow: var(--aclab-shadow-sm);
+  padding: 1rem 1.2rem;
+}
+.theme-admonition + .theme-admonition { margin-top: 1rem; }
+/* Heading row: tighter, uppercase; takes the callout's accent color */
+.theme-admonition .admonitionHeading_Gvgb,
+.theme-admonition [class*='admonitionHeading'] {
+  text-transform: uppercase;
+  letter-spacing: .045em;
+  font-size: .78rem;
+  font-weight: 700;
+  margin-bottom: .5rem;
+  color: var(--adm-bar);
+}
+.theme-admonition [class*='admonitionContent'] > :last-child { margin-bottom: 0; }
+/* Icon follows the heading color (monochrome, no per-variant hue) */
+.theme-admonition [class*='admonitionIcon'] svg {
+  width: 1.1rem;
+  height: 1.1rem;
+  vertical-align: -.18rem;
+  fill: currentColor;
+}
+
+/* Per-variant hue: note=gray, info/tip=blue, warning/caution=amber, danger=red */
+.theme-admonition-info,
+.theme-admonition-tip { --adm-bg: var(--adm-info-bg); --adm-bar: var(--adm-info-bar); }
+.theme-admonition-warning,
+.theme-admonition-caution { --adm-bg: var(--adm-warn-bg); --adm-bar: var(--adm-warn-bar); }
+.theme-admonition-danger { --adm-bg: var(--adm-danger-bg); --adm-bar: var(--adm-danger-bar); }
+
+/* ---------- Tables: clipped, rounded, zebra + hover ---------- */
+.markdown table {
+  display: table;
+  width: 100%;
+  margin: 1.25rem 0;
+  border-collapse: separate;
+  border-spacing: 0;
+  border: 1px solid var(--aclab-line);
+  border-radius: var(--aclab-radius-sm);
+  overflow: hidden;
+  box-shadow: var(--aclab-shadow-sm);
+  font-size: .94rem;
+}
+.markdown table thead { background: var(--aclab-bg-soft); }
+.markdown table thead tr { border: none; }
+.markdown table th {
+  border: none;
+  border-bottom: 2px solid var(--aclab-line);
+  color: var(--aclab-ink);
+  font-weight: 700;
+  text-align: left;
+  padding: .7rem .95rem;
+}
+.markdown table td {
+  border: none;
+  border-bottom: 1px solid var(--aclab-line);
+  padding: .65rem .95rem;
+}
+.markdown table tbody tr { background: var(--aclab-surface); transition: background .15s ease; }
+.markdown table tbody tr:nth-child(even) { background: var(--aclab-bg); }
+.markdown table tbody tr:hover { background: var(--aclab-cyan-soft); }
+.markdown table tbody tr:last-child td { border-bottom: none; }
+
+/* ---------- Blockquotes: cyan accent, soft tint ---------- */
+.markdown blockquote {
+  border-left: 4px solid var(--aclab-cyan);
+  border-radius: 0 var(--aclab-radius-sm) var(--aclab-radius-sm) 0;
+  background: var(--aclab-cyan-soft);
+  color: var(--aclab-body);
+  padding: .85rem 1.15rem;
+  margin: 1.25rem 0;
+}
+.markdown blockquote > :last-child { margin-bottom: 0; }
+
+/* ---------- Inline code & code blocks ---------- */
+.markdown :not(pre) > code {
+  background: var(--aclab-bg-soft);
+  border: 1px solid var(--aclab-line);
+  border-radius: 6px;
+  padding: .12rem .4rem;
+  font-size: .85em;
+}
+/* IDE-style code window — rounded editor panel with macOS traffic-light chrome.
+   Reused by every code block on the site; add `title="file.cpp"` to a fence to
+   turn the chrome into a filename tab. */
+.theme-code-block,
+div[class*='codeBlockContainer'] {
+  border-radius: var(--aclab-radius-sm) !important;
+  box-shadow: var(--aclab-shadow-md) !important;
+  border: 1px solid var(--code-chrome-border);
+  overflow: hidden;
+}
+
+/* No title → synthesize a chrome bar with three dots above the code */
+div[class*='codeBlockContainer']:not(:has([class*='codeBlockTitle']))::before {
+  content: "";
+  display: block;
+  height: 38px;
+  background-color: var(--code-chrome-bg);
+  border-bottom: 1px solid var(--code-chrome-border);
+  background-repeat: no-repeat;
+  background-image:
+    radial-gradient(circle 5.5px at 18px 19px, var(--code-dot-red) 96%, transparent 0),
+    radial-gradient(circle 5.5px at 38px 19px, var(--code-dot-yellow) 96%, transparent 0),
+    radial-gradient(circle 5.5px at 58px 19px, var(--code-dot-green) 96%, transparent 0);
+}
+
+/* With title → style the title row as a filename tab carrying the dots */
+div[class*='codeBlockTitle'] {
+  position: relative;
+  padding: .5rem 1rem .5rem 74px !important;
+  background: var(--code-chrome-bg) !important;
+  border-bottom: 1px solid var(--code-chrome-border) !important;
+  font-family: var(--ifm-font-family-monospace);
+  font-size: .82rem;
+  font-weight: 600;
+  color: var(--aclab-muted);
+}
+div[class*='codeBlockTitle']::before {
+  content: "";
+  position: absolute;
+  left: 16px;
+  top: 50%;
+  width: 50px;
+  height: 11px;
+  transform: translateY(-50%);
+  background-repeat: no-repeat;
+  background-image:
+    radial-gradient(circle 5.5px at 5.5px 5.5px, var(--code-dot-red) 96%, transparent 0),
+    radial-gradient(circle 5.5px at 25px 5.5px, var(--code-dot-yellow) 96%, transparent 0),
+    radial-gradient(circle 5.5px at 44.5px 5.5px, var(--code-dot-green) 96%, transparent 0);
+}
+
+/* Keep the copy button clear of the chrome bar / tab */
+div[class*='codeBlockContent'] button[class*='copyButton'] {
+  top: calc(38px + .4rem);
+}
+div[class*='codeBlockContainer']:has([class*='codeBlockTitle']) button[class*='copyButton'] {
+  top: .4rem;
+}
+
+/* ---------- Doc cards (autogenerated category index pages) ---------- */
+article .card {
+  border: 1px solid var(--aclab-line);
+  border-radius: var(--aclab-radius);
+  box-shadow: var(--aclab-shadow-sm);
+  background: var(--aclab-surface);
+  transition: transform var(--aclab-dur) var(--aclab-ease),
+    box-shadow var(--aclab-dur) var(--aclab-ease),
+    border-color var(--aclab-dur) var(--aclab-ease);
+}
+article .card:hover {
+  transform: translateY(-3px);
+  box-shadow: var(--aclab-shadow-md);
+  border-color: var(--aclab-cyan);
+}
+
+/* ---------- Horizontal rule ---------- */
+.markdown hr {
+  border: none;
+  height: 1px;
+  background: var(--aclab-line);
+  margin: 2.2rem 0;
+}
+
+/* ===========================================================================
+   Motion & polish — one shared easing/duration so every interactive element
+   moves the same way (cards, pagination, sidebar, TOC, links, buttons).
+   =========================================================================== */
+
+/* ---------- Pagination (Previous / Next doc cards) ---------- */
+.pagination-nav__link {
+  border: 1px solid var(--aclab-line);
+  border-radius: var(--aclab-radius);
+  box-shadow: var(--aclab-shadow-sm);
+  background: var(--aclab-surface);
+  transition: transform var(--aclab-dur) var(--aclab-ease),
+    box-shadow var(--aclab-dur) var(--aclab-ease),
+    border-color var(--aclab-dur) var(--aclab-ease);
+}
+.pagination-nav__link:hover {
+  transform: translateY(-3px);
+  box-shadow: var(--aclab-shadow-md);
+  border-color: var(--aclab-cyan);
+}
+.pagination-nav__sublabel {
+  color: var(--aclab-muted);
+  text-transform: uppercase;
+  letter-spacing: .05em;
+  font-size: .72rem;
+  font-weight: 600;
+}
+.pagination-nav__label {
+  font-weight: 700;
+  display: inline-block;
+  transition: transform var(--aclab-dur) var(--aclab-ease);
+}
+/* Nudge the label toward its direction on hover */
+.pagination-nav__link--next:hover .pagination-nav__label { transform: translateX(5px); }
+.pagination-nav__link--prev:hover .pagination-nav__label { transform: translateX(-5px); }
+
+/* ---------- Table of contents ---------- */
+.table-of-contents__link {
+  transition: color var(--aclab-dur) var(--aclab-ease),
+    border-color var(--aclab-dur) var(--aclab-ease);
+  border-left: 2px solid transparent;
+  padding-left: .6rem;
+  margin-left: -1px;
+}
+.table-of-contents__link--active {
+  border-left-color: var(--aclab-cyan);
+  font-weight: 600;
+}
+
+/* ---------- Breadcrumbs ---------- */
+.breadcrumbs__link {
+  transition: background var(--aclab-dur) var(--aclab-ease),
+    color var(--aclab-dur) var(--aclab-ease);
+}
+.breadcrumbs__item--active .breadcrumbs__link { background: var(--aclab-cyan-soft); }
+
+/* ---------- Sidebar ---------- */
+.menu__link {
+  border-radius: var(--aclab-radius-sm);
+  transition: background var(--aclab-dur) var(--aclab-ease),
+    color var(--aclab-dur) var(--aclab-ease),
+    padding-left var(--aclab-dur) var(--aclab-ease);
+}
+.menu__link:hover { padding-left: 1rem; }
+.menu__link--active:not(.menu__link--sublist) {
+  background: var(--aclab-cyan-soft);
+  font-weight: 600;
+  box-shadow: inset 3px 0 0 var(--aclab-cyan);
+}
+
+/* ---------- Content links: animated underline ---------- */
+.markdown a:not(.card):not(.button) {
+  text-decoration: none;
+  background-image: linear-gradient(var(--aclab-cyan), var(--aclab-cyan));
+  background-position: 0 100%;
+  background-repeat: no-repeat;
+  background-size: 0% 1.5px;
+  transition: background-size var(--aclab-dur) var(--aclab-ease);
+}
+.markdown a:not(.card):not(.button):hover { background-size: 100% 1.5px; }
+
+/* ---------- Buttons: shared lift ---------- */
+.button {
+  transition: transform var(--aclab-dur) var(--aclab-ease),
+    background var(--aclab-dur) var(--aclab-ease),
+    box-shadow var(--aclab-dur) var(--aclab-ease);
+}
+.button:hover { transform: translateY(-2px); box-shadow: var(--aclab-shadow-md); }
+
+/* ---------- Doc content: gentle fade-in on navigation ---------- */
+@keyframes aclab-rise {
+  from { opacity: 0; transform: translateY(8px); }
+  to { opacity: 1; transform: translateY(0); }
+}
+.theme-doc-markdown { animation: aclab-rise var(--aclab-dur-slow) var(--aclab-ease); }
+
+/* ---------- Respect reduced-motion preferences ---------- */
+@media (prefers-reduced-motion: reduce) {
+  *, *::before, *::after {
+    animation-duration: .001ms !important;
+    transition-duration: .001ms !important;
+    scroll-behavior: auto !important;
+  }
+}
