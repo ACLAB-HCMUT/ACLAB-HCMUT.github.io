@@ -1,0 +1,54 @@
+{
+  "title": {
+    "message": "ACLAB",
+    "description": "The title in the navbar"
+  },
+  "logo.alt": {
+    "message": "ACLAB HCMUT Logo",
+    "description": "The alt text of navbar logo"
+  },
+  "item.label.About": {
+    "message": "About",
+    "description": "Navbar item with label About"
+  },
+  "item.label.Research": {
+    "message": "Research",
+    "description": "Navbar item with label Research"
+  },
+  "item.label.Projects": {
+    "message": "Projects",
+    "description": "Navbar item with label Projects"
+  },
+  "item.label.People": {
+    "message": "People",
+    "description": "Navbar item with label People"
+  },
+  "item.label.Partners": {
+    "message": "Partners",
+    "description": "Navbar item with label Partners"
+  },
+  "item.label.News & Events": {
+    "message": "News & Events",
+    "description": "Navbar item with label News & Events"
+  },
+  "item.label.Knowledge Base": {
+    "message": "Knowledge Base",
+    "description": "Navbar item with label Knowledge Base"
+  },
+  "item.label.Courses": {
+    "message": "Courses",
+    "description": "Navbar item with label Courses"
+  },
+  "item.label.Student Guide": {
+    "message": "Student Guide",
+    "description": "Navbar item with label Student Guide"
+  },
+  "item.label.Contact": {
+    "message": "Contact",
+    "description": "Navbar item with label Contact"
+  },
+  "item.label.Join ACLAB": {
+    "message": "Join ACLAB",
+    "description": "Navbar item with label Join ACLAB"
+  }
+}

@@ -23,9 +23,12 @@ const config: Config = {
 
   i18n: {
     defaultLocale: 'en',
-    locales: ['en'],
+    locales: ['en', 'vi'],
     localeConfigs: {
       en: {label: 'English', htmlLang: 'en'},
+      // Scaffold: the navbar/UI is translatable; doc content falls back to English
+      // until each page is translated under i18n/vi/.
+      vi: {label: 'Tiếng Việt', htmlLang: 'vi'},
     },
   },
 
@@ -128,6 +131,7 @@ const config: Config = {
           label: 'Student Guide',
         },
         {to: '/contact', label: 'Contact', position: 'left'},
+        {type: 'localeDropdown', position: 'right'},
         {
           href: 'https://github.com/ACLAB-HCMUT',
           position: 'right',

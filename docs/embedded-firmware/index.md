@@ -7,6 +7,13 @@ title: Embedded Firmware
 
 Guides for microcontrollers, RTOS, peripheral drivers and firmware engineering.
 
+## Guides
+
+- [**Firmware Approaches**](/docs/embedded-firmware/firmware-approaches) — bare-metal, HAL/LL, frameworks, and RTOS (FreeRTOS, Zephyr, embOS).
+- [**Choosing an MCU**](/docs/embedded-firmware/choosing-an-mcu) — families, selection criteria, and the clock-speed / FPU / RISC-V-vs-Arm traps.
+- [**Advanced Topics**](/docs/embedded-firmware/advanced-topics) — memory model, memory management, memory bugs, register-level work, and debugging methods.
+- [**Building a Product**](/docs/embedded-firmware/building-a-product) — hardware requirements and the common chips (LDO, CH340, CAN/RS-485, isolators, crystals, SDRAM…).
+
 ## Topics
 
 - **MCUs:** STM32, ESP32, AVR — architecture and toolchains

@@ -32,9 +32,15 @@ deployed to `https://aclab-hcmut.github.io` (GitHub Pages, org `ACLAB-HCMUT`). *
   (member photos in `static/img/people/`). `build/` is generated — never edit.
 
 ## Conventions
-- **English-only.** No Vietnamese body text; keep only proper names with diacritics
-  (e.g. "Lê Trọng Nhân", "Bách Khoa"). (Courses once used a `<Tabs groupId="lang">` toggle —
-  removed; that's the pattern if bilingual is ever reintroduced.)
+- **English-first (with a VI i18n scaffold).** Author all content in English. A Docusaurus
+  **i18n** setup exists (`locales: ['en','vi']`, navbar `localeDropdown`); the `vi` locale is a
+  **scaffold only** — UI strings live in `i18n/vi/`, and doc/page content **falls back to
+  English** until a page is explicitly translated under `i18n/vi/`. Don't add VI body text to
+  the English source files. Keep proper names with diacritics (e.g. "Lê Trọng Nhân", "Bách Khoa").
+  - Build builds **all locales**; preview VI in dev with `npm run start -- --locale vi`.
+- **Concise & scannable.** Keep content short and easy to understand; prefer bullet points
+  over long paragraphs. Break dense topics into small sections with clear headings; use
+  tables/admonitions for structure. Don't pad — say it plainly, then stop.
 - **Don't hardcode content in JSX** — edit `src/data/*`; pages map over it.
 - **New docs page:** add the `.md` (+ `_category_.json` for a new folder), then `build` to
   check links. Cross-link with `[text](/path)`.

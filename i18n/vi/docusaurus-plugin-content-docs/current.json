@@ -1,0 +1,38 @@
+{
+  "version.label": {
+    "message": "Next",
+    "description": "The label for version current"
+  },
+  "sidebar.knowledgeBase.category.Embedded Firmware": {
+    "message": "Embedded Firmware",
+    "description": "The label for category Embedded Firmware in sidebar knowledgeBase"
+  },
+  "sidebar.knowledgeBase.category.PCB Design & DFM": {
+    "message": "PCB Design & DFM",
+    "description": "The label for category PCB Design & DFM in sidebar knowledgeBase"
+  },
+  "sidebar.knowledgeBase.category.Lab Equipment Guides": {
+    "message": "Lab Equipment Guides",
+    "description": "The label for category Lab Equipment Guides in sidebar knowledgeBase"
+  },
+  "sidebar.knowledgeBase.category.Devices": {
+    "message": "Devices",
+    "description": "The label for category Devices in sidebar knowledgeBase"
+  },
+  "sidebar.knowledgeBase.category.Tools": {
+    "message": "Tools",
+    "description": "The label for category Tools in sidebar knowledgeBase"
+  },
+  "sidebar.knowledgeBase.category.Projects": {
+    "message": "Projects",
+    "description": "The label for category Projects in sidebar knowledgeBase"
+  },
+  "sidebar.knowledgeBase.category.Projects.link.generated-index.title": {
+    "message": "ACLAB Projects",
+    "description": "The generated-index page title for category Projects in sidebar knowledgeBase"
+  },
+  "sidebar.knowledgeBase.category.Projects.link.generated-index.description": {
+    "message": "Documentation and write-ups for ACLAB projects.",
+    "description": "The generated-index page description for category Projects in sidebar knowledgeBase"
+  }
+}

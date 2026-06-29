@@ -1,0 +1,94 @@
+{
+  "link.title.ACLAB": {
+    "message": "ACLAB",
+    "description": "The title of the footer links column with title=ACLAB in the footer"
+  },
+  "link.title.Resources": {
+    "message": "Resources",
+    "description": "The title of the footer links column with title=Resources in the footer"
+  },
+  "link.title.Connect": {
+    "message": "Connect",
+    "description": "The title of the footer links column with title=Connect in the footer"
+  },
+  "link.title.Contact": {
+    "message": "Contact",
+    "description": "The title of the footer links column with title=Contact in the footer"
+  },
+  "link.item.label.About the Lab": {
+    "message": "About the Lab",
+    "description": "The label of footer link with label=About the Lab linking to /about"
+  },
+  "link.item.label.Research Areas": {
+    "message": "Research Areas",
+    "description": "The label of footer link with label=Research Areas linking to /research"
+  },
+  "link.item.label.Projects": {
+    "message": "Projects",
+    "description": "The label of footer link with label=Projects linking to /projects"
+  },
+  "link.item.label.People": {
+    "message": "People",
+    "description": "The label of footer link with label=People linking to /people"
+  },
+  "link.item.label.Partners": {
+    "message": "Partners",
+    "description": "The label of footer link with label=Partners linking to /partners"
+  },
+  "link.item.label.Knowledge Base": {
+    "message": "Knowledge Base",
+    "description": "The label of footer link with label=Knowledge Base linking to /docs/intro"
+  },
+  "link.item.label.Courses": {
+    "message": "Courses",
+    "description": "The label of footer link with label=Courses linking to /courses"
+  },
+  "link.item.label.Student Guide": {
+    "message": "Student Guide",
+    "description": "The label of footer link with label=Student Guide linking to /guide"
+  },
+  "link.item.label.News & Events": {
+    "message": "News & Events",
+    "description": "The label of footer link with label=News & Events linking to /blog"
+  },
+  "link.item.label.Join Us": {
+    "message": "Join Us",
+    "description": "The label of footer link with label=Join Us linking to /join"
+  },
+  "link.item.label.Contact": {
+    "message": "Contact",
+    "description": "The label of footer link with label=Contact linking to /contact"
+  },
+  "link.item.label.GitHub": {
+    "message": "GitHub",
+    "description": "The label of footer link with label=GitHub linking to https://github.com/ACLAB-HCMUT"
+  },
+  "link.item.label.YouTube (ChipFC)": {
+    "message": "YouTube (ChipFC)",
+    "description": "The label of footer link with label=YouTube (ChipFC) linking to https://www.youtube.com/@chipfc"
+  },
+  "link.item.label.Facebook Page": {
+    "message": "Facebook Page",
+    "description": "The label of footer link with label=Facebook Page linking to https://www.facebook.com/aclabhcumt"
+  },
+  "link.item.label.Facebook Group": {
+    "message": "Facebook Group",
+    "description": "The label of footer link with label=Facebook Group linking to https://www.facebook.com/groups/aclabbachkhoa"
+  },
+  "link.item.label.Ho Chi Minh City University of Technology (HCMUT)": {
+    "message": "Ho Chi Minh City University of Technology (HCMUT)",
+    "description": "The label of footer link with label=Ho Chi Minh City University of Technology (HCMUT) linking to https://hcmut.edu.vn/"
+  },
+  "link.item.label.268 Ly Thuong Kiet, Dist. 10, HCMC": {
+    "message": "268 Ly Thuong Kiet, Dist. 10, HCMC",
+    "description": "The label of footer link with label=268 Ly Thuong Kiet, Dist. 10, HCMC linking to https://maps.google.com/?q=HCMUT"
+  },
+  "link.item.label.aclab@hcmut.edu.vn": {
+    "message": "aclab@hcmut.edu.vn",
+    "description": "The label of footer link with label=aclab@hcmut.edu.vn linking to mailto:aclab@hcmut.edu.vn"
+  },
+  "copyright": {
+    "message": "Copyright © 2026 Advanced Computing Lab (ACLAB), HCMUT. Built with Docusaurus.",
+    "description": "The footer copyright"
+  }
+}

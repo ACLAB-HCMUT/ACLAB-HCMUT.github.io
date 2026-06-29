@@ -1,0 +1,14 @@
+{
+  "version.label": {
+    "message": "Next",
+    "description": "The label for version current"
+  },
+  "sidebar.courses.category.Microcontrollers": {
+    "message": "Microcontrollers",
+    "description": "The label for category Microcontrollers in sidebar courses"
+  },
+  "sidebar.courses.category.Internet of Things · IoT": {
+    "message": "Internet of Things · IoT",
+    "description": "The label for category Internet of Things · IoT in sidebar courses"
+  }
+}

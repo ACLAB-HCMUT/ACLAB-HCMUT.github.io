@@ -7,6 +7,12 @@ title: PCB Design & DFM
 
 Designing reliable, manufacturable printed circuit boards.
 
+## Guides
+
+- [**PCB Design Software (EDA Tools)**](/docs/pcb-design/eda-tools) — comparison, pricing, free student licenses, learning curve.
+- [**Common Mistakes & Risks**](/docs/pcb-design/common-mistakes) — decoupling, crosstalk, differential pairs, DFM/manufacturing pitfalls.
+- [**From Design to Delivery**](/docs/pcb-design/fabrication-and-ordering) — DRC, output files, ordering options, shipping & customs (JLCPCB case study).
+
 ## Topics
 
 - **Schematic capture:** symbols, nets, design reuse
@@ -17,8 +23,9 @@ Designing reliable, manufacturable printed circuit boards.
 
 ## Tools
 
-- KiCad (preferred, open-source) or Altium Designer
-- Standard lab tools: multimeter, oscilloscope, bench supply
+- **Software:** see [PCB Design Software (EDA Tools)](/docs/pcb-design/eda-tools) — comparison,
+  pricing, free student licenses and learning curve. KiCad is preferred (free, powerful).
+- **Bench tools:** multimeter, oscilloscope, bench supply — see [Lab Equipment Guide](/docs/equipment/tools/measurement-instruments).
 
 ## DFM checklist (short)
 
