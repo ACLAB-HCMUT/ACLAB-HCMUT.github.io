@@ -311,172 +311,172 @@
     "description": "The title of the tag list page"
   },
   "Mission": {
-    "message": "Mission"
+    "message": "Sứ mệnh"
   },
   "Advance applied research and engineering in intelligent systems, and train engineers who can build real hardware and software end to end.": {
-    "message": "Advance applied research and engineering in intelligent systems, and train engineers who can build real hardware and software end to end."
+    "message": "Thúc đẩy nghiên cứu ứng dụng và kỹ thuật trong các hệ thống thông minh, đồng thời đào tạo các kỹ sư có khả năng xây dựng phần cứng và phần mềm thực tế từ đầu đến cuối."
   },
   "Vision": {
-    "message": "Vision"
+    "message": "Tầm nhìn"
   },
   "Be a leading university lab bridging robotics, embedded systems and AI — from chip and PCB to autonomous platforms.": {
-    "message": "Be a leading university lab bridging robotics, embedded systems and AI — from chip and PCB to autonomous platforms."
+    "message": "Trở thành phòng thí nghiệm đại học hàng đầu kết nối robot, hệ thống nhúng và AI — từ chip và PCB đến các nền tảng tự hành."
   },
   "Approach": {
-    "message": "Approach"
+    "message": "Phương pháp tiếp cận"
   },
   "Hands-on, project-driven work. We design PCBs, write firmware, build robots and deploy AI on real devices.": {
-    "message": "Hands-on, project-driven work. We design PCBs, write firmware, build robots and deploy AI on real devices."
+    "message": "Làm việc thực hành, theo định hướng dự án. Chúng tôi thiết kế PCB, viết firmware, chế tạo robot và triển khai AI trên các thiết bị thực tế."
   },
   "Began R&D focus in Embedded Systems, AI and Robotics.": {
-    "message": "Began R&D focus in Embedded Systems, AI and Robotics."
+    "message": "Bắt đầu tập trung nghiên cứu và phát triển trong lĩnh vực Hệ thống nhúng, AI và Robot."
   },
   "Started an R&D collaboration with Kinis AI, bridging academic research and practical technology.": {
-    "message": "Started an R&D collaboration with Kinis AI, bridging academic research and practical technology."
+    "message": "Khởi động hợp tác nghiên cứu và phát triển với Kinis AI, kết nối nghiên cứu học thuật và công nghệ thực tiễn."
   },
   "Supported OhStem in running robotics competitions and activities for students and young engineers.": {
-    "message": "Supported OhStem in running robotics competitions and activities for students and young engineers."
+    "message": "Hỗ trợ OhStem tổ chức các cuộc thi và hoạt động về robot cho học sinh, sinh viên và các kỹ sư trẻ."
   },
   "Competed in Bách Khoa Innovation: INNOTECH with the Low-Cost Smart Irrigation System – HCMUT.": {
-    "message": "Competed in Bách Khoa Innovation: INNOTECH with the Low-Cost Smart Irrigation System – HCMUT."
+    "message": "Tham gia tranh tài tại Bách Khoa Innovation: INNOTECH với Hệ thống tưới tiêu thông minh chi phí thấp – HCMUT."
   },
   "Partnered with Heineken Vietnam and HCMUT on a humanoid-robot pilot for industrial manufacturing.": {
-    "message": "Partnered with Heineken Vietnam and HCMUT on a humanoid-robot pilot for industrial manufacturing."
+    "message": "Hợp tác với Heineken Vietnam và HCMUT trong dự án thí điểm robot hình người cho sản xuất công nghiệp."
   },
   "Robotics & prototyping workspace": {
-    "message": "Robotics & prototyping workspace"
+    "message": "Không gian làm việc robot và chế tạo mẫu"
   },
   "Electronics & PCB rework bench": {
-    "message": "Electronics & PCB rework bench"
+    "message": "Bàn sửa chữa điện tử và PCB"
   },
   "Embedded / firmware debug stations": {
-    "message": "Embedded / firmware debug stations"
+    "message": "Trạm gỡ lỗi hệ thống nhúng / firmware"
   },
   "3D printing & mechanical fabrication": {
-    "message": "3D printing & mechanical fabrication"
+    "message": "In 3D và gia công cơ khí"
   },
   "Edge-AI compute (Jetson / GPU)": {
-    "message": "Edge-AI compute (Jetson / GPU)"
+    "message": "Tính toán Edge AI (Jetson / GPU)"
   },
   "Sensors, motors & test equipment": {
-    "message": "Sensors, motors & test equipment"
+    "message": "Cảm biến, động cơ và thiết bị kiểm thử"
   },
   "About ACLAB": {
-    "message": "About ACLAB"
+    "message": "Giới thiệu ACLAB"
   },
   "About the Advanced Computing Lab at HCMUT — mission, vision, history, leadership and facilities.": {
-    "message": "About the Advanced Computing Lab at HCMUT — mission, vision, history, leadership and facilities."
+    "message": "Giới thiệu về Phòng thí nghiệm Tính toán Nâng cao tại HCMUT — sứ mệnh, tầm nhìn, lịch sử, đội ngũ lãnh đạo và cơ sở vật chất."
   },
   "About": {
-    "message": "About"
+    "message": "Giới thiệu"
   },
   "The Advanced Computing Lab (ACLAB) at HCMUT is a research and engineering lab building intelligent systems across robotics, embedded systems, edge AI, IoT and hardware-software co-design.": {
-    "message": "The Advanced Computing Lab (ACLAB) at HCMUT is a research and engineering lab building intelligent systems across robotics, embedded systems, edge AI, IoT and hardware-software co-design."
+    "message": "Phòng thí nghiệm Tính toán Nâng cao (ACLAB) tại HCMUT là một phòng thí nghiệm nghiên cứu và kỹ thuật xây dựng các hệ thống thông minh trong các lĩnh vực robot, hệ thống nhúng, Edge AI, IoT và đồng thiết kế phần cứng - phần mềm."
   },
   "Home": {
-    "message": "Home"
+    "message": "Trang chủ"
   },
   "Our story": {
-    "message": "Our story"
+    "message": "Câu chuyện của chúng tôi"
   },
   "History & milestones": {
-    "message": "History & milestones"
+    "message": "Lịch sử và các cột mốc"
   },
   "Leadership": {
-    "message": "Leadership"
+    "message": "Đội ngũ lãnh đạo"
   },
   "Director": {
-    "message": "Director"
+    "message": "Giám đốc"
   },
   "Co-PI": {
-    "message": "Co-PI"
+    "message": "Đồng chủ nhiệm"
   },
   "Associate Director (Faculty)": {
-    "message": "Associate Director (Faculty)"
+    "message": "Phó Giám đốc (Giảng viên)"
   },
   "Faculty": {
-    "message": "Faculty"
+    "message": "Khoa"
   },
   "Electrical & Electronics Engineering, HCMUT": {
-    "message": "Electrical & Electronics Engineering, HCMUT"
+    "message": "Kỹ thuật Điện - Điện tử, HCMUT"
   },
   "Meet the team": {
-    "message": "Meet the team"
+    "message": "Gặp gỡ đội ngũ"
   },
   "Facilities": {
-    "message": "Facilities"
+    "message": "Cơ sở vật chất"
   },
   "Where we build.": {
-    "message": "Where we build."
+    "message": "Nơi chúng tôi sáng tạo."
   },
   "A working engineering lab — electronics benches, prototyping tools and edge-AI compute.": {
-    "message": "A working engineering lab — electronics benches, prototyping tools and edge-AI compute."
+    "message": "Một phòng thí nghiệm kỹ thuật thực thụ — bàn làm việc điện tử, công cụ chế tạo mẫu và máy tính Edge AI."
   },
   "Want to work with us?": {
-    "message": "Want to work with us?"
+    "message": "Bạn muốn hợp tác cùng chúng tôi?"
   },
   "Reach out for collaboration, student membership or visiting the lab.": {
-    "message": "Reach out for collaboration, student membership or visiting the lab."
+    "message": "Liên hệ với chúng tôi để hợp tác, đăng ký thành viên sinh viên hoặc tham quan phòng thí nghiệm."
   },
   "Contact us": {
-    "message": "Contact us"
+    "message": "Liên hệ với chúng tôi"
   },
   "Join ACLAB": {
-    "message": "Join ACLAB"
+    "message": "Tham gia ACLAB"
   },
   "Contact — ACLAB": {
-    "message": "Contact — ACLAB"
+    "message": "Liên hệ — ACLAB"
   },
   "Contact ACLAB HCMUT — email, address, map and social links.": {
-    "message": "Contact ACLAB HCMUT — email, address, map and social links."
+    "message": "Liên hệ ACLAB HCMUT — email, địa chỉ, bản đồ và liên kết mạng xã hội."
   },
   "Contact": {
-    "message": "Contact"
+    "message": "Liên hệ"
   },
   "Contact ACLAB": {
-    "message": "Contact ACLAB"
+    "message": "Liên hệ ACLAB"
   },
   "Get in touch for collaboration, student membership, or visiting the lab.": {
-    "message": "Get in touch for collaboration, student membership, or visiting the lab."
+    "message": "Liên hệ với chúng tôi để hợp tác, đăng ký thành viên sinh viên hoặc tham quan phòng thí nghiệm."
   },
   "Send a message": {
-    "message": "Send a message"
+    "message": "Gửi tin nhắn"
   },
   "Drop us a line.": {
-    "message": "Drop us a line."
+    "message": "Hãy gửi lời nhắn cho chúng tôi."
   },
   "Name": {
-    "message": "Name"
+    "message": "Họ tên"
   },
   "Your name": {
-    "message": "Your name"
+    "message": "Họ tên của bạn"
   },
   "Email": {
     "message": "Email"
   },
   "Subject": {
-    "message": "Subject"
+    "message": "Tiêu đề"
   },
   "How can we help?": {
-    "message": "How can we help?"
+    "message": "Chúng tôi có thể giúp gì cho bạn?"
   },
   "Message": {
-    "message": "Message"
+    "message": "Nội dung"
   },
   "Your message…": {
-    "message": "Your message…"
+    "message": "Nội dung của bạn…"
   },
   "Send message": {
-    "message": "Send message"
+    "message": "Gửi tin nhắn"
   },
   "Reach us": {
-    "message": "Reach us"
+    "message": "Liên hệ chúng tôi"
   },
   "Address": {
-    "message": "Address"
+    "message": "Địa chỉ"
   },
   "268 Ly Thuong Kiet, Dist. 10, HCMC — HCMUT": {
-    "message": "268 Ly Thuong Kiet, Dist. 10, HCMC — HCMUT"
+    "message": "268 Lý Thường Kiệt, Quận 10, TP.HCM — HCMUT"
   },
   "GitHub": {
     "message": "GitHub"
@@ -485,43 +485,43 @@
     "message": "Facebook"
   },
   "HCMUT location": {
-    "message": "HCMUT location"
+    "message": "Vị trí HCMUT"
   },
   "Advanced Computing Lab · HCMUT": {
-    "message": "Advanced Computing Lab · HCMUT"
+    "message": "Phòng thí nghiệm Tính toán Nâng cao · HCMUT"
   },
   "Engineering intelligent systems from chip to robot.": {
-    "message": "Engineering intelligent systems from chip to robot."
+    "message": "Kỹ thuật các hệ thống thông minh từ chip đến robot."
   },
   "ACLAB is a university research lab at HCMUT working across intelligent robotics, embedded systems, edge AI, IoT and hardware-software co-design — from custom PCBs and firmware to autonomous robots.": {
-    "message": "ACLAB is a university research lab at HCMUT working across intelligent robotics, embedded systems, edge AI, IoT and hardware-software co-design — from custom PCBs and firmware to autonomous robots."
+    "message": "ACLAB là một phòng thí nghiệm nghiên cứu đại học tại HCMUT hoạt động trong các lĩnh vực robot thông minh, hệ thống nhúng, Edge AI, IoT và đồng thiết kế phần cứng - phần mềm — từ các bo mạch PCB tùy chỉnh và firmware đến robot tự hành."
   },
   "Explore Research": {
-    "message": "Explore Research"
+    "message": "Khám phá Nghiên cứu"
   },
   "View Projects": {
-    "message": "View Projects"
+    "message": "Xem Dự án"
   },
   "Research areas": {
-    "message": "Research areas"
+    "message": "Lĩnh vực nghiên cứu"
   },
   "Active projects": {
-    "message": "Active projects"
+    "message": "Dự án đang hoạt động"
   },
   "Members": {
-    "message": "Members"
+    "message": "Thành viên"
   },
   "ACLAB research knowledge graph": {
-    "message": "ACLAB research knowledge graph"
+    "message": "Đồ thị tri thức nghiên cứu của ACLAB"
   },
   "Robotics": {
-    "message": "Robotics"
+    "message": "Robot"
   },
   "Edge AI": {
     "message": "Edge AI"
   },
   "Embedded": {
-    "message": "Embedded"
+    "message": "Hệ thống nhúng"
   },
   "IoT": {
     "message": "IoT"
@@ -530,295 +530,295 @@
     "message": "PCB"
   },
   "Autonomous": {
-    "message": "Autonomous"
+    "message": "Tự hành"
   },
   "Advanced Computing Lab (ACLAB) — HCMUT": {
-    "message": "Advanced Computing Lab (ACLAB) — HCMUT"
+    "message": "Phòng thí nghiệm Tính toán Nâng cao (ACLAB) — HCMUT"
   },
   "ACLAB HCMUT — applied research in intelligent robotics, embedded systems, edge AI, IoT and hardware-software co-design.": {
-    "message": "ACLAB HCMUT — applied research in intelligent robotics, embedded systems, edge AI, IoT and hardware-software co-design."
+    "message": "ACLAB HCMUT — nghiên cứu ứng dụng trong robot thông minh, hệ thống nhúng, Edge AI, IoT và đồng thiết kế phần cứng - phần mềm."
   },
   "Research Areas": {
-    "message": "Research Areas"
+    "message": "Lĩnh vực nghiên cứu"
   },
   "Where we focus.": {
-    "message": "Where we focus."
+    "message": "Trọng tâm của chúng tôi."
   },
   "Applied research and engineering across the full intelligent-systems stack — hardware, firmware and AI.": {
-    "message": "Applied research and engineering across the full intelligent-systems stack — hardware, firmware and AI."
+    "message": "Nghiên cứu ứng dụng và kỹ thuật trên toàn bộ hệ thống thông minh — phần cứng, firmware và AI."
   },
   "Featured Projects": {
-    "message": "Featured Projects"
+    "message": "Dự án nổi bật"
   },
   "What we are building.": {
-    "message": "What we are building."
+    "message": "Những gì chúng tôi đang xây dựng."
   },
   "All projects": {
-    "message": "All projects"
+    "message": "Tất cả dự án"
   },
   "People": {
-    "message": "People"
+    "message": "Thành viên"
   },
   "The people behind ACLAB.": {
-    "message": "The people behind ACLAB."
+    "message": "Những con người đằng sau ACLAB."
   },
   "Partners & Affiliations": {
-    "message": "Partners & Affiliations"
+    "message": "Đối tác và Liên kết"
   },
   "We collaborate broadly.": {
-    "message": "We collaborate broadly."
+    "message": "Chúng tôi hợp tác rộng rãi."
   },
   "ACLAB works with academic units, research institutes and industry partners.": {
-    "message": "ACLAB works with academic units, research institutes and industry partners."
+    "message": "ACLAB hợp tác với các đơn vị học thuật, viện nghiên cứu và đối tác doanh nghiệp."
   },
   "View all partners": {
-    "message": "View all partners"
+    "message": "Xem tất cả đối tác"
   },
   "Get involved": {
-    "message": "Get involved"
+    "message": "Tham gia cùng chúng tôi"
   },
   "Join ACLAB or collaborate with us.": {
-    "message": "Join ACLAB or collaborate with us."
+    "message": "Tham gia ACLAB hoặc hợp tác cùng chúng tôi."
   },
   "We welcome students who want to build real intelligent systems, and partners looking to collaborate on applied research and engineering.": {
-    "message": "We welcome students who want to build real intelligent systems, and partners looking to collaborate on applied research and engineering."
+    "message": "Chúng tôi chào đón các sinh viên muốn xây dựng những hệ thống thông minh thực thụ, và các đối tác mong muốn hợp tác trong nghiên cứu ứng dụng và kỹ thuật."
   },
   "Partner with us": {
-    "message": "Partner with us"
+    "message": "Hợp tác cùng chúng tôi"
   },
   "Undergraduate Research Member": {
-    "message": "Undergraduate Research Member"
+    "message": "Thành viên nghiên cứu bậc đại học"
   },
   "Strong interest in robotics / embedded / AI": {
-    "message": "Strong interest in robotics / embedded / AI"
+    "message": "Đam mê mạnh mẽ với robot / hệ thống nhúng / AI"
   },
   "Basic C/C++ or Python": {
-    "message": "Basic C/C++ or Python"
+    "message": "Biết cơ bản về C/C++ hoặc Python"
   },
   "Willing to learn hardware & firmware": {
-    "message": "Willing to learn hardware & firmware"
+    "message": "Sẵn sàng học hỏi về phần cứng và firmware"
   },
   "Graduate Researcher (MSc/PhD)": {
-    "message": "Graduate Researcher (MSc/PhD)"
+    "message": "Nghiên cứu viên sau đại học (Thạc sĩ/Tiến sĩ)"
   },
   "Background in EE/CE/CS or related": {
-    "message": "Background in EE/CE/CS or related"
+    "message": "Có nền tảng về Điện tử/Kỹ thuật máy tính/Khoa học máy tính hoặc lĩnh vực liên quan"
   },
   "Research experience is a plus": {
-    "message": "Research experience is a plus"
+    "message": "Có kinh nghiệm nghiên cứu là một lợi thế"
   },
   "Commitment to a research direction": {
-    "message": "Commitment to a research direction"
+    "message": "Cam kết với một hướng nghiên cứu"
   },
   "Hardware / PCB Engineer (Student)": {
-    "message": "Hardware / PCB Engineer (Student)"
+    "message": "Kỹ sư Phần cứng / PCB (Sinh viên)"
   },
   "Familiar with KiCad/Altium": {
-    "message": "Familiar with KiCad/Altium"
+    "message": "Quen thuộc với KiCad/Altium"
   },
   "Understanding of analog/digital circuits": {
-    "message": "Understanding of analog/digital circuits"
+    "message": "Hiểu biết về mạch tương tự/số"
   },
   "Interest in DFM & prototyping": {
-    "message": "Interest in DFM & prototyping"
+    "message": "Quan tâm đến DFM và chế tạo mẫu"
   },
   "Apply": {
-    "message": "Apply"
+    "message": "Ứng tuyển"
   },
   "Send your CV, transcript and a short note about your interests to the lab email.": {
-    "message": "Send your CV, transcript and a short note about your interests to the lab email."
+    "message": "Gửi CV, bảng điểm và một ghi chú ngắn về mối quan tâm của bạn đến email của phòng thí nghiệm."
   },
   "Interview": {
-    "message": "Interview"
+    "message": "Phỏng vấn"
   },
   "A short technical conversation about your background and what you want to build.": {
-    "message": "A short technical conversation about your background and what you want to build."
+    "message": "Một buổi trao đổi kỹ thuật ngắn về nền tảng của bạn và những gì bạn muốn xây dựng."
   },
   "Trial project": {
-    "message": "Trial project"
+    "message": "Dự án thử nghiệm"
   },
   "Work on a small starter task with a mentor to get hands-on with the lab workflow.": {
-    "message": "Work on a small starter task with a mentor to get hands-on with the lab workflow."
+    "message": "Thực hiện một nhiệm vụ khởi đầu nhỏ cùng một người hướng dẫn để làm quen thực tế với quy trình làm việc của phòng thí nghiệm."
   },
   "Onboard": {
-    "message": "Onboard"
+    "message": "Gia nhập"
   },
   "Join a project team and start with the Member Onboarding guides in the Knowledge Base.": {
-    "message": "Join a project team and start with the Member Onboarding guides in the Knowledge Base."
+    "message": "Tham gia một nhóm dự án và bắt đầu với các hướng dẫn Gia nhập dành cho Thành viên trong Cơ sở Tri thức."
   },
   "Join ACLAB HCMUT — open positions for students and researchers, requirements and application process.": {
-    "message": "Join ACLAB HCMUT — open positions for students and researchers, requirements and application process."
+    "message": "Tham gia ACLAB HCMUT — các vị trí tuyển dụng cho sinh viên và nghiên cứu viên, yêu cầu và quy trình ứng tuyển."
   },
   "Join Us": {
-    "message": "Join Us"
+    "message": "Tham gia cùng chúng tôi"
   },
   "We recruit motivated students and researchers who want to build real intelligent systems — robots, embedded devices, custom hardware and edge AI.": {
-    "message": "We recruit motivated students and researchers who want to build real intelligent systems — robots, embedded devices, custom hardware and edge AI."
+    "message": "Chúng tôi tuyển dụng những sinh viên và nghiên cứu viên đầy nhiệt huyết, mong muốn xây dựng các hệ thống thông minh thực thụ — robot, thiết bị nhúng, phần cứng tùy chỉnh và Edge AI."
   },
   "Open positions": {
-    "message": "Open positions"
+    "message": "Vị trí tuyển dụng"
   },
   "Who we are looking for.": {
-    "message": "Who we are looking for."
+    "message": "Chúng tôi đang tìm kiếm ai."
   },
   "Requirements": {
-    "message": "Requirements"
+    "message": "Yêu cầu"
   },
   "Process": {
-    "message": "Process"
+    "message": "Quy trình"
   },
   "How to apply.": {
-    "message": "How to apply."
+    "message": "Cách ứng tuyển."
   },
   "A simple, four-step process from application to onboarding.": {
-    "message": "A simple, four-step process from application to onboarding."
+    "message": "Một quy trình đơn giản gồm bốn bước từ ứng tuyển đến gia nhập."
   },
   "Apply by email": {
-    "message": "Apply by email"
+    "message": "Ứng tuyển qua email"
   },
   "Ask a question": {
-    "message": "Ask a question"
+    "message": "Đặt câu hỏi"
   },
   "Academic": {
-    "message": "Academic"
+    "message": "Học thuật"
   },
   "Universities and faculties ACLAB is part of and works with.": {
-    "message": "Universities and faculties ACLAB is part of and works with."
+    "message": "Các trường đại học và khoa mà ACLAB trực thuộc và hợp tác."
   },
   "Industry": {
-    "message": "Industry"
+    "message": "Doanh nghiệp"
   },
   "Companies collaborating with ACLAB on applied R&D and technology transfer.": {
-    "message": "Companies collaborating with ACLAB on applied R&D and technology transfer."
+    "message": "Các công ty hợp tác với ACLAB trong nghiên cứu phát triển ứng dụng và chuyển giao công nghệ."
   },
   "Research": {
-    "message": "Research"
+    "message": "Nghiên cứu"
   },
   "Research centers and labs partnering on joint projects.": {
-    "message": "Research centers and labs partnering on joint projects."
+    "message": "Các trung tâm nghiên cứu và phòng thí nghiệm hợp tác trong các dự án chung."
   },
   "Visit website": {
-    "message": "Visit website"
+    "message": "Truy cập website"
   },
   "Partners — ACLAB": {
-    "message": "Partners — ACLAB"
+    "message": "Đối tác — ACLAB"
   },
   "Academic, industry and research partners collaborating with the Advanced Computing Lab (ACLAB) at HCMUT.": {
-    "message": "Academic, industry and research partners collaborating with the Advanced Computing Lab (ACLAB) at HCMUT."
+    "message": "Các đối tác học thuật, doanh nghiệp và nghiên cứu hợp tác với Phòng thí nghiệm Tính toán Nâng cao (ACLAB) tại HCMUT."
   },
   "Partners": {
-    "message": "Partners"
+    "message": "Đối tác"
   },
   "Partners & Collaborations": {
-    "message": "Partners & Collaborations"
+    "message": "Đối tác và Hợp tác"
   },
   "ACLAB works with universities, research centers and industry partners to turn applied research into real intelligent systems.": {
-    "message": "ACLAB works with universities, research centers and industry partners to turn applied research into real intelligent systems."
+    "message": "ACLAB hợp tác với các trường đại học, trung tâm nghiên cứu và đối tác doanh nghiệp để biến nghiên cứu ứng dụng thành các hệ thống thông minh thực thụ."
   },
   "{group} partners": {
-    "message": "{group} partners",
+    "message": "Đối tác {group}",
     "description": "Heading for a partner category section"
   },
   "Partner with ACLAB": {
-    "message": "Partner with ACLAB"
+    "message": "Hợp tác với ACLAB"
   },
   "Interested in joint research, technology transfer or student projects? We'd love to talk.": {
-    "message": "Interested in joint research, technology transfer or student projects? We'd love to talk."
+    "message": "Bạn quan tâm đến nghiên cứu chung, chuyển giao công nghệ hay các dự án sinh viên? Chúng tôi rất mong được trao đổi."
   },
   "Our research": {
-    "message": "Our research"
+    "message": "Nghiên cứu của chúng tôi"
   },
   "People — ACLAB": {
-    "message": "People — ACLAB"
+    "message": "Thành viên — ACLAB"
   },
   "The people of ACLAB HCMUT: faculty, researchers, students and alumni.": {
-    "message": "The people of ACLAB HCMUT: faculty, researchers, students and alumni."
+    "message": "Thành viên của ACLAB HCMUT: giảng viên, nghiên cứu viên, sinh viên và cựu thành viên."
   },
   "Faculty, researchers, students and alumni building intelligent systems at ACLAB.": {
-    "message": "Faculty, researchers, students and alumni building intelligent systems at ACLAB."
+    "message": "Giảng viên, nghiên cứu viên, sinh viên và cựu thành viên cùng xây dựng các hệ thống thông minh tại ACLAB."
   },
   "Want to join the team?": {
-    "message": "Want to join the team?"
+    "message": "Bạn muốn gia nhập đội ngũ?"
   },
   "We recruit motivated students every year and welcome research collaborators.": {
-    "message": "We recruit motivated students every year and welcome research collaborators."
+    "message": "Chúng tôi tuyển dụng những sinh viên đầy nhiệt huyết mỗi năm và chào đón các cộng tác viên nghiên cứu."
   },
   "Projects — ACLAB": {
-    "message": "Projects — ACLAB"
+    "message": "Dự án — ACLAB"
   },
   "ACLAB projects across robotics, embedded systems, edge AI, IoT and hardware-software co-design — filter by area, year and status.": {
-    "message": "ACLAB projects across robotics, embedded systems, edge AI, IoT and hardware-software co-design — filter by area, year and status."
+    "message": "Các dự án của ACLAB trong lĩnh vực robot, hệ thống nhúng, Edge AI, IoT và đồng thiết kế phần cứng - phần mềm — lọc theo lĩnh vực, năm và trạng thái."
   },
   "Projects": {
-    "message": "Projects"
+    "message": "Dự án"
   },
   "Robots, AGVs, custom PCBs, embedded devices and edge-AI systems built in the lab. Filter by area, year or status.": {
-    "message": "Robots, AGVs, custom PCBs, embedded devices and edge-AI systems built in the lab. Filter by area, year or status."
+    "message": "Robot, AGV, bo mạch PCB tùy chỉnh, thiết bị nhúng và hệ thống Edge AI được xây dựng tại phòng thí nghiệm. Lọc theo lĩnh vực, năm hoặc trạng thái."
   },
   "Search projects, tech, keywords…": {
-    "message": "Search projects, tech, keywords…"
+    "message": "Tìm kiếm dự án, công nghệ, từ khóa…"
   },
   "Search projects": {
-    "message": "Search projects"
+    "message": "Tìm kiếm dự án"
   },
   "Area": {
-    "message": "Area"
+    "message": "Lĩnh vực"
   },
   "Filter by area": {
-    "message": "Filter by area"
+    "message": "Lọc theo lĩnh vực"
   },
   "Year": {
-    "message": "Year"
+    "message": "Năm"
   },
   "Filter by year": {
-    "message": "Filter by year"
+    "message": "Lọc theo năm"
   },
   "Status": {
-    "message": "Status"
+    "message": "Trạng thái"
   },
   "Filter by status": {
-    "message": "Filter by status"
+    "message": "Lọc theo trạng thái"
   },
   "No projects match these filters yet.": {
-    "message": "No projects match these filters yet."
+    "message": "Chưa có dự án nào phù hợp với các bộ lọc này."
   },
   "Research — ACLAB": {
-    "message": "Research — ACLAB"
+    "message": "Nghiên cứu — ACLAB"
   },
   "Research areas at ACLAB HCMUT: intelligent robotics, embedded & edge AI, autonomous systems, IoT, hardware-software co-design and smart manufacturing.": {
-    "message": "Research areas at ACLAB HCMUT: intelligent robotics, embedded & edge AI, autonomous systems, IoT, hardware-software co-design and smart manufacturing."
+    "message": "Các lĩnh vực nghiên cứu tại ACLAB HCMUT: robot thông minh, hệ thống nhúng và Edge AI, hệ thống tự hành, IoT, đồng thiết kế phần cứng - phần mềm và sản xuất thông minh."
   },
   "We pursue applied research and engineering across six areas — combining hardware, firmware and AI to build real intelligent systems.": {
-    "message": "We pursue applied research and engineering across six areas — combining hardware, firmware and AI to build real intelligent systems."
+    "message": "Chúng tôi theo đuổi nghiên cứu ứng dụng và kỹ thuật trên sáu lĩnh vực — kết hợp phần cứng, firmware và AI để xây dựng các hệ thống thông minh thực thụ."
   },
   "Related projects:": {
-    "message": "Related projects:"
+    "message": "Dự án liên quan:"
   },
   "Output": {
-    "message": "Output"
+    "message": "Kết quả"
   },
   "Projects & publications.": {
-    "message": "Projects & publications."
+    "message": "Dự án và công bố khoa học."
   },
   "Browse projects": {
-    "message": "Browse projects"
+    "message": "Duyệt dự án"
   },
   "Each research area feeds into concrete projects, prototypes and publications. Explore the projects gallery for technical details, team, architecture and results, or visit the Knowledge Base for technical guides.": {
-    "message": "Each research area feeds into concrete projects, prototypes and publications. Explore the projects gallery for technical details, team, architecture and results, or visit the Knowledge Base for technical guides."
+    "message": "Mỗi lĩnh vực nghiên cứu đều dẫn đến các dự án, sản phẩm mẫu và công bố khoa học cụ thể. Khám phá thư viện dự án để xem chi tiết kỹ thuật, đội ngũ, kiến trúc và kết quả, hoặc truy cập Cơ sở Tri thức để xem các hướng dẫn kỹ thuật."
   },
   "View projects": {
-    "message": "View projects"
+    "message": "Xem dự án"
   },
   "Knowledge Base": {
-    "message": "Knowledge Base"
+    "message": "Cơ sở Tri thức"
   },
   "Interested in our research?": {
-    "message": "Interested in our research?"
+    "message": "Quan tâm đến nghiên cứu của chúng tôi?"
   },
   "Join the lab as a student researcher, or collaborate with us on applied projects.": {
-    "message": "Join the lab as a student researcher, or collaborate with us on applied projects."
+    "message": "Gia nhập phòng thí nghiệm với tư cách sinh viên nghiên cứu, hoặc hợp tác cùng chúng tôi trong các dự án ứng dụng."
   },
   "Collaborate": {
-    "message": "Collaborate"
+    "message": "Hợp tác"
   }
 }
