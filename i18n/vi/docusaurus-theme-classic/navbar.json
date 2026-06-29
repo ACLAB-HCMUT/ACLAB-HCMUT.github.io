@@ -4,51 +4,51 @@
     "description": "The title in the navbar"
   },
   "logo.alt": {
-    "message": "ACLAB HCMUT Logo",
+    "message": "Logo ACLAB HCMUT",
     "description": "The alt text of navbar logo"
   },
   "item.label.About": {
-    "message": "About",
+    "message": "Giới thiệu",
     "description": "Navbar item with label About"
   },
   "item.label.Research": {
-    "message": "Research",
+    "message": "Nghiên cứu",
     "description": "Navbar item with label Research"
   },
   "item.label.Projects": {
-    "message": "Projects",
+    "message": "Dự án",
     "description": "Navbar item with label Projects"
   },
   "item.label.People": {
-    "message": "People",
+    "message": "Thành viên",
     "description": "Navbar item with label People"
   },
   "item.label.Partners": {
-    "message": "Partners",
+    "message": "Đối tác",
     "description": "Navbar item with label Partners"
   },
   "item.label.News & Events": {
-    "message": "News & Events",
+    "message": "Tin tức & Sự kiện",
     "description": "Navbar item with label News & Events"
   },
   "item.label.Knowledge Base": {
-    "message": "Knowledge Base",
+    "message": "Cơ sở kiến thức",
     "description": "Navbar item with label Knowledge Base"
   },
   "item.label.Courses": {
-    "message": "Courses",
+    "message": "Khóa học",
     "description": "Navbar item with label Courses"
   },
   "item.label.Student Guide": {
-    "message": "Student Guide",
+    "message": "Sổ tay sinh viên",
     "description": "Navbar item with label Student Guide"
   },
   "item.label.Contact": {
-    "message": "Contact",
+    "message": "Liên hệ",
     "description": "Navbar item with label Contact"
   },
   "item.label.Join ACLAB": {
-    "message": "Join ACLAB",
+    "message": "Tham gia ACLAB",
     "description": "Navbar item with label Join ACLAB"
   }
 }

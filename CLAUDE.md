@@ -32,12 +32,17 @@ deployed to `https://aclab-hcmut.github.io` (GitHub Pages, org `ACLAB-HCMUT`). *
   (member photos in `static/img/people/`). `build/` is generated — never edit.
 
 ## Conventions
-- **English-first (with a VI i18n scaffold).** Author all content in English. A Docusaurus
-  **i18n** setup exists (`locales: ['en','vi']`, navbar `localeDropdown`); the `vi` locale is a
-  **scaffold only** — UI strings live in `i18n/vi/`, and doc/page content **falls back to
-  English** until a page is explicitly translated under `i18n/vi/`. Don't add VI body text to
-  the English source files. Keep proper names with diacritics (e.g. "Lê Trọng Nhân", "Bách Khoa").
-  - Build builds **all locales**; preview VI in dev with `npm run start -- --locale vi`.
+- **Bilingual (EN + VI) — ship both.** Every content page must exist in **English and
+  Vietnamese**. Author the English source in `docs/`, `courses/`, `guide/`; put the Vietnamese
+  version in the **mirrored i18n path** — never inline VI in the English source:
+  - `docs/<p>` → `i18n/vi/docusaurus-plugin-content-docs/current/<p>`
+  - `courses/<p>` → `i18n/vi/docusaurus-plugin-content-docs-courses/current/<p>`
+  - `guide/<p>` → `i18n/vi/docusaurus-plugin-content-docs-guide/current/<p>`
+  Translate only the `title:`; keep `slug`/`sidebar_position`/links/code blocks unchanged. **When
+  you add or edit an English page, create/update its VI counterpart in the same change.** UI
+  labels live in `i18n/vi/*.json`; React pages (`src/pages`) localize via `<Translate>` +
+  `i18n/vi/code.json`. Keep proper names with diacritics (e.g. "Lê Trọng Nhân", "Bách Khoa").
+  - Build builds **all locales**; preview VI in dev with `npm run start -- --locale vi`. **Commit `i18n/`.**
 - **Concise & scannable.** Keep content short and easy to understand; prefer bullet points
   over long paragraphs. Break dense topics into small sections with clear headings; use
   tables/admonitions for structure. Don't pad — say it plainly, then stop.

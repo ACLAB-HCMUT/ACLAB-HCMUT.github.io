@@ -71,3 +71,4 @@ Setup details: see [Tools & Setup](/guide/tools-setup).
 9. [Career Preparation](/guide/career)
 10. [Career Paths: From Courses to Real Roles](/guide/career-paths)
 11. [Student Survival Guide](/guide/survival-guide)
+12. [Starting Work — Pay, Tax & Labor Basics](/guide/starting-work)

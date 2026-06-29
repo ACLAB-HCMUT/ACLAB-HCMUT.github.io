@@ -309,5 +309,516 @@
   "theme.tags.tagsPageTitle": {
     "message": "Thẻ",
     "description": "The title of the tag list page"
+  },
+  "Mission": {
+    "message": "Mission"
+  },
+  "Advance applied research and engineering in intelligent systems, and train engineers who can build real hardware and software end to end.": {
+    "message": "Advance applied research and engineering in intelligent systems, and train engineers who can build real hardware and software end to end."
+  },
+  "Vision": {
+    "message": "Vision"
+  },
+  "Be a leading university lab bridging robotics, embedded systems and AI — from chip and PCB to autonomous platforms.": {
+    "message": "Be a leading university lab bridging robotics, embedded systems and AI — from chip and PCB to autonomous platforms."
+  },
+  "Approach": {
+    "message": "Approach"
+  },
+  "Hands-on, project-driven work. We design PCBs, write firmware, build robots and deploy AI on real devices.": {
+    "message": "Hands-on, project-driven work. We design PCBs, write firmware, build robots and deploy AI on real devices."
+  },
+  "Began R&D focus in Embedded Systems, AI and Robotics.": {
+    "message": "Began R&D focus in Embedded Systems, AI and Robotics."
+  },
+  "Started an R&D collaboration with Kinis AI, bridging academic research and practical technology.": {
+    "message": "Started an R&D collaboration with Kinis AI, bridging academic research and practical technology."
+  },
+  "Supported OhStem in running robotics competitions and activities for students and young engineers.": {
+    "message": "Supported OhStem in running robotics competitions and activities for students and young engineers."
+  },
+  "Competed in Bách Khoa Innovation: INNOTECH with the Low-Cost Smart Irrigation System – HCMUT.": {
+    "message": "Competed in Bách Khoa Innovation: INNOTECH with the Low-Cost Smart Irrigation System – HCMUT."
+  },
+  "Partnered with Heineken Vietnam and HCMUT on a humanoid-robot pilot for industrial manufacturing.": {
+    "message": "Partnered with Heineken Vietnam and HCMUT on a humanoid-robot pilot for industrial manufacturing."
+  },
+  "Robotics & prototyping workspace": {
+    "message": "Robotics & prototyping workspace"
+  },
+  "Electronics & PCB rework bench": {
+    "message": "Electronics & PCB rework bench"
+  },
+  "Embedded / firmware debug stations": {
+    "message": "Embedded / firmware debug stations"
+  },
+  "3D printing & mechanical fabrication": {
+    "message": "3D printing & mechanical fabrication"
+  },
+  "Edge-AI compute (Jetson / GPU)": {
+    "message": "Edge-AI compute (Jetson / GPU)"
+  },
+  "Sensors, motors & test equipment": {
+    "message": "Sensors, motors & test equipment"
+  },
+  "About ACLAB": {
+    "message": "About ACLAB"
+  },
+  "About the Advanced Computing Lab at HCMUT — mission, vision, history, leadership and facilities.": {
+    "message": "About the Advanced Computing Lab at HCMUT — mission, vision, history, leadership and facilities."
+  },
+  "About": {
+    "message": "About"
+  },
+  "The Advanced Computing Lab (ACLAB) at HCMUT is a research and engineering lab building intelligent systems across robotics, embedded systems, edge AI, IoT and hardware-software co-design.": {
+    "message": "The Advanced Computing Lab (ACLAB) at HCMUT is a research and engineering lab building intelligent systems across robotics, embedded systems, edge AI, IoT and hardware-software co-design."
+  },
+  "Home": {
+    "message": "Home"
+  },
+  "Our story": {
+    "message": "Our story"
+  },
+  "History & milestones": {
+    "message": "History & milestones"
+  },
+  "Leadership": {
+    "message": "Leadership"
+  },
+  "Director": {
+    "message": "Director"
+  },
+  "Co-PI": {
+    "message": "Co-PI"
+  },
+  "Associate Director (Faculty)": {
+    "message": "Associate Director (Faculty)"
+  },
+  "Faculty": {
+    "message": "Faculty"
+  },
+  "Electrical & Electronics Engineering, HCMUT": {
+    "message": "Electrical & Electronics Engineering, HCMUT"
+  },
+  "Meet the team": {
+    "message": "Meet the team"
+  },
+  "Facilities": {
+    "message": "Facilities"
+  },
+  "Where we build.": {
+    "message": "Where we build."
+  },
+  "A working engineering lab — electronics benches, prototyping tools and edge-AI compute.": {
+    "message": "A working engineering lab — electronics benches, prototyping tools and edge-AI compute."
+  },
+  "Want to work with us?": {
+    "message": "Want to work with us?"
+  },
+  "Reach out for collaboration, student membership or visiting the lab.": {
+    "message": "Reach out for collaboration, student membership or visiting the lab."
+  },
+  "Contact us": {
+    "message": "Contact us"
+  },
+  "Join ACLAB": {
+    "message": "Join ACLAB"
+  },
+  "Contact — ACLAB": {
+    "message": "Contact — ACLAB"
+  },
+  "Contact ACLAB HCMUT — email, address, map and social links.": {
+    "message": "Contact ACLAB HCMUT — email, address, map and social links."
+  },
+  "Contact": {
+    "message": "Contact"
+  },
+  "Contact ACLAB": {
+    "message": "Contact ACLAB"
+  },
+  "Get in touch for collaboration, student membership, or visiting the lab.": {
+    "message": "Get in touch for collaboration, student membership, or visiting the lab."
+  },
+  "Send a message": {
+    "message": "Send a message"
+  },
+  "Drop us a line.": {
+    "message": "Drop us a line."
+  },
+  "Name": {
+    "message": "Name"
+  },
+  "Your name": {
+    "message": "Your name"
+  },
+  "Email": {
+    "message": "Email"
+  },
+  "Subject": {
+    "message": "Subject"
+  },
+  "How can we help?": {
+    "message": "How can we help?"
+  },
+  "Message": {
+    "message": "Message"
+  },
+  "Your message…": {
+    "message": "Your message…"
+  },
+  "Send message": {
+    "message": "Send message"
+  },
+  "Reach us": {
+    "message": "Reach us"
+  },
+  "Address": {
+    "message": "Address"
+  },
+  "268 Ly Thuong Kiet, Dist. 10, HCMC — HCMUT": {
+    "message": "268 Ly Thuong Kiet, Dist. 10, HCMC — HCMUT"
+  },
+  "GitHub": {
+    "message": "GitHub"
+  },
+  "Facebook": {
+    "message": "Facebook"
+  },
+  "HCMUT location": {
+    "message": "HCMUT location"
+  },
+  "Advanced Computing Lab · HCMUT": {
+    "message": "Advanced Computing Lab · HCMUT"
+  },
+  "Engineering intelligent systems from chip to robot.": {
+    "message": "Engineering intelligent systems from chip to robot."
+  },
+  "ACLAB is a university research lab at HCMUT working across intelligent robotics, embedded systems, edge AI, IoT and hardware-software co-design — from custom PCBs and firmware to autonomous robots.": {
+    "message": "ACLAB is a university research lab at HCMUT working across intelligent robotics, embedded systems, edge AI, IoT and hardware-software co-design — from custom PCBs and firmware to autonomous robots."
+  },
+  "Explore Research": {
+    "message": "Explore Research"
+  },
+  "View Projects": {
+    "message": "View Projects"
+  },
+  "Research areas": {
+    "message": "Research areas"
+  },
+  "Active projects": {
+    "message": "Active projects"
+  },
+  "Members": {
+    "message": "Members"
+  },
+  "ACLAB research knowledge graph": {
+    "message": "ACLAB research knowledge graph"
+  },
+  "Robotics": {
+    "message": "Robotics"
+  },
+  "Edge AI": {
+    "message": "Edge AI"
+  },
+  "Embedded": {
+    "message": "Embedded"
+  },
+  "IoT": {
+    "message": "IoT"
+  },
+  "PCB": {
+    "message": "PCB"
+  },
+  "Autonomous": {
+    "message": "Autonomous"
+  },
+  "Advanced Computing Lab (ACLAB) — HCMUT": {
+    "message": "Advanced Computing Lab (ACLAB) — HCMUT"
+  },
+  "ACLAB HCMUT — applied research in intelligent robotics, embedded systems, edge AI, IoT and hardware-software co-design.": {
+    "message": "ACLAB HCMUT — applied research in intelligent robotics, embedded systems, edge AI, IoT and hardware-software co-design."
+  },
+  "Research Areas": {
+    "message": "Research Areas"
+  },
+  "Where we focus.": {
+    "message": "Where we focus."
+  },
+  "Applied research and engineering across the full intelligent-systems stack — hardware, firmware and AI.": {
+    "message": "Applied research and engineering across the full intelligent-systems stack — hardware, firmware and AI."
+  },
+  "Featured Projects": {
+    "message": "Featured Projects"
+  },
+  "What we are building.": {
+    "message": "What we are building."
+  },
+  "All projects": {
+    "message": "All projects"
+  },
+  "People": {
+    "message": "People"
+  },
+  "The people behind ACLAB.": {
+    "message": "The people behind ACLAB."
+  },
+  "Partners & Affiliations": {
+    "message": "Partners & Affiliations"
+  },
+  "We collaborate broadly.": {
+    "message": "We collaborate broadly."
+  },
+  "ACLAB works with academic units, research institutes and industry partners.": {
+    "message": "ACLAB works with academic units, research institutes and industry partners."
+  },
+  "View all partners": {
+    "message": "View all partners"
+  },
+  "Get involved": {
+    "message": "Get involved"
+  },
+  "Join ACLAB or collaborate with us.": {
+    "message": "Join ACLAB or collaborate with us."
+  },
+  "We welcome students who want to build real intelligent systems, and partners looking to collaborate on applied research and engineering.": {
+    "message": "We welcome students who want to build real intelligent systems, and partners looking to collaborate on applied research and engineering."
+  },
+  "Partner with us": {
+    "message": "Partner with us"
+  },
+  "Undergraduate Research Member": {
+    "message": "Undergraduate Research Member"
+  },
+  "Strong interest in robotics / embedded / AI": {
+    "message": "Strong interest in robotics / embedded / AI"
+  },
+  "Basic C/C++ or Python": {
+    "message": "Basic C/C++ or Python"
+  },
+  "Willing to learn hardware & firmware": {
+    "message": "Willing to learn hardware & firmware"
+  },
+  "Graduate Researcher (MSc/PhD)": {
+    "message": "Graduate Researcher (MSc/PhD)"
+  },
+  "Background in EE/CE/CS or related": {
+    "message": "Background in EE/CE/CS or related"
+  },
+  "Research experience is a plus": {
+    "message": "Research experience is a plus"
+  },
+  "Commitment to a research direction": {
+    "message": "Commitment to a research direction"
+  },
+  "Hardware / PCB Engineer (Student)": {
+    "message": "Hardware / PCB Engineer (Student)"
+  },
+  "Familiar with KiCad/Altium": {
+    "message": "Familiar with KiCad/Altium"
+  },
+  "Understanding of analog/digital circuits": {
+    "message": "Understanding of analog/digital circuits"
+  },
+  "Interest in DFM & prototyping": {
+    "message": "Interest in DFM & prototyping"
+  },
+  "Apply": {
+    "message": "Apply"
+  },
+  "Send your CV, transcript and a short note about your interests to the lab email.": {
+    "message": "Send your CV, transcript and a short note about your interests to the lab email."
+  },
+  "Interview": {
+    "message": "Interview"
+  },
+  "A short technical conversation about your background and what you want to build.": {
+    "message": "A short technical conversation about your background and what you want to build."
+  },
+  "Trial project": {
+    "message": "Trial project"
+  },
+  "Work on a small starter task with a mentor to get hands-on with the lab workflow.": {
+    "message": "Work on a small starter task with a mentor to get hands-on with the lab workflow."
+  },
+  "Onboard": {
+    "message": "Onboard"
+  },
+  "Join a project team and start with the Member Onboarding guides in the Knowledge Base.": {
+    "message": "Join a project team and start with the Member Onboarding guides in the Knowledge Base."
+  },
+  "Join ACLAB HCMUT — open positions for students and researchers, requirements and application process.": {
+    "message": "Join ACLAB HCMUT — open positions for students and researchers, requirements and application process."
+  },
+  "Join Us": {
+    "message": "Join Us"
+  },
+  "We recruit motivated students and researchers who want to build real intelligent systems — robots, embedded devices, custom hardware and edge AI.": {
+    "message": "We recruit motivated students and researchers who want to build real intelligent systems — robots, embedded devices, custom hardware and edge AI."
+  },
+  "Open positions": {
+    "message": "Open positions"
+  },
+  "Who we are looking for.": {
+    "message": "Who we are looking for."
+  },
+  "Requirements": {
+    "message": "Requirements"
+  },
+  "Process": {
+    "message": "Process"
+  },
+  "How to apply.": {
+    "message": "How to apply."
+  },
+  "A simple, four-step process from application to onboarding.": {
+    "message": "A simple, four-step process from application to onboarding."
+  },
+  "Apply by email": {
+    "message": "Apply by email"
+  },
+  "Ask a question": {
+    "message": "Ask a question"
+  },
+  "Academic": {
+    "message": "Academic"
+  },
+  "Universities and faculties ACLAB is part of and works with.": {
+    "message": "Universities and faculties ACLAB is part of and works with."
+  },
+  "Industry": {
+    "message": "Industry"
+  },
+  "Companies collaborating with ACLAB on applied R&D and technology transfer.": {
+    "message": "Companies collaborating with ACLAB on applied R&D and technology transfer."
+  },
+  "Research": {
+    "message": "Research"
+  },
+  "Research centers and labs partnering on joint projects.": {
+    "message": "Research centers and labs partnering on joint projects."
+  },
+  "Visit website": {
+    "message": "Visit website"
+  },
+  "Partners — ACLAB": {
+    "message": "Partners — ACLAB"
+  },
+  "Academic, industry and research partners collaborating with the Advanced Computing Lab (ACLAB) at HCMUT.": {
+    "message": "Academic, industry and research partners collaborating with the Advanced Computing Lab (ACLAB) at HCMUT."
+  },
+  "Partners": {
+    "message": "Partners"
+  },
+  "Partners & Collaborations": {
+    "message": "Partners & Collaborations"
+  },
+  "ACLAB works with universities, research centers and industry partners to turn applied research into real intelligent systems.": {
+    "message": "ACLAB works with universities, research centers and industry partners to turn applied research into real intelligent systems."
+  },
+  "{group} partners": {
+    "message": "{group} partners",
+    "description": "Heading for a partner category section"
+  },
+  "Partner with ACLAB": {
+    "message": "Partner with ACLAB"
+  },
+  "Interested in joint research, technology transfer or student projects? We'd love to talk.": {
+    "message": "Interested in joint research, technology transfer or student projects? We'd love to talk."
+  },
+  "Our research": {
+    "message": "Our research"
+  },
+  "People — ACLAB": {
+    "message": "People — ACLAB"
+  },
+  "The people of ACLAB HCMUT: faculty, researchers, students and alumni.": {
+    "message": "The people of ACLAB HCMUT: faculty, researchers, students and alumni."
+  },
+  "Faculty, researchers, students and alumni building intelligent systems at ACLAB.": {
+    "message": "Faculty, researchers, students and alumni building intelligent systems at ACLAB."
+  },
+  "Want to join the team?": {
+    "message": "Want to join the team?"
+  },
+  "We recruit motivated students every year and welcome research collaborators.": {
+    "message": "We recruit motivated students every year and welcome research collaborators."
+  },
+  "Projects — ACLAB": {
+    "message": "Projects — ACLAB"
+  },
+  "ACLAB projects across robotics, embedded systems, edge AI, IoT and hardware-software co-design — filter by area, year and status.": {
+    "message": "ACLAB projects across robotics, embedded systems, edge AI, IoT and hardware-software co-design — filter by area, year and status."
+  },
+  "Projects": {
+    "message": "Projects"
+  },
+  "Robots, AGVs, custom PCBs, embedded devices and edge-AI systems built in the lab. Filter by area, year or status.": {
+    "message": "Robots, AGVs, custom PCBs, embedded devices and edge-AI systems built in the lab. Filter by area, year or status."
+  },
+  "Search projects, tech, keywords…": {
+    "message": "Search projects, tech, keywords…"
+  },
+  "Search projects": {
+    "message": "Search projects"
+  },
+  "Area": {
+    "message": "Area"
+  },
+  "Filter by area": {
+    "message": "Filter by area"
+  },
+  "Year": {
+    "message": "Year"
+  },
+  "Filter by year": {
+    "message": "Filter by year"
+  },
+  "Status": {
+    "message": "Status"
+  },
+  "Filter by status": {
+    "message": "Filter by status"
+  },
+  "No projects match these filters yet.": {
+    "message": "No projects match these filters yet."
+  },
+  "Research — ACLAB": {
+    "message": "Research — ACLAB"
+  },
+  "Research areas at ACLAB HCMUT: intelligent robotics, embedded & edge AI, autonomous systems, IoT, hardware-software co-design and smart manufacturing.": {
+    "message": "Research areas at ACLAB HCMUT: intelligent robotics, embedded & edge AI, autonomous systems, IoT, hardware-software co-design and smart manufacturing."
+  },
+  "We pursue applied research and engineering across six areas — combining hardware, firmware and AI to build real intelligent systems.": {
+    "message": "We pursue applied research and engineering across six areas — combining hardware, firmware and AI to build real intelligent systems."
+  },
+  "Related projects:": {
+    "message": "Related projects:"
+  },
+  "Output": {
+    "message": "Output"
+  },
+  "Projects & publications.": {
+    "message": "Projects & publications."
+  },
+  "Browse projects": {
+    "message": "Browse projects"
+  },
+  "Each research area feeds into concrete projects, prototypes and publications. Explore the projects gallery for technical details, team, architecture and results, or visit the Knowledge Base for technical guides.": {
+    "message": "Each research area feeds into concrete projects, prototypes and publications. Explore the projects gallery for technical details, team, architecture and results, or visit the Knowledge Base for technical guides."
+  },
+  "View projects": {
+    "message": "View projects"
+  },
+  "Knowledge Base": {
+    "message": "Knowledge Base"
+  },
+  "Interested in our research?": {
+    "message": "Interested in our research?"
+  },
+  "Join the lab as a student researcher, or collaborate with us on applied projects.": {
+    "message": "Join the lab as a student researcher, or collaborate with us on applied projects."
+  },
+  "Collaborate": {
+    "message": "Collaborate"
   }
 }

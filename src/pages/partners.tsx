@@ -1,5 +1,6 @@
 import React from 'react';
 import Layout from '@theme/Layout';
+import Translate, {translate} from '@docusaurus/Translate';
 import {Btn, CTABanner, Grid, PageHero, Section, SectionHead} from '../components';
 import {partners, type Partner} from '../data/site';
 import styles from './pages.module.css';
@@ -7,18 +8,18 @@ import styles from './pages.module.css';
 const groups: {id: Partner['category']; title: string; intro: string}[] = [
   {
     id: 'Academic',
-    title: 'Academic',
-    intro: 'Universities and faculties ACLAB is part of and works with.',
+    title: translate({message: 'Academic'}),
+    intro: translate({message: 'Universities and faculties ACLAB is part of and works with.'}),
   },
   {
     id: 'Industry',
-    title: 'Industry',
-    intro: 'Companies collaborating with ACLAB on applied R&D and technology transfer.',
+    title: translate({message: 'Industry'}),
+    intro: translate({message: 'Companies collaborating with ACLAB on applied R&D and technology transfer.'}),
   },
   {
     id: 'Research',
-    title: 'Research',
-    intro: 'Research centers and labs partnering on joint projects.',
+    title: translate({message: 'Research'}),
+    intro: translate({message: 'Research centers and labs partnering on joint projects.'}),
   },
 ];
 
@@ -40,7 +41,7 @@ function PartnerCard({p}: {p: Partner}): JSX.Element {
       {p.url && (
         <p style={{margin: '.8rem 0 0'}}>
           <a href={p.url} target="_blank" rel="noopener noreferrer">
-            Visit website ↗
+            <Translate>Visit website</Translate> ↗
           </a>
         </p>
       )}
@@ -51,13 +52,13 @@ function PartnerCard({p}: {p: Partner}): JSX.Element {
 export default function Partners(): JSX.Element {
   return (
     <Layout
-      title="Partners — ACLAB"
-      description="Academic, industry and research partners collaborating with the Advanced Computing Lab (ACLAB) at HCMUT.">
+      title={translate({message: 'Partners — ACLAB'})}
+      description={translate({message: 'Academic, industry and research partners collaborating with the Advanced Computing Lab (ACLAB) at HCMUT.'})}>
       <PageHero
-        kicker="Partners"
-        title="Partners & Collaborations"
-        subtitle="ACLAB works with universities, research centers and industry partners to turn applied research into real intelligent systems."
-        breadcrumb={[{label: 'Home', to: '/'}, {label: 'Partners'}]}
+        kicker={translate({message: 'Partners'})}
+        title={translate({message: 'Partners & Collaborations'})}
+        subtitle={translate({message: 'ACLAB works with universities, research centers and industry partners to turn applied research into real intelligent systems.'})}
+        breadcrumb={[{label: translate({message: 'Home'}), to: '/'}, {label: translate({message: 'Partners'})}]}
       />
 
       {groups.map((g, i) => {
@@ -65,7 +66,14 @@ export default function Partners(): JSX.Element {
         if (items.length === 0) return null;
         return (
           <Section key={g.id} variant={i % 2 === 0 ? 'surface' : 'alt'}>
-            <SectionHead kicker={g.title} title={`${g.title} partners`} intro={g.intro} />
+            <SectionHead
+              kicker={g.title}
+              title={translate(
+                {message: '{group} partners', description: 'Heading for a partner category section'},
+                {group: g.title},
+              )}
+              intro={g.intro}
+            />
             <Grid cols={2}>
               {items.map((p) => (
                 <PartnerCard key={p.name} p={p} />
@@ -77,12 +85,12 @@ export default function Partners(): JSX.Element {
 
       <Section variant="surface">
         <CTABanner
-          title="Partner with ACLAB"
-          text="Interested in joint research, technology transfer or student projects? We'd love to talk."
+          title={translate({message: 'Partner with ACLAB'})}
+          text={translate({message: "Interested in joint research, technology transfer or student projects? We'd love to talk."})}
           actions={
             <>
-              <Btn to="/contact" variant="ghost">Contact us</Btn>
-              <Btn to="/research" variant="ghost">Our research</Btn>
+              <Btn to="/contact" variant="ghost"><Translate>Contact us</Translate></Btn>
+              <Btn to="/research" variant="ghost"><Translate>Our research</Translate></Btn>
             </>
           }
         />

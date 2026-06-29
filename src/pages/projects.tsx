@@ -1,5 +1,6 @@
 import React, {useMemo, useState} from 'react';
 import Layout from '@theme/Layout';
+import Translate, {translate} from '@docusaurus/Translate';
 import {Grid, PageHero, ProjectCard, Section} from '../components';
 import {projects} from '../data/projects';
 import styles from './pages.module.css';
@@ -29,12 +30,14 @@ export default function Projects(): JSX.Element {
   });
 
   return (
-    <Layout title="Projects — ACLAB" description="ACLAB projects across robotics, embedded systems, edge AI, IoT and hardware-software co-design — filter by area, year and status.">
+    <Layout
+      title={translate({message: 'Projects — ACLAB'})}
+      description={translate({message: 'ACLAB projects across robotics, embedded systems, edge AI, IoT and hardware-software co-design — filter by area, year and status.'})}>
       <PageHero
-        kicker="Projects"
-        title="Projects"
-        subtitle="Robots, AGVs, custom PCBs, embedded devices and edge-AI systems built in the lab. Filter by area, year or status."
-        breadcrumb={[{label: 'Home', to: '/'}, {label: 'Projects'}]}
+        kicker={translate({message: 'Projects'})}
+        title={translate({message: 'Projects'})}
+        subtitle={translate({message: 'Robots, AGVs, custom PCBs, embedded devices and edge-AI systems built in the lab. Filter by area, year or status.'})}
+        breadcrumb={[{label: translate({message: 'Home'}), to: '/'}, {label: translate({message: 'Projects'})}]}
       />
 
       <Section variant="surface">
@@ -43,27 +46,27 @@ export default function Projects(): JSX.Element {
             <span aria-hidden="true">🔍</span>
             <input
               type="search"
-              placeholder="Search projects, tech, keywords…"
+              placeholder={translate({message: 'Search projects, tech, keywords…'})}
               value={query}
               onChange={(e) => setQuery(e.target.value)}
-              aria-label="Search projects"
+              aria-label={translate({message: 'Search projects'})}
             />
           </div>
           <div className={styles.toolbarGroup}>
-            <span className={styles.toolbarLabel}>Area</span>
-            <select className={styles.select} value={area} onChange={(e) => setArea(e.target.value)} aria-label="Filter by area">
+            <span className={styles.toolbarLabel}><Translate>Area</Translate></span>
+            <select className={styles.select} value={area} onChange={(e) => setArea(e.target.value)} aria-label={translate({message: 'Filter by area'})}>
               {areas.map((a) => <option key={a} value={a}>{a}</option>)}
             </select>
           </div>
           <div className={styles.toolbarGroup}>
-            <span className={styles.toolbarLabel}>Year</span>
-            <select className={styles.select} value={year} onChange={(e) => setYear(e.target.value)} aria-label="Filter by year">
+            <span className={styles.toolbarLabel}><Translate>Year</Translate></span>
+            <select className={styles.select} value={year} onChange={(e) => setYear(e.target.value)} aria-label={translate({message: 'Filter by year'})}>
               {years.map((y) => <option key={y} value={y}>{y}</option>)}
             </select>
           </div>
           <div className={styles.toolbarGroup}>
-            <span className={styles.toolbarLabel}>Status</span>
-            <select className={styles.select} value={status} onChange={(e) => setStatus(e.target.value)} aria-label="Filter by status">
+            <span className={styles.toolbarLabel}><Translate>Status</Translate></span>
+            <select className={styles.select} value={status} onChange={(e) => setStatus(e.target.value)} aria-label={translate({message: 'Filter by status'})}>
               {statuses.map((s) => <option key={s} value={s}>{s}</option>)}
             </select>
           </div>
@@ -80,7 +83,7 @@ export default function Projects(): JSX.Element {
             ))}
           </Grid>
         ) : (
-          <p className={styles.empty}>No projects match these filters yet.</p>
+          <p className={styles.empty}><Translate>No projects match these filters yet.</Translate></p>
         )}
       </Section>
     </Layout>

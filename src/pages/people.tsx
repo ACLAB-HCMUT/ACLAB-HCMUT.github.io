@@ -1,17 +1,18 @@
 import React from 'react';
 import Layout from '@theme/Layout';
+import Translate, {translate} from '@docusaurus/Translate';
 import {CTABanner, Grid, MemberCard, PageHero, Section, Btn} from '../components';
 import {peopleGroups} from '../data/people';
 import styles from './pages.module.css';
 
 export default function People(): JSX.Element {
   return (
-    <Layout title="People — ACLAB" description="The people of ACLAB HCMUT: faculty, researchers, students and alumni.">
+    <Layout title={translate({message: 'People — ACLAB'})} description={translate({message: 'The people of ACLAB HCMUT: faculty, researchers, students and alumni.'})}>
       <PageHero
-        kicker="People"
-        title="People"
-        subtitle="Faculty, researchers, students and alumni building intelligent systems at ACLAB."
-        breadcrumb={[{label: 'Home', to: '/'}, {label: 'People'}]}
+        kicker={translate({message: 'People'})}
+        title={translate({message: 'People'})}
+        subtitle={translate({message: 'Faculty, researchers, students and alumni building intelligent systems at ACLAB.'})}
+        breadcrumb={[{label: translate({message: 'Home'}), to: '/'}, {label: translate({message: 'People'})}]}
       />
 
       {peopleGroups.map((group, idx) => (
@@ -30,9 +31,9 @@ export default function People(): JSX.Element {
 
       <Section variant="surface">
         <CTABanner
-          title="Want to join the team?"
-          text="We recruit motivated students every year and welcome research collaborators."
-          actions={<><Btn to="/join" variant="ghost">Open positions</Btn><Btn to="/contact" variant="ghost">Contact us</Btn></>}
+          title={translate({message: 'Want to join the team?'})}
+          text={translate({message: 'We recruit motivated students every year and welcome research collaborators.'})}
+          actions={<><Btn to="/join" variant="ghost"><Translate>Open positions</Translate></Btn><Btn to="/contact" variant="ghost"><Translate>Contact us</Translate></Btn></>}
         />
       </Section>
     </Layout>

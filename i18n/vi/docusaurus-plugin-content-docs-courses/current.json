@@ -4,11 +4,11 @@
     "description": "The label for version current"
   },
   "sidebar.courses.category.Microcontrollers": {
-    "message": "Microcontrollers",
+    "message": "Vi điều khiển",
     "description": "The label for category Microcontrollers in sidebar courses"
   },
   "sidebar.courses.category.Internet of Things · IoT": {
-    "message": "Internet of Things · IoT",
+    "message": "Internet vạn vật · IoT",
     "description": "The label for category Internet of Things · IoT in sidebar courses"
   }
 }

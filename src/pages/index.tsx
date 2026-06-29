@@ -1,5 +1,6 @@
 import React from 'react';
 import Layout from '@theme/Layout';
+import Translate, {translate} from '@docusaurus/Translate';
 
 import {
   Arrow,
@@ -29,45 +30,47 @@ function HomeHero() {
       <Container>
         <div className={styles.heroGrid}>
           <div>
-            <span className={styles.eyebrow}>Advanced Computing Lab · HCMUT</span>
+            <span className={styles.eyebrow}><Translate>Advanced Computing Lab · HCMUT</Translate></span>
             <h1 className={styles.heroTitle}>
-              Engineering <em>intelligent systems</em> from chip to robot.
+              <Translate>Engineering intelligent systems from chip to robot.</Translate>
             </h1>
             <p className={styles.heroSubtitle}>
-              ACLAB is a university research lab at HCMUT working across intelligent
-              robotics, embedded systems, edge AI, IoT and hardware-software co-design —
-              from custom PCBs and firmware to autonomous robots.
+              <Translate>
+                ACLAB is a university research lab at HCMUT working across intelligent
+                robotics, embedded systems, edge AI, IoT and hardware-software co-design —
+                from custom PCBs and firmware to autonomous robots.
+              </Translate>
             </p>
             <div className={styles.heroActions}>
-              <Btn to="/research" variant="primary">Explore Research <Arrow /></Btn>
-              <Btn to="/projects" variant="outline">View Projects</Btn>
+              <Btn to="/research" variant="primary"><Translate>Explore Research</Translate> <Arrow /></Btn>
+              <Btn to="/projects" variant="outline"><Translate>View Projects</Translate></Btn>
             </div>
             <div className={styles.heroMeta}>
               <div>
                 <CountUp className={styles.metaValue} value="6" />
-                <span className={styles.metaLabel}>Research areas</span>
+                <span className={styles.metaLabel}><Translate>Research areas</Translate></span>
               </div>
               <div>
                 <CountUp className={styles.metaValue} value="25+" />
-                <span className={styles.metaLabel}>Active projects</span>
+                <span className={styles.metaLabel}><Translate>Active projects</Translate></span>
               </div>
               <div>
                 <CountUp className={styles.metaValue} value="40+" />
-                <span className={styles.metaLabel}>Members</span>
+                <span className={styles.metaLabel}><Translate>Members</Translate></span>
               </div>
             </div>
           </div>
 
-          <div className={styles.graph} aria-label="ACLAB research knowledge graph">
+          <div className={styles.graph} aria-label={translate({message: 'ACLAB research knowledge graph'})}>
             <div className={`${styles.orbit} ${styles.orbitOuter}`} />
             <div className={`${styles.orbit} ${styles.orbitInner}`} />
             <div className={styles.core}>ACLAB</div>
-            <div className={`${styles.node} ${styles.nodeTop}`}>Robotics</div>
-            <div className={`${styles.node} ${styles.nodeRight}`}>Edge AI</div>
-            <div className={`${styles.node} ${styles.nodeBottom}`}>Embedded</div>
-            <div className={`${styles.node} ${styles.nodeLeft}`}>IoT</div>
-            <div className={`${styles.node} ${styles.nodeTL}`}>PCB</div>
-            <div className={`${styles.node} ${styles.nodeBR}`}>Autonomous</div>
+            <div className={`${styles.node} ${styles.nodeTop}`}><Translate>Robotics</Translate></div>
+            <div className={`${styles.node} ${styles.nodeRight}`}><Translate>Edge AI</Translate></div>
+            <div className={`${styles.node} ${styles.nodeBottom}`}><Translate>Embedded</Translate></div>
+            <div className={`${styles.node} ${styles.nodeLeft}`}><Translate>IoT</Translate></div>
+            <div className={`${styles.node} ${styles.nodeTL}`}><Translate>PCB</Translate></div>
+            <div className={`${styles.node} ${styles.nodeBR}`}><Translate>Autonomous</Translate></div>
           </div>
         </div>
       </Container>
@@ -78,17 +81,17 @@ function HomeHero() {
 export default function Home(): JSX.Element {
   return (
     <Layout
-      title="Advanced Computing Lab (ACLAB) — HCMUT"
-      description="ACLAB HCMUT — applied research in intelligent robotics, embedded systems, edge AI, IoT and hardware-software co-design.">
+      title={translate({message: 'Advanced Computing Lab (ACLAB) — HCMUT'})}
+      description={translate({message: 'ACLAB HCMUT — applied research in intelligent robotics, embedded systems, edge AI, IoT and hardware-software co-design.'})}>
       <main>
         <HomeHero />
 
         {/* 3 — Research Areas */}
         <Section variant="surface" id="research">
           <SectionHead
-            kicker="Research Areas"
-            title="Where we focus."
-            intro="Applied research and engineering across the full intelligent-systems stack — hardware, firmware and AI."
+            kicker={translate({message: 'Research Areas'})}
+            title={translate({message: 'Where we focus.'})}
+            intro={translate({message: 'Applied research and engineering across the full intelligent-systems stack — hardware, firmware and AI.'})}
           />
           <Grid cols={3}>
             {researchAreas.map((a) => (
@@ -108,9 +111,9 @@ export default function Home(): JSX.Element {
         <Section variant="alt" id="projects">
           <SectionHead
             row
-            kicker="Featured Projects"
-            title="What we are building."
-            aside={<Btn to="/projects" variant="outline">All projects <Arrow /></Btn>}
+            kicker={translate({message: 'Featured Projects'})}
+            title={translate({message: 'What we are building.'})}
+            aside={<Btn to="/projects" variant="outline"><Translate>All projects</Translate> <Arrow /></Btn>}
           />
           <Grid cols={3}>
             {featuredProjects.map((p) => (
@@ -132,9 +135,9 @@ export default function Home(): JSX.Element {
         <Section variant="alt">
           <SectionHead
             row
-            kicker="People"
-            title="The people behind ACLAB."
-            aside={<Btn to="/people" variant="outline">Meet the team <Arrow /></Btn>}
+            kicker={translate({message: 'People'})}
+            title={translate({message: 'The people behind ACLAB.'})}
+            aside={<Btn to="/people" variant="outline"><Translate>Meet the team</Translate> <Arrow /></Btn>}
           />
           <Grid cols={4}>
             {peopleHighlight.map((m, i) => (
@@ -146,9 +149,9 @@ export default function Home(): JSX.Element {
         {/* 7 — Partners */}
         <Section variant="surface">
           <SectionHead
-            kicker="Partners & Affiliations"
-            title="We collaborate broadly."
-            intro="ACLAB works with academic units, research institutes and industry partners."
+            kicker={translate({message: 'Partners & Affiliations'})}
+            title={translate({message: 'We collaborate broadly.'})}
+            intro={translate({message: 'ACLAB works with academic units, research institutes and industry partners.'})}
           />
           <Grid cols={4}>
             {partners.map((p) => (
@@ -156,20 +159,20 @@ export default function Home(): JSX.Element {
             ))}
           </Grid>
           <div style={{marginTop: '1.4rem', textAlign: 'center'}}>
-            <Btn to="/partners" variant="outline">View all partners</Btn>
+            <Btn to="/partners" variant="outline"><Translate>View all partners</Translate></Btn>
           </div>
         </Section>
 
         {/* 8 — CTA */}
         <Section variant="alt">
           <CTABanner
-            kicker="Get involved"
-            title="Join ACLAB or collaborate with us."
-            text="We welcome students who want to build real intelligent systems, and partners looking to collaborate on applied research and engineering."
+            kicker={translate({message: 'Get involved'})}
+            title={translate({message: 'Join ACLAB or collaborate with us.'})}
+            text={translate({message: 'We welcome students who want to build real intelligent systems, and partners looking to collaborate on applied research and engineering.'})}
             actions={
               <>
-                <Btn to="/join" variant="ghost">Join ACLAB <Arrow /></Btn>
-                <Btn to="/contact" variant="ghost">Partner with us</Btn>
+                <Btn to="/join" variant="ghost"><Translate>Join ACLAB</Translate> <Arrow /></Btn>
+                <Btn to="/contact" variant="ghost"><Translate>Partner with us</Translate></Btn>
               </>
             }
           />

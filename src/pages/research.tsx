@@ -1,5 +1,6 @@
 import React from 'react';
 import Layout from '@theme/Layout';
+import Translate, {translate} from '@docusaurus/Translate';
 import {Btn, CTABanner, Grid, PageHero, Section, SectionHead, TagList} from '../components';
 import {researchAreas} from '../data/research';
 import {projects} from '../data/projects';
@@ -8,12 +9,12 @@ import styles from './pages.module.css';
 
 export default function Research(): JSX.Element {
   return (
-    <Layout title="Research — ACLAB" description="Research areas at ACLAB HCMUT: intelligent robotics, embedded & edge AI, autonomous systems, IoT, hardware-software co-design and smart manufacturing.">
+    <Layout title={translate({message: 'Research — ACLAB'})} description={translate({message: 'Research areas at ACLAB HCMUT: intelligent robotics, embedded & edge AI, autonomous systems, IoT, hardware-software co-design and smart manufacturing.'})}>
       <PageHero
-        kicker="Research"
-        title="Research Areas"
-        subtitle="We pursue applied research and engineering across six areas — combining hardware, firmware and AI to build real intelligent systems."
-        breadcrumb={[{label: 'Home', to: '/'}, {label: 'Research'}]}
+        kicker={translate({message: 'Research'})}
+        title={translate({message: 'Research Areas'})}
+        subtitle={translate({message: 'We pursue applied research and engineering across six areas — combining hardware, firmware and AI to build real intelligent systems.'})}
+        breadcrumb={[{label: translate({message: 'Home'}), to: '/'}, {label: translate({message: 'Research'})}]}
       />
 
       <Section variant="surface">
@@ -28,7 +29,7 @@ export default function Research(): JSX.Element {
                 <div style={{margin: '.8rem 0'}}><TagList tags={area.tags} /></div>
                 {related.length > 0 && (
                   <p style={{fontSize: '.85rem', color: 'var(--aclab-muted)', margin: '.4rem 0 0'}}>
-                    <strong style={{color: 'var(--aclab-ink)'}}>Related projects: </strong>
+                    <strong style={{color: 'var(--aclab-ink)'}}><Translate>Related projects: </Translate></strong>
                     {related.map((r, i) => (
                       <React.Fragment key={r.slug}>
                         {i > 0 && ', '}
@@ -46,26 +47,28 @@ export default function Research(): JSX.Element {
       <Section variant="alt">
         <SectionHead
           row
-          kicker="Output"
-          title="Projects & publications."
-          aside={<Btn to="/projects" variant="outline">Browse projects</Btn>}
+          kicker={translate({message: 'Output'})}
+          title={translate({message: 'Projects & publications.'})}
+          aside={<Btn to="/projects" variant="outline"><Translate>Browse projects</Translate></Btn>}
         />
         <p className={styles.lead}>
-          Each research area feeds into concrete projects, prototypes and publications. Explore
-          the projects gallery for technical details, team, architecture and results, or visit
-          the Knowledge Base for technical guides.
+          <Translate>
+            Each research area feeds into concrete projects, prototypes and publications. Explore
+            the projects gallery for technical details, team, architecture and results, or visit
+            the Knowledge Base for technical guides.
+          </Translate>
         </p>
         <div style={{marginTop: '1.4rem', display: 'flex', gap: '.8rem', flexWrap: 'wrap'}}>
-          <Btn to="/projects" variant="primary">View projects</Btn>
-          <Btn to="/docs/intro" variant="outline">Knowledge Base</Btn>
+          <Btn to="/projects" variant="primary"><Translate>View projects</Translate></Btn>
+          <Btn to="/docs/intro" variant="outline"><Translate>Knowledge Base</Translate></Btn>
         </div>
       </Section>
 
       <Section variant="surface">
         <CTABanner
-          title="Interested in our research?"
-          text="Join the lab as a student researcher, or collaborate with us on applied projects."
-          actions={<><Btn to="/join" variant="ghost">Join ACLAB</Btn><Btn to="/contact" variant="ghost">Collaborate</Btn></>}
+          title={translate({message: 'Interested in our research?'})}
+          text={translate({message: 'Join the lab as a student researcher, or collaborate with us on applied projects.'})}
+          actions={<><Btn to="/join" variant="ghost"><Translate>Join ACLAB</Translate></Btn><Btn to="/contact" variant="ghost"><Translate>Collaborate</Translate></Btn></>}
         />
       </Section>
     </Layout>
