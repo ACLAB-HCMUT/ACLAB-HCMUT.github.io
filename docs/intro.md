@@ -23,6 +23,7 @@ how we work and how to build things in the lab.
 | [Lab Equipment Guides](/docs/equipment) | How to use lab tools and instruments |
 | [Project Documentation](/docs/project-docs) | How to document a project |
 | [DevOps & Research Infra](/docs/devops) | Git, CI, compute and infrastructure |
+| [Projects](/docs/projects/vr-robot-arm-teleoperation) | Documentation and write-ups for ACLAB projects |
 
 ## How to use this wiki
 

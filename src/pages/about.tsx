@@ -10,10 +10,11 @@ const values = [
 ];
 
 const history = [
-  {year: '2019', text: 'ACLAB founded at HCMUT to pursue applied research in embedded and intelligent systems.'},
-  {year: '2021', text: 'Expanded into robotics and edge AI; first AGV and robot-arm prototypes built in-house.'},
-  {year: '2023', text: 'Grew industry collaborations and student teams competing in national robotics competitions.'},
-  {year: '2025', text: 'Active research across six areas with custom hardware, firmware and edge-AI platforms.'},
+  {year: 'Dec 2023', text: 'Began R&D focus in Embedded Systems, AI and Robotics.'},
+  {year: 'May 2024', text: 'Started an R&D collaboration with Kinis AI, bridging academic research and practical technology.'},
+  {year: '2025', text: 'Supported OhStem in running robotics competitions and activities for students and young engineers.'},
+  {year: 'Aug 2025', text: 'Competed in Bách Khoa Innovation: INNOTECH with the Low-Cost Smart Irrigation System – HCMUT.'},
+  {year: 'Jun 2026', text: 'Partnered with Heineken Vietnam and HCMUT on a humanoid-robot pilot for industrial manufacturing.'},
 ];
 
 const facilities = [
@@ -61,7 +62,7 @@ export default function About(): JSX.Element {
           </div>
           <div className={styles.infoCard}>
             <h3>Leadership</h3>
-            <div className={styles.infoRow}><strong>Director</strong><span>Head of Lab (Faculty)</span></div>
+            <div className={styles.infoRow}><strong>Director</strong><span>Dr. Lê Trọng Nhân (HOD)</span></div>
             <div className={styles.infoRow}><strong>Co-PI</strong><span>Associate Director (Faculty)</span></div>
             <div className={styles.infoRow}><strong>Faculty</strong><span>Electrical & Electronics Engineering, HCMUT</span></div>
             <div style={{marginTop: '1rem'}}>

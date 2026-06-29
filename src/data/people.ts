@@ -12,13 +12,17 @@ export const peopleGroups: PeopleGroup[] = [
     label: 'Faculty',
     members: [
       {
-        name: 'Lab Director',
-        role: 'Head of Lab · Faculty',
-        interests: 'Intelligent robotics, autonomous systems, control',
-        initials: 'LD',
+        name: 'Dr. Lê Trọng Nhân',
+        role: 'Head of Lab (HOD) · Faculty of CSE, HCMUT',
+        interests:
+          'IoT, wireless sensor networks, energy harvesting, edge AI & embedded systems',
+        initials: 'LTN',
+        photo: '/img/people/le-trong-nhan.jpg',
         links: [
-          {label: 'Scholar', href: 'https://scholar.google.com/'},
-          {label: 'LinkedIn', href: 'https://www.linkedin.com/'},
+          {
+            label: 'Scholar',
+            href: 'https://scholar.google.com/citations?user=nLfZASYAAAAJ&hl=en',
+          },
         ],
       },
       {

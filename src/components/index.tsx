@@ -185,13 +185,20 @@ export type Member = {
   role: string;
   interests: string;
   initials: string;
+  photo?: string;
   links?: {label: string; href: string}[];
 };
 
 export function MemberCard({member}: {member: Member}) {
   return (
     <div className={clsx(styles.card, styles.memberCard)}>
-      <div className={styles.memberPhoto} aria-hidden="true">{member.initials}</div>
+      <div className={styles.memberPhoto} aria-hidden={member.photo ? undefined : true}>
+        {member.photo ? (
+          <img src={member.photo} alt={member.name} className={styles.memberPhotoImg} />
+        ) : (
+          member.initials
+        )}
+      </div>
       <h3>{member.name}</h3>
       <p className={styles.memberRole}>{member.role}</p>
       <p className={styles.memberInterests}>{member.interests}</p>
@@ -238,8 +245,19 @@ export function StatItem({value, label}: {value: string; label: string}) {
   );
 }
 
-export function Partner({name}: {name: string}) {
-  return <div className={styles.partner}>{name}</div>;
+export function Partner({name, url}: {name: string; url?: string}) {
+  const box = <div className={styles.partner}>{name}</div>;
+  return url ? (
+    <a
+      href={url}
+      target="_blank"
+      rel="noopener noreferrer"
+      className={styles.partnerLink}>
+      {box}
+    </a>
+  ) : (
+    box
+  );
 }
 
 export function CTABanner({

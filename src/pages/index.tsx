@@ -151,9 +151,12 @@ export default function Home(): JSX.Element {
           />
           <Grid cols={4}>
             {partners.map((p) => (
-              <Partner key={p} name={p} />
+              <Partner key={p.name} name={p.name} url={p.url} />
             ))}
           </Grid>
+          <div style={{marginTop: '1.4rem', textAlign: 'center'}}>
+            <Btn to="/partners" variant="outline">View all partners</Btn>
+          </div>
         </Section>
 
         {/* 8 — CTA */}

@@ -26,6 +26,31 @@ const config: Config = {
     },
   },
 
+  plugins: [
+    [
+      '@docusaurus/plugin-content-docs',
+      {
+        id: 'courses',
+        path: 'courses',
+        routeBasePath: 'courses',
+        sidebarPath: './sidebarsCourses.ts',
+        editUrl:
+          'https://github.com/ACLAB-HCMUT/ACLAB-HCMUT.github.io/tree/main/',
+      },
+    ],
+    [
+      '@docusaurus/plugin-content-docs',
+      {
+        id: 'guide',
+        path: 'guide',
+        routeBasePath: 'guide',
+        sidebarPath: './sidebarsGuide.ts',
+        editUrl:
+          'https://github.com/ACLAB-HCMUT/ACLAB-HCMUT.github.io/tree/main/',
+      },
+    ],
+  ],
+
   presets: [
     [
       'classic',
@@ -77,12 +102,27 @@ const config: Config = {
         {to: '/research', label: 'Research', position: 'left'},
         {to: '/projects', label: 'Projects', position: 'left'},
         {to: '/people', label: 'People', position: 'left'},
+        {to: '/partners', label: 'Partners', position: 'left'},
         {to: '/blog', label: 'News & Events', position: 'left'},
         {
           type: 'docSidebar',
           sidebarId: 'knowledgeBase',
           position: 'left',
           label: 'Knowledge Base',
+        },
+        {
+          type: 'docSidebar',
+          docsPluginId: 'courses',
+          sidebarId: 'courses',
+          position: 'left',
+          label: 'Courses',
+        },
+        {
+          type: 'docSidebar',
+          docsPluginId: 'guide',
+          sidebarId: 'guide',
+          position: 'left',
+          label: 'Student Guide',
         },
         {to: '/contact', label: 'Contact', position: 'left'},
         {
@@ -104,12 +144,15 @@ const config: Config = {
             {label: 'Research Areas', to: '/research'},
             {label: 'Projects', to: '/projects'},
             {label: 'People', to: '/people'},
+            {label: 'Partners', to: '/partners'},
           ],
         },
         {
           title: 'Resources',
           items: [
             {label: 'Knowledge Base', to: '/docs/intro'},
+            {label: 'Courses', to: '/courses'},
+            {label: 'Student Guide', to: '/guide'},
             {label: 'News & Events', to: '/blog'},
             {label: 'Join Us', to: '/join'},
             {label: 'Contact', to: '/contact'},
