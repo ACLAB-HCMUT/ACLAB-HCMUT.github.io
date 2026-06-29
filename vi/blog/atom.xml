@@ -1,0 +1,57 @@
+<?xml version="1.0" encoding="utf-8"?><?xml-stylesheet type="text/xsl" href="atom.xsl"?>
+<feed xmlns="http://www.w3.org/2005/Atom">
+    <id>https://aclab-hcmut.github.io/vi/blog</id>
+    <title>ACLAB Blog</title>
+    <updated>2026-05-20T00:00:00.000Z</updated>
+    <generator>https://github.com/jpmonette/feed</generator>
+    <link rel="alternate" href="https://aclab-hcmut.github.io/vi/blog"/>
+    <subtitle>ACLAB Blog</subtitle>
+    <icon>https://aclab-hcmut.github.io/vi/img/favicon.ico</icon>
+    <entry>
+        <title type="html"><![CDATA[Seminar: Edge AI for real-time visual inspection]]></title>
+        <id>https://aclab-hcmut.github.io/vi/blog/seminar-edge-ai-inspection</id>
+        <link href="https://aclab-hcmut.github.io/vi/blog/seminar-edge-ai-inspection"/>
+        <updated>2026-05-20T00:00:00.000Z</updated>
+        <summary type="html"><![CDATA[This month's lab seminar covers deploying quantized vision models on embedded]]></summary>
+        <content type="html"><![CDATA[<p>This month's lab seminar covers <strong>deploying quantized vision models on embedded
+accelerators</strong> for real-time quality control on the factory floor.</p>
+<h2 class="anchor anchorWithStickyNavbar_LWe7" id="topics">Topics<a href="https://aclab-hcmut.github.io/vi/blog/seminar-edge-ai-inspection#topics" class="hash-link" aria-label="Đường dẫn trực tiếp đến Topics" title="Đường dẫn trực tiếp đến Topics">​</a></h2>
+<ul>
+<li>Model quantization and pruning for edge devices</li>
+<li>Running inference on Jetson with TensorRT</li>
+<li>Measuring latency, throughput and power on-device</li>
+<li>A walkthrough of our visual-inspection project pipeline</li>
+</ul>
+<p>The session is open to all lab members and interested students. Slides and demo
+code will be shared in the <a href="https://aclab-hcmut.github.io/vi/docs/intro">Knowledge Base</a> afterwards.</p>]]></content>
+        <author>
+            <name>ACLAB</name>
+            <uri>https://github.com/ACLAB-HCMUT</uri>
+        </author>
+        <category label="Seminar" term="Seminar"/>
+        <category label="News" term="News"/>
+    </entry>
+    <entry>
+        <title type="html"><![CDATA[ACLAB team reaches national robotics competition finals]]></title>
+        <id>https://aclab-hcmut.github.io/vi/blog/robotics-competition-finals</id>
+        <link href="https://aclab-hcmut.github.io/vi/blog/robotics-competition-finals"/>
+        <updated>2026-04-10T00:00:00.000Z</updated>
+        <summary type="html"><![CDATA[Our autonomous AGV team reached the finals of a national robotics competition]]></summary>
+        <content type="html"><![CDATA[<p>Our autonomous AGV team reached the <strong>finals of a national robotics competition</strong>
+with a LiDAR-based navigation stack designed and built entirely in the lab.</p>
+<h2 class="anchor anchorWithStickyNavbar_LWe7" id="highlights">Highlights<a href="https://aclab-hcmut.github.io/vi/blog/robotics-competition-finals#highlights" class="hash-link" aria-label="Đường dẫn trực tiếp đến Highlights" title="Đường dẫn trực tiếp đến Highlights">​</a></h2>
+<ul>
+<li>Differential-drive AGV with custom motor-driver PCBs</li>
+<li>LiDAR SLAM and ROS 2 navigation</li>
+<li>Real-time obstacle avoidance and path planning</li>
+</ul>
+<p>Congratulations to the team! The platform continues as one of our active
+<a href="https://aclab-hcmut.github.io/vi/projects">projects</a>. Want to build the next one? <a href="https://aclab-hcmut.github.io/vi/join">Join ACLAB</a>.</p>]]></content>
+        <author>
+            <name>ACLAB</name>
+            <uri>https://github.com/ACLAB-HCMUT</uri>
+        </author>
+        <category label="Competition" term="Competition"/>
+        <category label="News" term="News"/>
+    </entry>
+</feed>

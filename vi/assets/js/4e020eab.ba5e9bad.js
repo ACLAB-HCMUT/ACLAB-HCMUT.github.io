@@ -1,0 +1,1 @@
+"use strict";(self.webpackChunkmy_website=self.webpackChunkmy_website||[]).push([[7908],{6410:e=>{e.exports=JSON.parse('{"metadata":{"permalink":"/vi/blog","page":1,"postsPerPage":6,"totalPages":1,"totalCount":2,"blogDescription":"News, seminars, workshops and recruitment at ACLAB.","blogTitle":"News & Events"}}')}}]);
