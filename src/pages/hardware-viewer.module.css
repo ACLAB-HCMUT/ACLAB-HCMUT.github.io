@@ -76,11 +76,7 @@
   border-color: var(--ifm-color-emphasis-300);
 }
 
-@media (max-width: 600px) {
-  .stage {
-    height: 380px;
-  }
-}
+/* .stage phone height is handled in the consolidated phone block below. */
 
 .layer {
   position: absolute;
@@ -239,4 +235,32 @@
   background: var(--ifm-color-emphasis-100);
   border: 1px solid var(--ifm-color-emphasis-200);
   color: var(--ifm-color-emphasis-800);
+}
+
+/* ---- Phone tuning ---- */
+@media (max-width: 600px) {
+  .switch {
+    width: 100%;
+    overflow-x: auto;
+    -webkit-overflow-scrolling: touch;
+  }
+  .switchBtn {
+    flex: 1 0 auto;
+    padding: 7px 12px;
+    font-size: 0.82rem;
+  }
+  /* Tabs scroll instead of cramping; keep labels on one line */
+  .tabs {
+    overflow-x: auto;
+    -webkit-overflow-scrolling: touch;
+  }
+  .tab {
+    flex: 0 0 auto;
+    white-space: nowrap;
+    padding: 11px 14px;
+  }
+  .stage {
+    height: 56vh;
+    min-height: 320px;
+  }
 }

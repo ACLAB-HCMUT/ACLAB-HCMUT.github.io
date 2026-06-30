@@ -263,3 +263,15 @@
   color: var(--aclab-blue);
 }
 .fileSize { color: var(--aclab-muted); font-size: .78rem; }
+
+/* ---- Phone tuning ---- */
+@media (max-width: 600px) {
+  .header { padding: 1.2rem 1rem .3rem; }
+  .title { font-size: 1.5rem; }
+  .app { padding: .8rem 1rem 2.4rem; }
+  /* Let the tab row scroll horizontally instead of cramping 4 labels */
+  .tabs { overflow-x: auto; -webkit-overflow-scrolling: touch; }
+  .tab { flex: 0 0 auto; white-space: nowrap; padding: .7rem .8rem; }
+  .viewControls { gap: .35rem; }
+  .viewBtn { flex: 1 1 auto; }
+}

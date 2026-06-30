@@ -109,3 +109,11 @@
 @media (max-width: 900px) {
   .twoCol { grid-template-columns: 1fr; }
 }
+@media (max-width: 640px) {
+  /* Stack the project filters into full-width rows on phones */
+  .searchBox { flex-basis: 100%; min-width: 0; }
+  .toolbarGroup { flex: 1 1 100%; }
+  .select { flex: 1; }
+  /* Keep the timeline/steps readable on narrow screens */
+  .timeItem { grid-template-columns: 64px 1fr; gap: .7rem; }
+}

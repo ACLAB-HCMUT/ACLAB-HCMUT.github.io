@@ -52,7 +52,12 @@ export function ViewerFrame({
   if (bare) return <>{children}</>;
   return (
     <figure className={styles.figure}>
-      <div className={clsx(styles.viewerFrame, grid && styles.grid)} style={{height}}>
+      <div
+        className={clsx(styles.viewerFrame, grid && styles.grid)}
+        // Height as a CSS var so a media query can cap it on small screens.
+        style={
+          height ? ({['--vh']: `${height}px`} as React.CSSProperties) : undefined
+        }>
         {children}
       </div>
       {controls}

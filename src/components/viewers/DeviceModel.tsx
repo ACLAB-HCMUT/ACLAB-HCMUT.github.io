@@ -52,7 +52,9 @@ export default function DeviceModel({
         {badge && <span className={styles.badge}>{badge}</span>}
       </div>
 
-      <div className={clsx(styles.cardStage, styles.grid)} style={{height}}>
+      <div
+        className={clsx(styles.cardStage, styles.grid)}
+        style={{['--vh']: `${height}px`} as React.CSSProperties}>
         <Model3D bare src={src} poster={poster} posterAlt={posterAlt} />
       </div>
 
