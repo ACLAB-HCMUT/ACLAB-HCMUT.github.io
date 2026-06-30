@@ -38,7 +38,7 @@ deployed to `https://aclab-hcmut.github.io` (GitHub Pages, org `ACLAB-HCMUT`).
 
 ## Structure
 - **React pages** `src/pages/*.tsx`: index, about, research, projects, people, partners, contact,
-  join, hardware-viewer (3D/Gerber demo), board-demo (CSS viewer demo).
+  join, board-demo (CSS viewer demo). `ui-showcase` = three.js hero + 3D model demo.
 - **Shared UI kit** `src/components/` — split into focused modules, re-exported by the
   `index.tsx` **barrel** (import everything from `'../components'`):
   `types.ts` (`Project`/`Member`/`NewsItem`/`ProjectStatus`), `primitives.tsx`

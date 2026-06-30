@@ -34,5 +34,37 @@
   "sidebar.knowledgeBase.category.Projects.link.generated-index.description": {
     "message": "Tài liệu và bài viết về các dự án của ACLAB.",
     "description": "The generated-index page description for category Projects in sidebar knowledgeBase"
+  },
+  "sidebar.knowledgeBase.category.Connectivity & Buses": {
+    "message": "Connectivity & Buses",
+    "description": "The label for category Connectivity & Buses in sidebar knowledgeBase"
+  },
+  "sidebar.knowledgeBase.category.Circuit Design Blocks": {
+    "message": "Circuit Design Blocks",
+    "description": "The label for category Circuit Design Blocks in sidebar knowledgeBase"
+  },
+  "sidebar.knowledgeBase.category.Examples & Reference": {
+    "message": "Examples & Reference",
+    "description": "The label for category Examples & Reference in sidebar knowledgeBase"
+  },
+  "sidebar.knowledgeBase.category.Signal & Power Integrity": {
+    "message": "Signal & Power Integrity",
+    "description": "The label for category Signal & Power Integrity in sidebar knowledgeBase"
+  },
+  "sidebar.knowledgeBase.category.Components & Parts": {
+    "message": "Components & Parts",
+    "description": "The label for category Components & Parts in sidebar knowledgeBase"
+  },
+  "sidebar.knowledgeBase.category.Applied Circuits & Practices": {
+    "message": "Applied Circuits & Practices",
+    "description": "The label for category Applied Circuits & Practices in sidebar knowledgeBase"
+  },
+  "sidebar.knowledgeBase.category.IoT Applications": {
+    "message": "IoT Applications",
+    "description": "The label for category IoT Applications in sidebar knowledgeBase"
+  },
+  "sidebar.knowledgeBase.category.Fabrication": {
+    "message": "Fabrication",
+    "description": "The label for category Fabrication in sidebar knowledgeBase"
   }
 }

@@ -31,8 +31,8 @@ export default function UiShowcase(): JSX.Element {
             static site and falls back gracefully when motion is reduced.
           </p>
           <div className={styles.actions}>
-            <Link className={styles.btnPrimary} to="/hardware-viewer">
-              Explore the 3D / PCB viewer →
+            <Link className={styles.btnPrimary} to="/docs/equipment/devices/single-board-computers">
+              Explore an interactive 3D model →
             </Link>
             <Link className={styles.btnGhost} to="/docs/pcb-design">
               Browse the Knowledge Base
@@ -62,10 +62,13 @@ export default function UiShowcase(): JSX.Element {
               </p>
             </div>
             <div>
-              <h3>In-browser model & PCB viewers</h3>
+              <h3>In-browser 3D model viewer</h3>
               <p>
-                STEP 3D models and Gerber PCBs render right in the page — see the{' '}
-                <Link to="/hardware-viewer">Hardware Viewer</Link>.
+                STEP 3D models render right in the page — see the{' '}
+                <Link to="/docs/equipment/devices/single-board-computers">
+                  interactive model
+                </Link>
+                .
               </p>
             </div>
             <div>
@@ -124,8 +127,7 @@ export default function UiShowcase(): JSX.Element {
             <div>
               <h3>🔧 Embedded & PCB</h3>
               <p>
-                Boards and parts in 3D, and real Gerbers — open the{' '}
-                <Link to="/hardware-viewer">Hardware Viewer</Link> and{' '}
+                Boards and parts in 3D — see{' '}
                 <Link to="/docs/pcb-design">PCB Design</Link>.
               </p>
             </div>

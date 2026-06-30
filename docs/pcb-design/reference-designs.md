@@ -42,4 +42,3 @@ design or footprint into your own board. Learn the *patterns*; don't blindly clo
 
 - [Design by Circuit Block](/docs/pcb-design/circuit-blocks) — apply what you learn, block by block
 - [Single-Board Computers](/docs/equipment/devices/single-board-computers) — has an interactive 3D model
-- [Hardware Viewer](/hardware-viewer) — view a real PCB's Gerbers and a 3D part in-browser

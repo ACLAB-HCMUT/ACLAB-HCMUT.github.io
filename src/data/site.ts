@@ -24,7 +24,7 @@ export const partners: Partner[] = [
       "Ho Chi Minh City University of Technology — ACLAB's home institution.",
   },
   {
-    name: 'Faculty of EEE',
+    name: 'Faculty of Computer Science and Engineering',
     category: 'Academic',
     blurb: 'Host faculty at HCMUT supporting ACLAB research and teaching.',
   },

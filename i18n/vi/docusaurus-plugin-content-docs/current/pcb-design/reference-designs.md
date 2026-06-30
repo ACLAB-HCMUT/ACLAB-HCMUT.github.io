@@ -42,4 +42,3 @@ chép mù quáng.
 
 - [Thiết kế theo khối mạch](/docs/pcb-design/circuit-blocks) — áp dụng điều đã học, theo từng khối
 - [Máy tính bo mạch đơn](/docs/equipment/devices/single-board-computers) — có mô hình 3D tương tác
-- [Hardware Viewer](/hardware-viewer) — xem Gerber của một PCB thật và một linh kiện 3D ngay trên trình duyệt

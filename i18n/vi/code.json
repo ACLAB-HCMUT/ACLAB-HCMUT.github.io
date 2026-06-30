@@ -823,5 +823,80 @@
   },
   "Collaborate": {
     "message": "Hợp tác"
+  },
+  "Robot Arm Kinematics — 3D Demo": {
+    "message": "Động học cánh tay robot — Demo 3D"
+  },
+  "Interactive three.js robot-arm kinematics demo, built procedurally.": {
+    "message": "Demo tương tác về động học cánh tay robot bằng three.js, được dựng theo phương pháp thủ tục."
+  },
+  "three.js Demo": {
+    "message": "Demo three.js"
+  },
+  "Robot Arm Kinematics": {
+    "message": "Động học cánh tay robot"
+  },
+  "A 6-joint articulated arm with looping joint kinematics, built procedurally in three.js — no model file. Drag to orbit, scroll to zoom.": {
+    "message": "Một cánh tay khớp nối 6 bậc tự do với chuyển động động học lặp lại tại các khớp, được dựng theo phương pháp thủ tục bằng three.js — không dùng tệp mô hình. Kéo để xoay quanh, cuộn để phóng to/thu nhỏ."
+  },
+  "About this demo": {
+    "message": "Về demo này"
+  },
+  "What it shows.": {
+    "message": "Demo này thể hiện điều gì."
+  },
+  "A kinematic chain of nested joints (waist → shoulder → elbow → wrist roll/pitch → gripper), each animated through a looping motion.": {
+    "message": "Một chuỗi động học gồm các khớp lồng nhau (eo → vai → khuỷu → cổ tay xoay/gập → kẹp), mỗi khớp được tạo hoạt ảnh qua một chuyển động lặp lại."
+  },
+  "SSR-safe three.js: it caps device pixel ratio, disposes all GPU resources on unmount, and renders a single static pose when you prefer reduced motion.": {
+    "message": "three.js an toàn với SSR: giới hạn tỷ lệ điểm ảnh thiết bị, giải phóng toàn bộ tài nguyên GPU khi gỡ bỏ, và hiển thị một tư thế tĩnh duy nhất khi bạn ưu tiên giảm chuyển động."
+  },
+  "Inspired by the three.js Collada-kinematics example — here the arm is generated from primitives instead of a loaded model.": {
+    "message": "Lấy cảm hứng từ ví dụ Collada-kinematics của three.js — ở đây cánh tay được tạo từ các khối hình cơ bản thay vì tải từ một mô hình có sẵn."
+  },
+  "See the real robot-arm project": {
+    "message": "Xem dự án cánh tay robot thực tế"
+  },
+  "Robotics & ROS": {
+    "message": "Robotics & ROS"
+  },
+  "Arctos Robotic Arm — 3D": {
+    "message": "Arctos Robotic Arm — 3D"
+  },
+  "Interactive 3D model of the Arctos robotic arm, plus an animated kinematics schematic.": {
+    "message": "Mô hình 3D tương tác của cánh tay robot Arctos, kèm sơ đồ động học có hoạt ảnh."
+  },
+  "3D Model": {
+    "message": "Mô hình 3D"
+  },
+  "Arctos Robotic Arm": {
+    "message": "Cánh tay robot Arctos"
+  },
+  "The real Arctos arm CAD model (glTF). Once loaded: drag to orbit, scroll to zoom.": {
+    "message": "Mô hình CAD thực của cánh tay Arctos (glTF). Sau khi tải xong: kéo để xoay quanh, cuộn để phóng to/thu nhỏ."
+  },
+  "6-DOF · 3D-printed · ROS 2": {
+    "message": "6-DOF · In 3D · ROS 2"
+  },
+  "Interactive CAD model — drag to rotate, scroll to zoom.": {
+    "message": "Mô hình CAD tương tác — kéo để xoay, cuộn để phóng to/thu nhỏ."
+  },
+  "Load Arctos 3D model (~33 MB)": {
+    "message": "Tải mô hình 3D Arctos (~33 MB)"
+  },
+  "Large model — it downloads only when you click.": {
+    "message": "Mô hình dung lượng lớn — chỉ tải xuống khi bạn nhấp vào."
+  },
+  "Animated schematic": {
+    "message": "Sơ đồ có hoạt ảnh"
+  },
+  "Kinematics (procedural)": {
+    "message": "Động học (dựng theo phương pháp thủ tục)"
+  },
+  "A lightweight procedural arm showing joint motion — instant, no model download. Inspired by the three.js Collada-kinematics example.": {
+    "message": "Một cánh tay nhẹ được dựng theo phương pháp thủ tục, mô phỏng chuyển động của các khớp — hiển thị tức thì, không cần tải mô hình. Lấy cảm hứng từ ví dụ Collada-kinematics của three.js."
+  },
+  "Arctos · 6-DOF · 3D-printed · ROS 2 — interactive CAD model.": {
+    "message": "Arctos · 6-DOF · in 3D · ROS 2 — mô hình CAD tương tác."
   }
 }
