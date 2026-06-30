@@ -5,6 +5,7 @@ import JSZip from 'jszip';
 import pcbStackup from 'pcb-stackup/dist/pcb-stackup.min.js';
 
 import styles from './viewers.module.css';
+import {ViewerFrame, LoadingOverlay, ErrorOverlay} from './chrome';
 
 export type Side = 'top' | 'bottom';
 
@@ -79,32 +80,6 @@ export default function GerberViewerImpl({
     };
   }, [src]);
 
-  const inner = (
-    <>
-      {status === 'loading' && (
-        <div className={styles.overlay}>
-          <span className={styles.spinner} aria-hidden />
-          <span>Rendering Gerber layers…</span>
-        </div>
-      )}
-      {status === 'error' && (
-        <div className={styles.overlay}>
-          <span className={styles.errIcon} aria-hidden>
-            ⚠
-          </span>
-          <span>Could not render Gerbers: {err}</span>
-        </div>
-      )}
-      {status === 'ready' && (
-        <div
-          className={styles.gerberStage}
-          // SVG is produced by pcb-stackup from the user's own Gerber files.
-          dangerouslySetInnerHTML={{__html: side === 'top' ? top : bottom}}
-        />
-      )}
-    </>
-  );
-
   const controls = !isControlled && showControls && (
     <div className={styles.controls}>
       <button
@@ -127,15 +102,25 @@ export default function GerberViewerImpl({
     </div>
   );
 
-  if (bare) return inner;
-
   return (
-    <figure className={styles.figure}>
-      <div className={clsx(styles.viewerFrame, styles.grid)} style={{height}}>
-        {inner}
-      </div>
-      {controls}
-      {caption && <figcaption className={styles.caption}>{caption}</figcaption>}
-    </figure>
+    <ViewerFrame
+      bare={bare}
+      height={height}
+      caption={caption}
+      controls={controls}>
+      {status === 'loading' && (
+        <LoadingOverlay label="Rendering Gerber layers…" />
+      )}
+      {status === 'error' && (
+        <ErrorOverlay>Could not render Gerbers: {err}</ErrorOverlay>
+      )}
+      {status === 'ready' && (
+        <div
+          className={styles.gerberStage}
+          // SVG is produced by pcb-stackup from the user's own Gerber files.
+          dangerouslySetInnerHTML={{__html: side === 'top' ? top : bottom}}
+        />
+      )}
+    </ViewerFrame>
   );
 }

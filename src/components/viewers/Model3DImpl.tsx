@@ -1,15 +1,15 @@
 import React, {useEffect, useRef, useState} from 'react';
-import clsx from 'clsx';
 import * as OV from 'online-3d-viewer';
 
 import styles from './viewers.module.css';
+import {ViewerFrame, LoadingOverlay, ErrorOverlay} from './chrome';
 
 export type Model3DImplProps = {
   /** Already-resolved (base-url prefixed) URL to a model file (STEP/STL/GLB/OBJ…). */
   src: string;
   height?: number;
   caption?: string;
-  /** Render only the canvas (no frame/figure/caption) so a parent can own the chrome. */
+  /** Render only the canvas (no frame/caption) so a parent can own the chrome. */
   bare?: boolean;
 };
 
@@ -59,37 +59,16 @@ export default function Model3DImpl({
     };
   }, [src]);
 
-  const inner = (
-    <>
-      <div ref={hostRef} className={styles.canvasHost} />
-      {status === 'loading' && (
-        <div className={styles.overlay}>
-          <span className={styles.spinner} aria-hidden />
-          <span>Loading 3D model…</span>
-        </div>
-      )}
-      {status === 'error' && (
-        <div className={styles.overlay}>
-          <span className={styles.errIcon} aria-hidden>
-            ⚠
-          </span>
-          <span>
-            Could not load the model. The STEP decoder is fetched from a CDN —
-            check your network connection.
-          </span>
-        </div>
-      )}
-    </>
-  );
-
-  if (bare) return inner;
-
   return (
-    <figure className={styles.figure}>
-      <div className={clsx(styles.viewerFrame, styles.grid)} style={{height}}>
-        {inner}
-      </div>
-      {caption && <figcaption className={styles.caption}>{caption}</figcaption>}
-    </figure>
+    <ViewerFrame bare={bare} height={height} caption={caption}>
+      <div ref={hostRef} className={styles.canvasHost} />
+      {status === 'loading' && <LoadingOverlay label="Loading 3D model…" />}
+      {status === 'error' && (
+        <ErrorOverlay>
+          Could not load the model. The STEP decoder is fetched from a CDN —
+          check your network connection.
+        </ErrorOverlay>
+      )}
+    </ViewerFrame>
   );
 }

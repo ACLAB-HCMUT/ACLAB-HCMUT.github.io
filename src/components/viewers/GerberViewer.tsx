@@ -1,8 +1,7 @@
 import React from 'react';
-import BrowserOnly from '@docusaurus/BrowserOnly';
 import useBaseUrl from '@docusaurus/useBaseUrl';
 
-import styles from './viewers.module.css';
+import {ViewerFrame, LoadingOverlay, ClientLazy} from './chrome';
 import type {Side} from './GerberViewerImpl';
 
 export type {Side};
@@ -28,28 +27,18 @@ const LazyImpl = React.lazy(() => import('./GerberViewerImpl'));
  *   <GerberViewer src="/assets/ExamplePCB/board.zip" caption="…" />
  */
 export default function GerberViewer(props: GerberViewerProps): JSX.Element {
-  const resolvedSrc = useBaseUrl(props.src);
-  const spinner = (
-    <div className={styles.overlay}>
-      <span className={styles.spinner} aria-hidden />
-      <span>Loading viewer…</span>
-    </div>
-  );
-  const fallback = props.bare ? (
-    spinner
-  ) : (
-    <div className={styles.viewerFrame} style={{height: props.height ?? 440}}>
-      {spinner}
-    </div>
+  const {src, height = 440, caption, bare = false} = props;
+  const resolvedSrc = useBaseUrl(src);
+
+  const fallback = (
+    <ViewerFrame bare={bare} height={height} caption={caption}>
+      <LoadingOverlay label="Loading viewer…" />
+    </ViewerFrame>
   );
 
   return (
-    <BrowserOnly fallback={fallback}>
-      {() => (
-        <React.Suspense fallback={fallback}>
-          <LazyImpl {...props} src={resolvedSrc} />
-        </React.Suspense>
-      )}
-    </BrowserOnly>
+    <ClientLazy fallback={fallback}>
+      {() => <LazyImpl {...props} src={resolvedSrc} />}
+    </ClientLazy>
   );
 }

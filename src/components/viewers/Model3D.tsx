@@ -1,9 +1,8 @@
 import React, {useState} from 'react';
-import BrowserOnly from '@docusaurus/BrowserOnly';
 import useBaseUrl from '@docusaurus/useBaseUrl';
-import clsx from 'clsx';
 
 import styles from './viewers.module.css';
+import {ViewerFrame, LoadingOverlay, ClientLazy} from './chrome';
 
 export type Model3DProps = {
   /** Site-absolute path to a model file, e.g. "/assets/3D/part.STEP". */
@@ -35,63 +34,48 @@ export default function Model3D(props: Model3DProps): JSX.Element {
   // Hook must run unconditionally; result is only used when a poster is set.
   const resolvedPoster = useBaseUrl(poster ?? '');
 
-  const spinner = (
-    <div className={styles.overlay}>
-      <span className={styles.spinner} aria-hidden />
-      <span>Loading viewer…</span>
-    </div>
+  const fallback = (
+    <ViewerFrame bare={bare} height={height} caption={caption}>
+      <LoadingOverlay label="Loading viewer…" />
+    </ViewerFrame>
   );
-
-  const frame = (content: React.ReactNode) =>
-    bare ? (
-      <>{content}</>
-    ) : (
-      <figure className={styles.figure}>
-        <div className={clsx(styles.viewerFrame, styles.grid)} style={{height}}>
-          {content}
-        </div>
-        {caption && (
-          <figcaption className={styles.caption}>{caption}</figcaption>
-        )}
-      </figure>
-    );
 
   // Poster gate — defer the heavy 3D load until the user opts in.
   if (poster && !activated) {
-    return frame(
-      <button
-        type="button"
-        className={styles.poster}
-        onClick={() => setActivated(true)}
-        aria-label="Load interactive 3D model">
-        <img
-          className={styles.posterImg}
-          src={resolvedPoster}
-          alt={posterAlt ?? 'Static preview of the 3D model'}
-          loading="lazy"
-        />
-        <span className={styles.posterScrim}>
-          <span className={styles.playBtn}>
-            <span className={styles.playIcon} aria-hidden>
-              ▶
+    return (
+      <ViewerFrame bare={bare} height={height} caption={caption}>
+        <button
+          type="button"
+          className={styles.poster}
+          onClick={() => setActivated(true)}
+          aria-label="Load interactive 3D model">
+          <img
+            className={styles.posterImg}
+            src={resolvedPoster}
+            alt={posterAlt ?? 'Static preview of the 3D model'}
+            loading="lazy"
+          />
+          <span className={styles.posterScrim}>
+            <span className={styles.playBtn}>
+              <span className={styles.playIcon} aria-hidden>
+                ▶
+              </span>
+              View in 3D
             </span>
-            View in 3D
+            <span className={styles.posterNote}>
+              Loads an interactive model — may take a few seconds
+            </span>
           </span>
-          <span className={styles.posterNote}>
-            Loads an interactive model — may take a few seconds
-          </span>
-        </span>
-      </button>,
+        </button>
+      </ViewerFrame>
     );
   }
 
-  return frame(
-    <BrowserOnly fallback={spinner}>
+  return (
+    <ClientLazy fallback={fallback}>
       {() => (
-        <React.Suspense fallback={spinner}>
-          <LazyImpl {...props} bare src={resolvedSrc} />
-        </React.Suspense>
+        <LazyImpl src={resolvedSrc} height={height} caption={caption} bare={bare} />
       )}
-    </BrowserOnly>,
+    </ClientLazy>
   );
 }
