@@ -5,9 +5,9 @@ title: Hiểu Về Chương Trình Đào Tạo
 
 # 2. Hiểu về Chương trình đào tạo
 
-Tổng quan về chương trình đào tạo ngành Khoa học Máy tính. Đây chỉ mang tính định hướng — các con số
-chính xác (số tín chỉ, mã môn học, môn tiên quyết) luôn lấy từ **chương trình đào tạo chính thức**
-của khóa bạn và **BKeL**.
+Tổng quan về một chương trình đào tạo Khoa học Máy tính điển hình — chỉ mang tính định hướng
+chung. Số tín chỉ, mã môn học và môn tiên quyết thực tế phụ thuộc vào chương trình và khóa học
+cụ thể của bạn.
 
 ## Tổng số tín chỉ và các nhóm môn học
 

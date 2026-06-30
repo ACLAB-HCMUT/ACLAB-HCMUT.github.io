@@ -208,7 +208,7 @@ const config: Config = {
               href: 'https://hcmut.edu.vn/',
             },
             {label: '268 Ly Thuong Kiet, Dist. 10, HCMC', href: 'https://maps.google.com/?q=HCMUT'},
-            {label: 'aclab@hcmut.edu.vn', href: 'mailto:aclab@hcmut.edu.vn'},
+            {label: 'caotiendattx@gmail.com', href: 'mailto:caotiendattx@gmail.com'},
           ],
         },
       ],

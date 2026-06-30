@@ -82,7 +82,7 @@ export default function Join(): JSX.Element {
           ))}
         </div>
         <div style={{marginTop: '1.8rem', display: 'flex', gap: '.8rem', flexWrap: 'wrap'}}>
-          <Btn to="mailto:aclab@hcmut.edu.vn?subject=ACLAB%20Application" variant="primary"><Translate>Apply by email</Translate></Btn>
+          <Btn to="mailto:caotiendattx@gmail.com?subject=ACLAB%20Application" variant="primary"><Translate>Apply by email</Translate></Btn>
           <Btn to="/contact" variant="outline"><Translate>Ask a question</Translate></Btn>
         </div>
       </Section>

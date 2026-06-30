@@ -5,9 +5,8 @@ title: Understand the Program
 
 # 2. Understand the Program
 
-An overview of the Computer Science curriculum. This is orientation only — exact numbers
-(credits, course codes, prerequisites) always come from your cohort's **official program** and
-**BKeL**.
+An overview of a typical Computer Science curriculum — general orientation only. Your actual
+credits, course codes and prerequisites depend on your own program and cohort.
 
 ## Total credits and course groups
 

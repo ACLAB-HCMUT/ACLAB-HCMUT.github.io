@@ -10,7 +10,7 @@ title: Start Here
 
 A practical, self-help guide for Computer Science & Engineering students at HCMUT (Bách Khoa).
 It complements the official curriculum — it does not replace it. Always confirm rules, credits
-and prerequisites with the **official program** and **BKeL**.
+and prerequisites with your own program and cohort.
 
 ## 1. Start Here
 
@@ -31,7 +31,6 @@ and prerequisites with the **official program** and **BKeL**.
 
 ### First-year checklist
 
-- [ ] Activate your **university email** and log in to the **LMS / BKeL**.
 - [ ] Create a **GitHub** account and a basic profile.
 - [ ] Install **VS Code** and one programming environment (C/C++ or Python).
 - [ ] Get comfortable with **Linux / WSL** (Windows Subsystem for Linux).
@@ -40,8 +39,6 @@ and prerequisites with the **official program** and **BKeL**.
 
 ### Systems and tools you should know
 
-- **University email** — the official channel for announcements and academic services.
-- **LMS / BKeL** — course materials, submissions, grades.
 - **GitHub** — store code, collaborate, build a portfolio.
 - **VS Code** — your main editor.
 - **Linux / WSL** — the standard environment for programming and systems work.

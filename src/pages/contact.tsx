@@ -21,7 +21,7 @@ export default function Contact(): JSX.Element {
             <SectionHead kicker={translate({message: 'Send a message'})} title={translate({message: 'Drop us a line.'})} />
             <form
               className={styles.form}
-              action="mailto:aclab@hcmut.edu.vn"
+              action="mailto:caotiendattx@gmail.com"
               method="post"
               encType="text/plain">
               <div className={styles.field}>
@@ -47,7 +47,7 @@ export default function Contact(): JSX.Element {
           <div>
             <div className={styles.infoCard}>
               <h3><Translate>Reach us</Translate></h3>
-              <div className={styles.infoRow}><strong><Translate>Email</Translate></strong><a href="mailto:aclab@hcmut.edu.vn">aclab@hcmut.edu.vn</a></div>
+              <div className={styles.infoRow}><strong><Translate>Email</Translate></strong><a href="mailto:caotiendattx@gmail.com">caotiendattx@gmail.com</a></div>
               <div className={styles.infoRow}><strong><Translate>Address</Translate></strong><span><Translate>268 Ly Thuong Kiet, Dist. 10, HCMC — HCMUT</Translate></span></div>
               <div className={styles.infoRow}><strong><Translate>GitHub</Translate></strong><a href="https://github.com/ACLAB-HCMUT">ACLAB-HCMUT</a></div>
               <div className={styles.infoRow}><strong><Translate>Facebook</Translate></strong><a href="https://www.facebook.com/aclabhcumt">aclabhcumt</a></div>

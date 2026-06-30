@@ -10,7 +10,7 @@ title: Bắt Đầu Tại Đây
 
 Một cẩm nang thực tế, mang tính tự học dành cho sinh viên ngành Khoa học & Kỹ thuật Máy tính tại HCMUT (Bách Khoa).
 Cẩm nang này bổ trợ cho chương trình đào tạo chính thức — chứ không thay thế nó. Hãy luôn kiểm chứng các quy định, số tín chỉ
-và môn học tiên quyết với **chương trình đào tạo chính thức** và **BKeL**.
+và môn học tiên quyết với **chương trình đào tạo** và khóa học của bạn.
 
 ## 1. Bắt đầu tại đây
 
@@ -31,7 +31,6 @@ và môn học tiên quyết với **chương trình đào tạo chính thức**
 
 ### Danh sách kiểm tra cho năm nhất
 
-- [ ] Kích hoạt **email trường** và đăng nhập vào **LMS / BKeL**.
 - [ ] Tạo tài khoản **GitHub** và một hồ sơ cơ bản.
 - [ ] Cài đặt **VS Code** và một môi trường lập trình (C/C++ hoặc Python).
 - [ ] Làm quen với **Linux / WSL** (Windows Subsystem for Linux).
@@ -40,8 +39,6 @@ và môn học tiên quyết với **chương trình đào tạo chính thức**
 
 ### Những hệ thống và công cụ bạn nên biết
 
-- **Email trường** — kênh chính thức cho các thông báo và dịch vụ học vụ.
-- **LMS / BKeL** — tài liệu môn học, nộp bài, điểm số.
 - **GitHub** — lưu trữ mã nguồn, cộng tác, xây dựng portfolio.
 - **VS Code** — trình soạn thảo chính của bạn.
 - **Linux / WSL** — môi trường tiêu chuẩn cho lập trình và làm việc với hệ thống.

@@ -83,9 +83,9 @@
     "message": "268 Lý Thường Kiệt, Quận 10, TP.HCM",
     "description": "The label of footer link with label=268 Ly Thuong Kiet, Dist. 10, HCMC linking to https://maps.google.com/?q=HCMUT"
   },
-  "link.item.label.aclab@hcmut.edu.vn": {
-    "message": "aclab@hcmut.edu.vn",
-    "description": "The label of footer link with label=aclab@hcmut.edu.vn linking to mailto:aclab@hcmut.edu.vn"
+  "link.item.label.caotiendattx@gmail.com": {
+    "message": "caotiendattx@gmail.com",
+    "description": "The label of footer link with label=caotiendattx@gmail.com linking to mailto:caotiendattx@gmail.com"
   },
   "copyright": {
     "message": "Bản quyền © 2026 Phòng thí nghiệm Advanced Computing Lab (ACLAB), HCMUT. Được xây dựng bằng Docusaurus.",
