@@ -1,0 +1,1 @@
+"use strict";(self.webpackChunkmy_website=self.webpackChunkmy_website||[]).push([[1712],{1011:e=>{e.exports=JSON.parse('{"name":"people-detail-pages","id":"default"}')}}]);
