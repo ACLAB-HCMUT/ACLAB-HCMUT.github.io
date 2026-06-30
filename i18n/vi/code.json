@@ -898,5 +898,20 @@
   },
   "Arctos · 6-DOF · 3D-printed · ROS 2 — interactive CAD model.": {
     "message": "Arctos · 6-DOF · in 3D · ROS 2 — mô hình CAD tương tác."
+  },
+  "Who we are": {
+    "message": "Chúng tôi là ai"
+  },
+  "Mission, vision & approach.": {
+    "message": "Sứ mệnh, tầm nhìn & cách tiếp cận."
+  },
+  "Head of Lab (HOD) · ACLAB": {
+    "message": "Trưởng phòng thí nghiệm (HOD) · ACLAB"
+  },
+  "Computer Science & Engineering, HCMUT": {
+    "message": "Khoa học & Kỹ thuật Máy tính, HCMUT"
+  },
+  "Scholar": {
+    "message": "Scholar"
   }
 }
