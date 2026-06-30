@@ -105,6 +105,14 @@ export function MemberCard({member}: {member: Member}) {
           ))}
         </div>
       )}
+      {member.slug && (
+        <Link
+          to={`/people/${member.slug}`}
+          className={styles.cardLink}
+          style={{marginTop: '.8rem'}}>
+          View profile <Arrow />
+        </Link>
+      )}
     </div>
   );
 }

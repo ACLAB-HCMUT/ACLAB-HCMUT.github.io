@@ -38,6 +38,7 @@ export default function Projects(): JSX.Element {
         title={translate({message: 'Projects'})}
         subtitle={translate({message: 'A growing portfolio of intelligent-systems work built in the lab — robotics, embedded, edge AI and hardware-software co-design. Filter by area, year or status.'})}
         breadcrumb={[{label: translate({message: 'Home'}), to: '/'}, {label: translate({message: 'Projects'})}]}
+        bg3d
       />
 
       <Section variant="surface">

@@ -4,6 +4,7 @@ import Link from '@docusaurus/Link';
 
 import styles from './ui.module.css';
 import {Container} from './primitives';
+import Hero3D from './hero3d/Hero3D';
 
 /* ---------- Section & page-level layout ---------- */
 
@@ -75,6 +76,9 @@ export function CTABanner({
 }) {
   return (
     <div className={styles.cta}>
+      <div className={styles.ctaBg} aria-hidden>
+        <Hero3D count={60} pointSize={0.18} lineOpacity={0.28} />
+      </div>
       <div>
         {kicker && (
           <p className={styles.kicker} style={{color: '#7fd6ec'}}>
@@ -111,14 +115,32 @@ export function PageHero({
   title,
   subtitle,
   breadcrumb,
+  bg3d,
 }: {
   kicker?: string;
   title: string;
   subtitle?: string;
   breadcrumb?: {label: string; to?: string}[];
+  /** Render a subtle interactive three.js background behind the hero. */
+  bg3d?: boolean;
 }) {
   return (
     <header className={styles.pageHero}>
+      {bg3d && (
+        <>
+          <div className={styles.pageHeroBg} aria-hidden>
+            <Hero3D
+              count={90}
+              pointColor={0x0b4f93}
+              lineColor={0x2f7fc4}
+              pointSize={0.13}
+              pointOpacity={0.7}
+              lineOpacity={0.22}
+            />
+          </div>
+          <div className={styles.pageHeroScrim} aria-hidden />
+        </>
+      )}
       <Container>
         {breadcrumb && <Breadcrumb trail={breadcrumb} />}
         {kicker && (

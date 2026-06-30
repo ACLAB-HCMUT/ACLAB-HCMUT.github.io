@@ -49,6 +49,7 @@ export default function Join(): JSX.Element {
         title={translate({message: 'Join ACLAB'})}
         subtitle={translate({message: 'We recruit motivated students and researchers who want to build real intelligent systems — robots, embedded devices, custom hardware and edge AI.'})}
         breadcrumb={[{label: translate({message: 'Home'}), to: '/'}, {label: translate({message: 'Join Us'})}]}
+        bg3d
       />
 
       <Section variant="surface">

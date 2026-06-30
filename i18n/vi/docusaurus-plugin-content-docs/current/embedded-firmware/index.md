@@ -13,6 +13,7 @@ Các hướng dẫn về vi điều khiển, RTOS, driver ngoại vi và kỹ th
 - [**Chọn Vi Điều Khiển**](/docs/embedded-firmware/choosing-an-mcu) — các họ chip, tiêu chí lựa chọn, và những cái bẫy về tốc độ xung nhịp / FPU / RISC-V-so-với-Arm.
 - [**Chủ Đề Nâng Cao**](/docs/embedded-firmware/advanced-topics) — mô hình bộ nhớ, quản lý bộ nhớ, các lỗi bộ nhớ, làm việc ở mức register, và các phương pháp debug.
 - [**Xây Dựng Một Sản Phẩm**](/docs/embedded-firmware/building-a-product) — yêu cầu phần cứng và các chip thường gặp (LDO, CH340, CAN/RS-485, isolator, thạch anh, SDRAM…).
+- [**Kết nối & Bus giao tiếp**](/docs/embedded-firmware/connectivity) — UART, I²C, CAN, RS-485 (ưu/nhược, use case, yêu cầu HW & SW) và tín hiệu vi sai & EMI/EMC.
 
 ## Chủ đề
 

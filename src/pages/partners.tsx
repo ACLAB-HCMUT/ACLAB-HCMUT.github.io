@@ -59,6 +59,7 @@ export default function Partners(): JSX.Element {
         title={translate({message: 'Partners & Collaborations'})}
         subtitle={translate({message: 'ACLAB works with universities, research centers and industry partners to turn applied research into real intelligent systems.'})}
         breadcrumb={[{label: translate({message: 'Home'}), to: '/'}, {label: translate({message: 'Partners'})}]}
+        bg3d
       />
 
       {groups.map((g, i) => {

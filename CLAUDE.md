@@ -47,6 +47,9 @@ deployed to `https://aclab-hcmut.github.io` (GitHub Pages, org `ACLAB-HCMUT`).
 - **Viewers** `src/components/viewers/` — reusable, client-only 3D + PCB viewers (see Design
   patterns). `chrome.tsx` holds the shared `ViewerFrame`/`LoadingOverlay`/`ErrorOverlay`/
   `ClientLazy`. Registered as MDX globals in `src/theme/MDXComponents.tsx`.
+- **3D / WebGL** `src/components/hero3d/` — `<Hero3D>`, an interactive **three.js** particle
+  scene used as the **homepage hero** backdrop and on **`/ui-showcase`** (the 3D/UI demo + 3D lab
+  equipment gallery). Plain `three`, no R3F.
 - **Data — edit these, not JSX** (`src/data/`): `projects.ts` (`featuredProjects = slice(0,3)`),
   `people.ts` (`peopleGroups`, `peopleHighlight`), `site.ts` (`partners`, `stats`),
   `research.ts` (a project's `area` must equal a research `title`).
@@ -71,6 +74,12 @@ deployed to `https://aclab-hcmut.github.io` (GitHub Pages, org `ACLAB-HCMUT`).
   `ErrorOverlay` — don't re-style frames/spinners per viewer.
 - **Poster gate for heavy assets.** Large models pass `poster=` so the 3D engine loads only on
   click (`Model3D`/`DeviceModel`).
+- **three.js for rich 3D UI — lean into it.** Prefer plain **`three`** for custom 3D/animated
+  visuals (hero backdrops, scenes, lab/equipment showcases); copy `<Hero3D>`/`ParticleField` as
+  the template. Always: `BrowserOnly` + `React.lazy` (SSR-safe), **dispose** geometries/materials/
+  renderer + remove listeners on unmount, cap DPR (≤2), and render a single static frame under
+  `prefers-reduced-motion`. Use `online-3d-viewer`/`<DeviceModel>` only to *load model files*
+  (STEP/GLB). **Do not** add `@react-three/fiber` (peer-dep conflict — see Architecture).
 - **MDX globals for reuse in content.** Register doc-embeddable components in
   `src/theme/MDXComponents.tsx` so any `.md`/`.mdx` uses them with no import:
   `<DeviceModel>`, `<Model3D>`, `<GerberViewer>`.

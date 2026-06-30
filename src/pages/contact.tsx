@@ -12,6 +12,7 @@ export default function Contact(): JSX.Element {
         title={translate({message: 'Contact ACLAB'})}
         subtitle={translate({message: 'Get in touch for collaboration, student membership, or visiting the lab.'})}
         breadcrumb={[{label: translate({message: 'Home'}), to: '/'}, {label: translate({message: 'Contact'})}]}
+        bg3d
       />
 
       <Section variant="surface">

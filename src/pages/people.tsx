@@ -13,6 +13,7 @@ export default function People(): JSX.Element {
         title={translate({message: 'People'})}
         subtitle={translate({message: 'ACLAB is led by faculty at HCMUT and is actively growing its team of student members and research collaborators.'})}
         breadcrumb={[{label: translate({message: 'Home'}), to: '/'}, {label: translate({message: 'People'})}]}
+        bg3d
       />
 
       {peopleGroups.map((group, idx) => (

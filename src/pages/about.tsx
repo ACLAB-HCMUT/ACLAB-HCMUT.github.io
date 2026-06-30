@@ -35,6 +35,7 @@ export default function About(): JSX.Element {
         title={translate({message: 'About ACLAB'})}
         subtitle={translate({message: 'The Advanced Computing Lab (ACLAB) at HCMUT is a research and engineering lab building intelligent systems across robotics, embedded systems, edge AI, IoT and hardware-software co-design.'})}
         breadcrumb={[{label: translate({message: 'Home'}), to: '/'}, {label: translate({message: 'About'})}]}
+        bg3d
       />
 
       <Section variant="surface">

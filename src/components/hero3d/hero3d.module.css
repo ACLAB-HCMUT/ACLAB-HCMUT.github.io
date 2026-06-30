@@ -1,0 +1,23 @@
+/* Reusable interactive 3D hero (three.js particle network) */
+
+.canvas {
+  position: absolute;
+  inset: 0;
+  width: 100%;
+  height: 100%;
+}
+
+.canvas canvas {
+  display: block;
+  width: 100% !important;
+  height: 100% !important;
+}
+
+/* Shown during SSR / before the WebGL scene loads, and as a graceful base layer */
+.fallback {
+  position: absolute;
+  inset: 0;
+  background:
+    radial-gradient(60% 80% at 80% 10%, rgba(34, 184, 230, 0.18), transparent 60%),
+    radial-gradient(50% 60% at 15% 90%, rgba(11, 79, 147, 0.25), transparent 60%);
+}

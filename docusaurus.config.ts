@@ -1,6 +1,7 @@
 import {themes as prismThemes} from 'prism-react-renderer';
 import type {Config} from '@docusaurus/types';
 import type * as Preset from '@docusaurus/preset-classic';
+import {allMembers} from './src/data/people';
 
 // This runs in Node.js - Don't use client-side code here (browser APIs, JSX...)
 
@@ -55,6 +56,31 @@ const config: Config = {
           'https://github.com/ACLAB-HCMUT/ACLAB-HCMUT.github.io/tree/main/',
       },
     ],
+    // Generate a detail page at <baseUrl>people/<slug> for each member with a
+    // slug. Uses the locale baseUrl so links resolve in both en and vi.
+    (context: any) => ({
+      name: 'people-detail-pages',
+      async contentLoaded({actions}: any) {
+        const {addRoute, createData} = actions;
+        const base: string = context.baseUrl; // '/' (en) or '/vi/' (vi)
+        await Promise.all(
+          allMembers
+            .filter((m) => m.slug)
+            .map(async (m) => {
+              const data = await createData(
+                `person-${m.slug}.json`,
+                JSON.stringify(m),
+              );
+              addRoute({
+                path: `${base}people/${m.slug}`,
+                component: '@site/src/components/PersonDetail.tsx',
+                modules: {person: data},
+                exact: true,
+              });
+            }),
+        );
+      },
+    }),
   ],
 
   presets: [

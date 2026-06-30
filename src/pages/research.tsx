@@ -15,6 +15,7 @@ export default function Research(): JSX.Element {
         title={translate({message: 'Research Areas'})}
         subtitle={translate({message: 'We pursue applied research and engineering across six areas — combining hardware, firmware and AI to build real intelligent systems.'})}
         breadcrumb={[{label: translate({message: 'Home'}), to: '/'}, {label: translate({message: 'Research'})}]}
+        bg3d
       />
 
       <Section variant="surface">

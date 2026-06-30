@@ -12,6 +12,8 @@ Designing reliable, manufacturable printed circuit boards.
 - [**PCB Design Software (EDA Tools)**](/docs/pcb-design/eda-tools) — comparison, pricing, free student licenses, learning curve.
 - [**Design by Circuit Block**](/docs/pcb-design/circuit-blocks) — classify a board into blocks (MCU, power, power electronics, high-speed, analog) and design each by its own rules.
 - [**Signal & Power Integrity**](/docs/pcb-design/fundamentals) — the cross-cutting physics: signal integrity, return paths, EMI/EMC, impedance/stackup, copper pours & thermal.
+- [**Components & Parts**](/docs/pcb-design/components) — resistors (with use cases), capacitors, inductors/ferrites, diodes/TVS, MOSFETs.
+- [**Applied Circuits & Practices**](/docs/pcb-design/applied-circuits) — pull-ups, TVS/ESD, power arbiter, buck/boost/flyback, USB-PD, PoE, and DDR/HDMI/PCIe layout.
 - [**Common Mistakes & Risks**](/docs/pcb-design/common-mistakes) — decoupling, crosstalk, differential pairs, DFM/manufacturing pitfalls.
 - [**From Design to Delivery**](/docs/pcb-design/fabrication-and-ordering) — DRC, output files, ordering options, shipping & customs (JLCPCB case study).
 - [**Reference Designs & Sources**](/docs/pcb-design/reference-designs) — learn from open boards (Antmicro, Raspberry Pi, BeagleBoard…).

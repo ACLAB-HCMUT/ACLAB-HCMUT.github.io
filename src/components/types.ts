@@ -21,6 +21,18 @@ export type Member = {
   initials: string;
   photo?: string;
   links?: {label: string; href: string}[];
+  /** When set, the member gets a detail page at /people/<slug>. */
+  slug?: string;
+  affiliation?: string;
+  email?: string;
+  office?: string;
+  bio?: string;
+  education?: string[];
+  researchAreas?: string[];
+  publicationsUrl?: string;
+  projects?: {label: string; to?: string}[];
+  /** Filled when members are flattened across groups (group label). */
+  group?: string;
 };
 
 export type NewsItem = {

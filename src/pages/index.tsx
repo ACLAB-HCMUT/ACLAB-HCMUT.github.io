@@ -17,6 +17,7 @@ import {
   SectionHead,
   StatItem,
 } from '../components';
+import Hero3D from '../components/hero3d/Hero3D';
 import {researchAreas} from '../data/research';
 import {featuredProjects} from '../data/projects';
 import {peopleHighlight} from '../data/people';
@@ -27,9 +28,20 @@ import styles from './index.module.css';
 function HomeHero() {
   return (
     <header className={styles.hero}>
+      <div className={styles.heroBg} aria-hidden>
+        <Hero3D
+          count={120}
+          pointColor={0x0b4f93}
+          lineColor={0x2f7fc4}
+          pointSize={0.14}
+          pointOpacity={0.8}
+          lineOpacity={0.25}
+        />
+      </div>
+      <div className={styles.heroScrim} aria-hidden />
       <Container>
         <div className={styles.heroGrid}>
-          <div>
+          <div className={styles.heroText}>
             <span className={styles.eyebrow}><Translate>Advanced Computing Lab · HCMUT</Translate></span>
             <h1 className={styles.heroTitle}>
               <Translate>Engineering intelligent systems from chip to robot.</Translate>
@@ -59,18 +71,6 @@ function HomeHero() {
                 <span className={styles.metaLabel}><Translate>Courses</Translate></span>
               </div>
             </div>
-          </div>
-
-          <div className={styles.graph} aria-label={translate({message: 'ACLAB research knowledge graph'})}>
-            <div className={`${styles.orbit} ${styles.orbitOuter}`} />
-            <div className={`${styles.orbit} ${styles.orbitInner}`} />
-            <div className={styles.core}>ACLAB</div>
-            <div className={`${styles.node} ${styles.nodeTop}`}><Translate>Robotics</Translate></div>
-            <div className={`${styles.node} ${styles.nodeRight}`}><Translate>Edge AI</Translate></div>
-            <div className={`${styles.node} ${styles.nodeBottom}`}><Translate>Embedded</Translate></div>
-            <div className={`${styles.node} ${styles.nodeLeft}`}><Translate>IoT</Translate></div>
-            <div className={`${styles.node} ${styles.nodeTL}`}><Translate>PCB</Translate></div>
-            <div className={`${styles.node} ${styles.nodeBR}`}><Translate>Autonomous</Translate></div>
           </div>
         </div>
       </Container>
