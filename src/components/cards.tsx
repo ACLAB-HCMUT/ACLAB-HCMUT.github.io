@@ -1,6 +1,7 @@
 import React from 'react';
 import clsx from 'clsx';
 import Link from '@docusaurus/Link';
+import Translate from '@docusaurus/Translate';
 
 import styles from './ui.module.css';
 import {Arrow} from './primitives';
@@ -32,7 +33,7 @@ export function ResearchCard({
       {tags && <TagList tags={tags} />}
       {to && (
         <span className={styles.cardLink} style={{marginTop: '1rem'}}>
-          Learn more <Arrow />
+          <Translate>Learn more</Translate> <Arrow />
         </span>
       )}
     </>
@@ -66,7 +67,7 @@ export function ProjectCard({project}: {project: Project}) {
         <h3>{project.title}</h3>
         <p>{project.description}</p>
         <span className={styles.cardLink}>
-          View details <Arrow />
+          <Translate>View details</Translate> <Arrow />
         </span>
       </div>
     </Link>
@@ -110,7 +111,7 @@ export function MemberCard({member}: {member: Member}) {
           to={`/people/${member.slug}`}
           className={styles.cardLink}
           style={{marginTop: '.8rem'}}>
-          View profile <Arrow />
+          <Translate>View profile</Translate> <Arrow />
         </Link>
       )}
     </div>
@@ -130,7 +131,7 @@ export function NewsCard({item}: {item: NewsItem}) {
       <h3>{item.title}</h3>
       <p>{item.excerpt}</p>
       <span className={styles.cardLink}>
-        Read more <Arrow />
+        <Translate>Read more</Translate> <Arrow />
       </span>
     </Link>
   );

@@ -3,8 +3,20 @@ import Layout from '@theme/Layout';
 import Translate, {translate} from '@docusaurus/Translate';
 import useBaseUrl from '@docusaurus/useBaseUrl';
 
-import {Btn, CTABanner, PageHero, Section, SectionHead} from '../components';
-import styles from './about.module.css';
+import {
+  Btn,
+  CTABanner,
+  FeatureCard,
+  Grid,
+  IconTile,
+  InfoCard,
+  PageHero,
+  ProfileHeader,
+  Section,
+  SectionHead,
+  Split,
+  Timeline,
+} from '../components';
 
 const values = [
   {icon: '🎯', title: translate({message: 'Mission'}), text: translate({message: 'Advance applied research and engineering in intelligent systems, and train engineers who can build real hardware and software end to end.'})},
@@ -46,70 +58,58 @@ export default function About(): JSX.Element {
           kicker={translate({message: 'Who we are'})}
           title={translate({message: 'Mission, vision & approach.'})}
         />
-        <div className={styles.values}>
+        <Grid cols={3}>
           {values.map((v) => (
-            <div key={v.title} className={styles.valueCard}>
-              <div className={styles.valueIcon} aria-hidden>{v.icon}</div>
-              <h3>{v.title}</h3>
-              <p>{v.text}</p>
-            </div>
+            <FeatureCard key={v.title} icon={v.icon} title={v.title} description={v.text} />
           ))}
-        </div>
+        </Grid>
       </Section>
 
       <Section variant="alt">
-        <div className={styles.story}>
+        <Split>
           <div>
             <SectionHead
               kicker={translate({message: 'Our story'})}
               title={translate({message: 'History & milestones'})}
             />
-            <div className={styles.timeline}>
-              {history.map((h) => (
-                <div key={h.year} className={styles.timeItem}>
-                  <span className={styles.timeYear}>{h.year}</span>
-                  <p>{h.text}</p>
-                </div>
-              ))}
-            </div>
+            <Timeline
+              items={history.map((h) => ({label: h.year, content: h.text}))}
+            />
           </div>
 
-          <div className={styles.leadCard}>
-            <div className={styles.leadHead}>
-              <img
-                className={styles.leadAvatar}
-                src={useBaseUrl('/img/people/le-trong-nhan.jpg')}
-                alt="Dr. Lê Trọng Nhân"
+          <InfoCard
+            sticky
+            header={
+              <ProfileHeader
+                photo={useBaseUrl('/img/people/le-trong-nhan.jpg')}
+                name="Dr. Lê Trọng Nhân"
+                role={<Translate>Head of Lab (HOD) · ACLAB</Translate>}
               />
-              <div>
-                <div className={styles.leadName}>Dr. Lê Trọng Nhân</div>
-                <div className={styles.leadRole}>
-                  <Translate>Head of Lab (HOD) · ACLAB</Translate>
-                </div>
-              </div>
-            </div>
-            <div className={styles.leadBody}>
-              <div className={styles.leadRow}>
-                <strong><Translate>Faculty</Translate></strong>
-                <span><Translate>Computer Science & Engineering, HCMUT</Translate></span>
-              </div>
-              <div className={styles.leadRow}>
-                <strong><Translate>Scholar</Translate></strong>
-                <a
-                  href="https://scholar.google.com/citations?user=nLfZASYAAAAJ"
-                  target="_blank"
-                  rel="noreferrer">
-                  Google Scholar ↗
-                </a>
-              </div>
-              <div style={{marginTop: '1.1rem'}}>
-                <Btn to="/people" variant="outline">
-                  <Translate>Meet the team</Translate>
-                </Btn>
-              </div>
-            </div>
-          </div>
-        </div>
+            }
+            rows={[
+              {
+                label: <Translate>Faculty</Translate>,
+                value: <Translate>Computer Science & Engineering, HCMUT</Translate>,
+              },
+              {
+                label: <Translate>Scholar</Translate>,
+                value: (
+                  <a
+                    href="https://scholar.google.com/citations?user=nLfZASYAAAAJ"
+                    target="_blank"
+                    rel="noreferrer">
+                    Google Scholar ↗
+                  </a>
+                ),
+              },
+            ]}
+            footer={
+              <Btn to="/people" variant="outline">
+                <Translate>Meet the team</Translate>
+              </Btn>
+            }
+          />
+        </Split>
       </Section>
 
       <Section variant="surface">
@@ -118,14 +118,13 @@ export default function About(): JSX.Element {
           title={translate({message: 'Where we build.'})}
           intro={translate({message: 'A working engineering lab — electronics benches, prototyping tools and edge-AI compute.'})}
         />
-        <div className={styles.facilities}>
+        <Grid cols={3}>
           {facilities.map((f) => (
-            <div key={f.label} className={styles.facility}>
-              <span className={styles.facilityIcon} aria-hidden>{f.icon}</span>
-              <span>{f.label}</span>
-            </div>
+            <IconTile key={f.label} icon={f.icon}>
+              {f.label}
+            </IconTile>
           ))}
-        </div>
+        </Grid>
       </Section>
 
       <Section variant="alt">

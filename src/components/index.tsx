@@ -5,4 +5,5 @@ export * from './primitives';
 export * from './sections';
 export * from './tags';
 export * from './cards';
+export * from './blocks';
 export * from './stats';

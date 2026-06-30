@@ -43,7 +43,11 @@ deployed to `https://aclab-hcmut.github.io` (GitHub Pages, org `ACLAB-HCMUT`).
   `index.tsx` **barrel** (import everything from `'../components'`):
   `types.ts` (`Project`/`Member`/`NewsItem`/`ProjectStatus`), `primitives.tsx`
   (Container/Btn/Grid/Arrow), `sections.tsx` (Section/SectionHead/PageHero/Breadcrumb/CTABanner),
-  `tags.tsx`, `cards.tsx`, `stats.tsx` (CountUp/StatItem). Styles in `ui.module.css`.
+  `tags.tsx`, `cards.tsx` (ResearchCard/ProjectCard/MemberCard/NewsCard/Partner),
+  `blocks.tsx` (**reusable layout/content blocks**: Split, FeatureCard, IconTile, Timeline,
+  InfoCard, ProfileHeader), `stats.tsx` (CountUp/StatItem). Styles in `ui.module.css`.
+  **Prefer composing these blocks over page-specific one-off CSS modules.** Card CTAs and kit
+  text use `<Translate>` (extract with `write-translations`, fill `i18n/vi/code.json`).
 - **Viewers** `src/components/viewers/` — reusable, client-only 3D + PCB viewers (see Design
   patterns). `chrome.tsx` holds the shared `ViewerFrame`/`LoadingOverlay`/`ErrorOverlay`/
   `ClientLazy`. Registered as MDX globals in `src/theme/MDXComponents.tsx`.

@@ -913,5 +913,17 @@
   },
   "Scholar": {
     "message": "Scholar"
+  },
+  "Learn more": {
+    "message": "Tìm hiểu thêm"
+  },
+  "View details": {
+    "message": "Xem chi tiết"
+  },
+  "View profile": {
+    "message": "Xem hồ sơ"
+  },
+  "Read more": {
+    "message": "Đọc thêm"
   }
 }
