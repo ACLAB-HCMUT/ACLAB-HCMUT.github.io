@@ -511,6 +511,9 @@
   "Members": {
     "message": "Thành viên"
   },
+  "Courses": {
+    "message": "Khóa học"
+  },
   "ACLAB research knowledge graph": {
     "message": "Đồ thị tri thức nghiên cứu của ACLAB"
   },
@@ -731,11 +734,11 @@
   "People — ACLAB": {
     "message": "Thành viên — ACLAB"
   },
-  "The people of ACLAB HCMUT: faculty, researchers, students and alumni.": {
-    "message": "Thành viên của ACLAB HCMUT: giảng viên, nghiên cứu viên, sinh viên và cựu thành viên."
+  "The people of ACLAB HCMUT — faculty leadership and a growing team of student members and collaborators.": {
+    "message": "Đội ngũ của ACLAB HCMUT — ban lãnh đạo giảng viên cùng đội ngũ sinh viên và cộng tác viên đang phát triển."
   },
-  "Faculty, researchers, students and alumni building intelligent systems at ACLAB.": {
-    "message": "Giảng viên, nghiên cứu viên, sinh viên và cựu thành viên cùng xây dựng các hệ thống thông minh tại ACLAB."
+  "ACLAB is led by faculty at HCMUT and is actively growing its team of student members and research collaborators.": {
+    "message": "ACLAB do giảng viên HCMUT dẫn dắt và đang tích cực mở rộng đội ngũ sinh viên cùng các cộng tác viên nghiên cứu."
   },
   "Want to join the team?": {
     "message": "Bạn muốn gia nhập đội ngũ?"
@@ -752,8 +755,8 @@
   "Projects": {
     "message": "Dự án"
   },
-  "Robots, AGVs, custom PCBs, embedded devices and edge-AI systems built in the lab. Filter by area, year or status.": {
-    "message": "Robot, AGV, bo mạch PCB tùy chỉnh, thiết bị nhúng và hệ thống Edge AI được xây dựng tại phòng thí nghiệm. Lọc theo lĩnh vực, năm hoặc trạng thái."
+  "A growing portfolio of intelligent-systems work built in the lab — robotics, embedded, edge AI and hardware-software co-design. Filter by area, year or status.": {
+    "message": "Danh mục các công trình hệ thống thông minh đang phát triển tại phòng lab — robot, hệ thống nhúng, Edge AI và đồng thiết kế phần cứng - phần mềm. Lọc theo lĩnh vực, năm hoặc trạng thái."
   },
   "Search projects, tech, keywords…": {
     "message": "Tìm kiếm dự án, công nghệ, từ khóa…"

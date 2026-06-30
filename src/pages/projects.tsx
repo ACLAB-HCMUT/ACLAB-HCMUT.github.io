@@ -36,7 +36,7 @@ export default function Projects(): JSX.Element {
       <PageHero
         kicker={translate({message: 'Projects'})}
         title={translate({message: 'Projects'})}
-        subtitle={translate({message: 'Robots, AGVs, custom PCBs, embedded devices and edge-AI systems built in the lab. Filter by area, year or status.'})}
+        subtitle={translate({message: 'A growing portfolio of intelligent-systems work built in the lab — robotics, embedded, edge AI and hardware-software co-design. Filter by area, year or status.'})}
         breadcrumb={[{label: translate({message: 'Home'}), to: '/'}, {label: translate({message: 'Projects'})}]}
       />
 

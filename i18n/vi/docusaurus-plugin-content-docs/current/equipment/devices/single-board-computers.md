@@ -18,7 +18,20 @@ thẻ.
 
 ## Raspberry Pi
 
-SBC phổ biến nhất trong phòng lab. Các thế hệ liên quan:
+SBC phổ biến nhất trong phòng lab. Kéo để xoay mô hình bên dưới, cuộn để phóng to:
+
+<DeviceModel
+  src="/assets/3D/RASPBERRY_PI_5.STEP"
+  poster="/assets/IMG/Pi5.jpg"
+  posterAlt="Bo mạch Raspberry Pi 5"
+  title="Raspberry Pi 5"
+  subtitle="Bấm để tải mô hình CAD 3D tương tác (STEP)"
+  chips={['BCM2712 · Cortex-A76 @ 2.4 GHz', '4 / 8 GB LPDDR4X', 'GPIO 40 chân (3.3 V)', '2× USB 3.0 · PCIe 2.0', '5 V / 5 A USB-C PD']}
+  height={460}
+  caption="Hiển thị ảnh tĩnh trước; mô hình 3D (~33 MB) chỉ tải khi bạn bấm."
+/>
+
+Các thế hệ liên quan:
 
 | Mẫu | SoC / CPU | RAM | Ghi chú |
 | --- | --- | --- | --- |

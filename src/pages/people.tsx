@@ -7,11 +7,11 @@ import styles from './pages.module.css';
 
 export default function People(): JSX.Element {
   return (
-    <Layout title={translate({message: 'People — ACLAB'})} description={translate({message: 'The people of ACLAB HCMUT: faculty, researchers, students and alumni.'})}>
+    <Layout title={translate({message: 'People — ACLAB'})} description={translate({message: 'The people of ACLAB HCMUT — faculty leadership and a growing team of student members and collaborators.'})}>
       <PageHero
         kicker={translate({message: 'People'})}
         title={translate({message: 'People'})}
-        subtitle={translate({message: 'Faculty, researchers, students and alumni building intelligent systems at ACLAB.'})}
+        subtitle={translate({message: 'ACLAB is led by faculty at HCMUT and is actively growing its team of student members and research collaborators.'})}
         breadcrumb={[{label: translate({message: 'Home'}), to: '/'}, {label: translate({message: 'People'})}]}
       />
 

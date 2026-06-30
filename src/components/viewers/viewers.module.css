@@ -1,0 +1,316 @@
+/* Shared styles for reusable hardware viewers (3D model + Gerber). */
+
+.figure {
+  margin: 0 0 1.2rem;
+}
+
+.viewerFrame {
+  position: relative;
+  width: 100%;
+  border: 1px solid var(--ifm-color-emphasis-200);
+  border-radius: 12px;
+  overflow: hidden;
+  background:
+    radial-gradient(120% 120% at 50% 0%, #f7fafc 0%, #eef2f6 60%, #e7edf3 100%);
+}
+
+[data-theme='dark'] .viewerFrame {
+  background:
+    radial-gradient(120% 120% at 50% 0%, #14202e 0%, #0f1822 60%, #0b121b 100%);
+  border-color: var(--ifm-color-emphasis-300);
+}
+
+/* subtle engineering grid background for the viewer stage */
+.grid::before {
+  content: '';
+  position: absolute;
+  inset: 0;
+  pointer-events: none;
+  background-image:
+    linear-gradient(to right, rgba(120, 140, 160, 0.10) 1px, transparent 1px),
+    linear-gradient(to bottom, rgba(120, 140, 160, 0.10) 1px, transparent 1px);
+  background-size: 26px 26px;
+  mask-image: radial-gradient(120% 120% at 50% 40%, #000 55%, transparent 100%);
+  -webkit-mask-image: radial-gradient(120% 120% at 50% 40%, #000 55%, transparent 100%);
+}
+
+/* host element that online-3d-viewer fills with its <canvas> */
+.canvasHost {
+  position: absolute;
+  inset: 0;
+}
+
+/* loading spinner */
+.spinner {
+  width: 26px;
+  height: 26px;
+  border-radius: 50%;
+  border: 3px solid var(--ifm-color-emphasis-300);
+  border-top-color: var(--ifm-color-primary);
+  animation: viewerspin 0.8s linear infinite;
+}
+
+.errIcon {
+  font-size: 1.5rem;
+  line-height: 1;
+  color: var(--ifm-color-warning-dark, #b8860b);
+}
+
+@keyframes viewerspin {
+  to {
+    transform: rotate(360deg);
+  }
+}
+
+@media (prefers-reduced-motion: reduce) {
+  .spinner {
+    animation: none;
+  }
+}
+
+/* Gerber SVG stage — center and contain the rendered board */
+.gerberStage {
+  position: absolute;
+  inset: 0;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  padding: 14px;
+}
+
+.gerberStage :global(svg) {
+  max-width: 100%;
+  max-height: 100%;
+  width: auto;
+  height: auto;
+  filter: drop-shadow(0 6px 18px rgba(0, 0, 0, 0.25));
+}
+
+.overlay {
+  position: absolute;
+  inset: 0;
+  display: flex;
+  flex-direction: column;
+  gap: 12px;
+  align-items: center;
+  justify-content: center;
+  text-align: center;
+  padding: 1.5rem;
+  font-size: 0.92rem;
+  color: var(--ifm-color-emphasis-700);
+  background: rgba(255, 255, 255, 0.55);
+  backdrop-filter: blur(2px);
+}
+
+[data-theme='dark'] .overlay {
+  background: rgba(11, 18, 27, 0.55);
+  color: var(--ifm-color-emphasis-600);
+}
+
+.controls {
+  display: flex;
+  gap: 6px;
+  margin-top: 10px;
+}
+
+.segBtn {
+  appearance: none;
+  border: 1px solid var(--ifm-color-emphasis-300);
+  background: var(--ifm-background-surface-color);
+  color: var(--ifm-font-color-base);
+  font: inherit;
+  font-size: 0.85rem;
+  padding: 5px 14px;
+  border-radius: 999px;
+  cursor: pointer;
+  transition: background 0.15s ease, border-color 0.15s ease;
+}
+
+.segBtn:hover:not(:disabled) {
+  border-color: var(--ifm-color-primary);
+}
+
+.segBtn:disabled {
+  opacity: 0.5;
+  cursor: default;
+}
+
+.segBtnActive,
+.segBtnActive:hover {
+  background: var(--ifm-color-primary);
+  border-color: var(--ifm-color-primary);
+  color: #fff;
+}
+
+.caption {
+  margin-top: 8px;
+  font-size: 0.82rem;
+  color: var(--ifm-color-emphasis-600);
+}
+
+/* ---- Poster (click-to-load) gate ---- */
+.poster {
+  position: absolute;
+  inset: 0;
+  width: 100%;
+  height: 100%;
+  padding: 0;
+  border: 0;
+  background: transparent;
+  cursor: pointer;
+  display: block;
+}
+
+.posterImg {
+  position: absolute;
+  inset: 0;
+  width: 100%;
+  height: 100%;
+  object-fit: contain;
+}
+
+.posterScrim {
+  position: absolute;
+  inset: 0;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  gap: 10px;
+  background: radial-gradient(
+    120% 90% at 50% 50%,
+    rgba(8, 14, 22, 0.05) 0%,
+    rgba(8, 14, 22, 0.32) 100%
+  );
+  transition: background 0.18s ease;
+}
+
+.poster:hover .posterScrim,
+.poster:focus-visible .posterScrim {
+  background: radial-gradient(
+    120% 90% at 50% 50%,
+    rgba(8, 14, 22, 0.12) 0%,
+    rgba(8, 14, 22, 0.45) 100%
+  );
+}
+
+.playBtn {
+  display: inline-flex;
+  align-items: center;
+  gap: 9px;
+  font-size: 0.95rem;
+  font-weight: 700;
+  color: #fff;
+  background: var(--ifm-color-primary);
+  padding: 11px 22px;
+  border-radius: 999px;
+  box-shadow: 0 6px 20px rgba(0, 0, 0, 0.3);
+  transition: transform 0.18s ease;
+}
+
+.poster:hover .playBtn,
+.poster:focus-visible .playBtn {
+  transform: scale(1.05);
+}
+
+.playIcon {
+  font-size: 0.8rem;
+}
+
+.posterNote {
+  font-size: 0.78rem;
+  font-weight: 600;
+  color: #fff;
+  text-shadow: 0 1px 3px rgba(0, 0, 0, 0.6);
+}
+
+@media (prefers-reduced-motion: reduce) {
+  .posterScrim,
+  .playBtn {
+    transition: none;
+  }
+}
+
+/* ---- DeviceModel card (reusable in docs) ---- */
+.card {
+  margin: 1.4rem 0 1.8rem;
+  border: 1px solid var(--ifm-color-emphasis-200);
+  border-radius: 14px;
+  overflow: hidden;
+  background: var(--ifm-background-surface-color);
+  box-shadow: 0 1px 2px rgba(0, 0, 0, 0.04), 0 8px 24px rgba(0, 0, 0, 0.05);
+}
+
+.cardHead {
+  display: flex;
+  align-items: flex-start;
+  justify-content: space-between;
+  gap: 12px;
+  padding: 14px 16px;
+  border-bottom: 1px solid var(--ifm-color-emphasis-200);
+}
+
+.cardTitle {
+  font-size: 1.05rem;
+  font-weight: 700;
+  line-height: 1.2;
+}
+
+.cardSub {
+  margin-top: 2px;
+  font-size: 0.84rem;
+  color: var(--ifm-color-emphasis-600);
+}
+
+.badge {
+  flex: none;
+  font-size: 0.7rem;
+  font-weight: 700;
+  letter-spacing: 0.04em;
+  text-transform: uppercase;
+  padding: 4px 9px;
+  border-radius: 6px;
+  color: var(--ifm-color-primary);
+  background: var(--ifm-color-primary-contrast-background, rgba(20, 110, 200, 0.1));
+  border: 1px solid var(--ifm-color-primary-lightest, rgba(20, 110, 200, 0.25));
+}
+
+.cardStage {
+  position: relative;
+  width: 100%;
+  background:
+    radial-gradient(130% 130% at 50% 0%, #f8fafc 0%, #eef2f6 55%, #e4ebf1 100%);
+}
+
+[data-theme='dark'] .cardStage {
+  background:
+    radial-gradient(130% 130% at 50% 0%, #15202e 0%, #0f1822 55%, #0a111a 100%);
+}
+
+.chipRow {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 7px;
+  padding: 12px 16px 4px;
+}
+
+.chip {
+  font-size: 0.76rem;
+  font-weight: 600;
+  padding: 4px 11px;
+  border-radius: 999px;
+  background: var(--ifm-color-emphasis-100);
+  border: 1px solid var(--ifm-color-emphasis-200);
+  color: var(--ifm-color-emphasis-800);
+}
+
+.card .caption {
+  padding: 6px 16px 14px;
+  margin: 0;
+}
+
+@media (prefers-reduced-motion: reduce) {
+  .segBtn {
+    transition: none;
+  }
+}

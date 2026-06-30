@@ -18,7 +18,20 @@ the card.
 
 ## Raspberry Pi
 
-The most common SBC in the lab. The relevant generations:
+The most common SBC in the lab. Drag to orbit the model below, scroll to zoom:
+
+<DeviceModel
+  src="/assets/3D/RASPBERRY_PI_5.STEP"
+  poster="/assets/IMG/Pi5.jpg"
+  posterAlt="Raspberry Pi 5 board"
+  title="Raspberry Pi 5"
+  subtitle="Click to load the interactive 3D CAD model (STEP)"
+  chips={['BCM2712 · Cortex-A76 @ 2.4 GHz', '4 / 8 GB LPDDR4X', '40-pin GPIO (3.3 V)', '2× USB 3.0 · PCIe 2.0', '5 V / 5 A USB-C PD']}
+  height={460}
+  caption="Static photo shown first; the 3D model (~33 MB) loads only when you click."
+/>
+
+The relevant generations:
 
 | Model | SoC / CPU | RAM | Notes |
 | --- | --- | --- | --- |

@@ -1,8 +1,11 @@
+// Honest, verifiable figures only — each traces to real content on the site.
+// Do NOT inflate; replace/extend only with data backed by a real project,
+// person, publication or partner record.
 export const stats = [
-  {value: '40+', label: 'Lab Members'},
-  {value: '25+', label: 'Active Projects'},
-  {value: '60+', label: 'Publications'},
-  {value: '15+', label: 'Partners & Awards'},
+  {value: '6', label: 'Research Areas'},
+  {value: '5', label: 'Partners & Affiliations'},
+  {value: '2', label: 'Courses Taught'},
+  {value: '1', label: 'Flagship Project'},
 ];
 
 export type Partner = {

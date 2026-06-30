@@ -1,0 +1,242 @@
+/* Antmicro-style board explorer layout */
+
+.app {
+  display: grid;
+  grid-template-columns: minmax(0, 1.7fr) minmax(280px, 1fr);
+  gap: 1.5rem;
+  align-items: start;
+}
+
+@media (max-width: 900px) {
+  .app {
+    grid-template-columns: 1fr;
+  }
+}
+
+/* ---- Viewer column ---- */
+.viewerCol {
+  min-width: 0;
+}
+
+.viewToolbar {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 8px;
+  align-items: center;
+  margin-bottom: 12px;
+}
+
+.switch {
+  display: inline-flex;
+  padding: 4px;
+  gap: 4px;
+  background: var(--ifm-color-emphasis-100);
+  border: 1px solid var(--ifm-color-emphasis-200);
+  border-radius: 999px;
+}
+
+.switchBtn {
+  appearance: none;
+  border: 0;
+  background: transparent;
+  color: var(--ifm-color-emphasis-700);
+  font: inherit;
+  font-size: 0.86rem;
+  font-weight: 600;
+  padding: 6px 16px;
+  border-radius: 999px;
+  cursor: pointer;
+  transition: background 0.15s ease, color 0.15s ease;
+}
+
+.switchBtn:hover {
+  color: var(--ifm-font-color-base);
+}
+
+.switchBtnActive,
+.switchBtnActive:hover {
+  background: var(--ifm-color-primary);
+  color: #fff;
+}
+
+.stage {
+  position: relative;
+  width: 100%;
+  height: 560px;
+  border: 1px solid var(--ifm-color-emphasis-200);
+  border-radius: 14px;
+  overflow: hidden;
+  background:
+    radial-gradient(130% 130% at 50% 0%, #f8fafc 0%, #eef2f6 55%, #e4ebf1 100%);
+}
+
+[data-theme='dark'] .stage {
+  background:
+    radial-gradient(130% 130% at 50% 0%, #15202e 0%, #0f1822 55%, #0a111a 100%);
+  border-color: var(--ifm-color-emphasis-300);
+}
+
+@media (max-width: 600px) {
+  .stage {
+    height: 380px;
+  }
+}
+
+.layer {
+  position: absolute;
+  inset: 0;
+  transition: opacity 0.2s ease;
+}
+
+.layerHidden {
+  opacity: 0;
+  visibility: hidden;
+  pointer-events: none;
+}
+
+@media (prefers-reduced-motion: reduce) {
+  .layer,
+  .switchBtn {
+    transition: none;
+  }
+}
+
+.hint {
+  margin-top: 10px;
+  font-size: 0.8rem;
+  color: var(--ifm-color-emphasis-600);
+}
+
+/* ---- Side panel ---- */
+.panel {
+  border: 1px solid var(--ifm-color-emphasis-200);
+  border-radius: 14px;
+  overflow: hidden;
+  background: var(--ifm-background-surface-color);
+}
+
+.tabs {
+  display: flex;
+  border-bottom: 1px solid var(--ifm-color-emphasis-200);
+}
+
+.tab {
+  appearance: none;
+  border: 0;
+  background: transparent;
+  color: var(--ifm-color-emphasis-700);
+  font: inherit;
+  font-size: 0.82rem;
+  font-weight: 600;
+  padding: 12px 14px;
+  cursor: pointer;
+  border-bottom: 2px solid transparent;
+  flex: 1;
+}
+
+.tab:hover {
+  color: var(--ifm-font-color-base);
+}
+
+.tabActive {
+  color: var(--ifm-color-primary);
+  border-bottom-color: var(--ifm-color-primary);
+}
+
+.tabBody {
+  padding: 16px 18px;
+  font-size: 0.9rem;
+}
+
+.tabBody p {
+  margin: 0 0 0.8rem;
+}
+
+.specTable {
+  width: 100%;
+  border-collapse: collapse;
+  font-size: 0.86rem;
+}
+
+.specTable th,
+.specTable td {
+  text-align: left;
+  padding: 8px 4px;
+  border-bottom: 1px solid var(--ifm-color-emphasis-200);
+  vertical-align: top;
+}
+
+.specTable th {
+  color: var(--ifm-color-emphasis-700);
+  font-weight: 600;
+  white-space: nowrap;
+  width: 42%;
+}
+
+.fileList,
+.layerList {
+  list-style: none;
+  margin: 0;
+  padding: 0;
+}
+
+.fileList li {
+  display: flex;
+  justify-content: space-between;
+  gap: 10px;
+  padding: 9px 2px;
+  border-bottom: 1px solid var(--ifm-color-emphasis-200);
+  font-size: 0.85rem;
+}
+
+.fileName {
+  font-family: var(--ifm-font-family-monospace);
+  word-break: break-all;
+}
+
+.fileSize {
+  color: var(--ifm-color-emphasis-600);
+  white-space: nowrap;
+}
+
+.layerList li {
+  display: flex;
+  align-items: center;
+  gap: 10px;
+  padding: 7px 2px;
+  border-bottom: 1px solid var(--ifm-color-emphasis-200);
+  font-size: 0.85rem;
+}
+
+.swatch {
+  width: 14px;
+  height: 14px;
+  border-radius: 3px;
+  flex: none;
+  border: 1px solid rgba(0, 0, 0, 0.2);
+}
+
+.layerType {
+  margin-left: auto;
+  color: var(--ifm-color-emphasis-600);
+  font-size: 0.78rem;
+  font-family: var(--ifm-font-family-monospace);
+}
+
+/* ---- Spec chips under the hero ---- */
+.chips {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 8px;
+  margin-bottom: 1.4rem;
+}
+
+.chip {
+  font-size: 0.78rem;
+  font-weight: 600;
+  padding: 4px 12px;
+  border-radius: 999px;
+  background: var(--ifm-color-emphasis-100);
+  border: 1px solid var(--ifm-color-emphasis-200);
+  color: var(--ifm-color-emphasis-800);
+}

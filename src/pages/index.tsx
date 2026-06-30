@@ -51,12 +51,12 @@ function HomeHero() {
                 <span className={styles.metaLabel}><Translate>Research areas</Translate></span>
               </div>
               <div>
-                <CountUp className={styles.metaValue} value="25+" />
-                <span className={styles.metaLabel}><Translate>Active projects</Translate></span>
+                <CountUp className={styles.metaValue} value="5" />
+                <span className={styles.metaLabel}><Translate>Partners</Translate></span>
               </div>
               <div>
-                <CountUp className={styles.metaValue} value="40+" />
-                <span className={styles.metaLabel}><Translate>Members</Translate></span>
+                <CountUp className={styles.metaValue} value="2" />
+                <span className={styles.metaLabel}><Translate>Courses</Translate></span>
               </div>
             </div>
           </div>
