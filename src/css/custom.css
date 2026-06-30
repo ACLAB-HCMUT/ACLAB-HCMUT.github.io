@@ -115,6 +115,13 @@ h1, h2, h3 { letter-spacing: -0.02em; }
 
 /* ---------- Navbar ---------- */
 .navbar { backdrop-filter: saturate(140%) blur(8px); }
+/* `backdrop-filter` makes .navbar a containing block for its fixed-position
+   children, which would clip the mobile slide-in menu (.navbar-sidebar) to the
+   navbar height. Disable it at the mobile-sidebar breakpoint so the drawer can
+   cover the full viewport. */
+@media (max-width: 996px) {
+  .navbar { backdrop-filter: none; }
+}
 .navbar__title { font-weight: 800; letter-spacing: -0.02em; }
 .navbar__link { font-weight: 600; font-size: .94rem; }
 

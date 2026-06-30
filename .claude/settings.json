@@ -1,0 +1,22 @@
+{
+  "permissions": {
+    "allow": [
+      "WebFetch(domain:aclab-hcmut.github.io)",
+      "Bash(unzip -l PC_ExtensionBoard.zip)",
+      "PowerShell(npm uninstall @react-three/fiber @react-three/drei three \"@types/three\")",
+      "PowerShell(npm install online-3d-viewer jszip pcb-stackup)",
+      "Bash(node -e \"const p=require\\('./package.json'\\); console.log\\('main:',p.main,'module:',p.module,'version:',p.version\\); console.log\\('exports:',JSON.stringify\\(p.exports\\)\\)\")",
+      "Bash(ls -la libs)",
+      "Bash(ls -la dist)",
+      "Bash(node -e \"const p=require\\('./node_modules/pcb-stackup/package.json'\\); console.log\\('main:',p.main,'browser:',p.browser,'module:',p.module\\); console.log\\('deps:',Object.keys\\(p.dependencies||{}\\).join\\(', '\\)\\)\")",
+      "Bash(npm uninstall *)",
+      "Bash(node -e \"const o=require\\('./node_modules/online-3d-viewer/package.json'\\); console.log\\('o3dv types:', o.types||o.typings||'\\(none\\)'\\); const j=require\\('./node_modules/jszip/package.json'\\); console.log\\('jszip types:', j.types||j.typings||'\\(none\\)'\\); const p=require\\('./node_modules/pcb-stackup/package.json'\\); console.log\\('pcb-stackup types:', p.types||p.typings||'\\(none\\)'\\)\")",
+      "PowerShell(npm run typecheck)",
+      "PowerShell(npm run build 2>&1)",
+      "Bash(git add *)",
+      "Bash(git commit -m ' *)",
+      "Bash(git push *)",
+      "Bash(gh run *)"
+    ]
+  }
+}
