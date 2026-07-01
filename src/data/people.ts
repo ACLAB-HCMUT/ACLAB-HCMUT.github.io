@@ -139,6 +139,62 @@ export const peopleGroups: PeopleGroup[] = [
           {label: 'GitHub', href: 'https://github.com/Trungnguyen3101nht'},
         ],
       },
+      {
+        name: 'Lê Bảo Long',
+        slug: 'le-bao-long',
+        role: 'Research Assistant',
+        interests: 'Embedded firmware, robotics middleware (ROS 2) and autonomous systems',
+        initials: 'LBL',
+        photo: '/img/people/le-bao-long.jpg',
+        affiliation: 'Computer Engineering, University of Information Technology (UIT)',
+        bio: 'Computer engineering student with hands-on experience in embedded firmware, robotics middleware and autonomous systems — from ROS 2 delivery robots and STM32 competition firmware to CARLA simulation tooling.',
+        researchAreas: ['Embedded Firmware', 'ROS 2 / Robotics', 'Autonomous Systems', 'Simulation (CARLA)'],
+        education: [
+          {
+            degree: 'B.E. in Computer Engineering (GPA 8.51/10)',
+            institution: 'University of Information Technology (UIT)',
+            years: '2024 – Present',
+          },
+          {
+            degree: 'High School Diploma (GPA 9.10/10)',
+            institution: 'Tran Dai Nghia High School for the Gifted',
+            years: '2021 – 2024',
+          },
+        ],
+        experience: [
+          {
+            period: 'May 2025 – Present',
+            title: 'Research Assistant',
+            org: 'Advanced Computing Lab (ACLAB), HCMUT',
+            description: 'Robotics and voice-assistant research under Dr. Lê Trọng Nhân — hardware integration, software architecture and system validation; lab instruction on ESP32-based IoT; technical documentation and research reports.',
+          },
+        ],
+        projects: [
+          {
+            label: 'STM32 Sumo Robot — competition firmware (STM32F446)',
+            to: 'https://github.com/baolongdev/Sumo_Robot_STM32F446RET6',
+          },
+          {
+            label: 'HospitalRobot — ROS 2 autonomous delivery robot',
+            to: 'https://github.com/Unray12/HospitalRobot',
+          },
+          {
+            label: 'VinFast CARLA Control — Python AV simulation',
+            to: 'https://github.com/baolongdev/vinfast-carla-control',
+          },
+          {label: 'AI-Assisted PCB Design (Atopile → KiCad, code-first workflow)'},
+          {
+            label: 'ROBOTDORELA — Android Vietnamese voice-assistant app',
+            to: 'https://www.dorela.vn',
+          },
+        ],
+        links: [
+          {label: 'Email', href: 'mailto:longle12042006a@gmail.com'},
+          {label: 'GitHub', href: 'https://github.com/baolongdev'},
+          {label: 'LinkedIn', href: 'https://linkedin.com/in/blong12'},
+          {label: 'Website', href: 'https://blong.id.vn'},
+        ],
+      },
     ],
   },
 ];
