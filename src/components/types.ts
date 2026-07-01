@@ -27,7 +27,9 @@ export type Member = {
   email?: string;
   office?: string;
   bio?: string;
-  education?: string[];
+  education?: {degree: string; institution?: string; years?: string}[];
+  experience?: {period?: string; title: string; org?: string; description?: string}[];
+  awards?: {year?: string; title: string; org?: string}[];
   researchAreas?: string[];
   publicationsUrl?: string;
   projects?: {label: string; to?: string}[];

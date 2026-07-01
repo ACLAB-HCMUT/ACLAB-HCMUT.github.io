@@ -1,6 +1,7 @@
 import React from 'react';
 import Layout from '@theme/Layout';
 import Link from '@docusaurus/Link';
+import clsx from 'clsx';
 
 import {Section, Container} from './index';
 import {TagList} from './tags';
@@ -9,18 +10,23 @@ import styles from './PersonDetail.module.css';
 
 const NA = <span className={styles.na}>N/A</span>;
 
-function Fact({label, children}: {label: string; children: React.ReactNode}) {
+const has = (v: unknown): boolean =>
+  Array.isArray(v) ? v.length > 0 : v != null && v !== '';
+
+function Block({title, children}: {title: string; children: React.ReactNode}) {
   return (
-    <>
-      <dt>{label}</dt>
-      <dd>{children}</dd>
-    </>
+    <section className={clsx(styles.block, styles.reveal)}>
+      <h2>{title}</h2>
+      {children}
+    </section>
   );
 }
 
 /**
- * Detail page for one lab member. Rendered by the `people-detail-pages` plugin
- * at /people/<slug>. Any field that isn't available shows "N/A".
+ * Detail page for one lab member (rendered by the `people-detail-pages` plugin
+ * at /people/<slug>). Sections mirror a typical academic profile; any field
+ * that isn't available shows "N/A". Sections reveal with a subtle fade-up
+ * (disabled under prefers-reduced-motion).
  */
 export default function PersonDetail({person}: {person: Member}): JSX.Element {
   const p = person ?? ({} as Member);
@@ -29,32 +35,25 @@ export default function PersonDetail({person}: {person: Member}): JSX.Element {
     <Layout
       title={`${p.name} — ACLAB`}
       description={`${p.name} — ${p.role}${p.affiliation ? `, ${p.affiliation}` : ''}.`}>
-      <Section variant="surface">
+      {/* ---- Header ---- */}
+      <header className={styles.header}>
         <Container>
-          <p style={{marginBottom: '1.4rem'}}>
-            <Link to="/people">← Back to People</Link>
-          </p>
-
-          <div className={styles.wrap}>
-            {/* Photo + quick facts */}
-            <aside className={styles.aside}>
-              <div className={styles.photo}>
-                {p.photo ? <img src={p.photo} alt={p.name} /> : p.initials}
-              </div>
-
-              <dl className={styles.facts}>
-                <Fact label="Role">{p.role || NA}</Fact>
-                <Fact label="Group">{p.group || NA}</Fact>
-                <Fact label="Affiliation">{p.affiliation || NA}</Fact>
-                <Fact label="Email">
-                  {p.email ? <a href={`mailto:${p.email}`}>{p.email}</a> : NA}
-                </Fact>
-                <Fact label="Office">{p.office || NA}</Fact>
-              </dl>
-
+          <div className={clsx(styles.headerInner, styles.reveal)}>
+            <div className={styles.photo}>
+              {p.photo ? <img src={p.photo} alt={p.name} /> : p.initials}
+            </div>
+            <div className={styles.headMeta}>
+              <p className={styles.crumb}>
+                <Link to="/people">People</Link>
+                <span> / </span>
+                {p.group || 'Member'}
+              </p>
+              <h1 className={styles.name}>{p.name}</h1>
+              <p className={styles.role}>{p.role || NA}</p>
+              <p className={styles.affil}>{p.affiliation || NA}</p>
               <div className={styles.links}>
-                {p.links && p.links.length > 0 ? (
-                  p.links.map((l) => (
+                {has(p.links) ? (
+                  p.links!.map((l) => (
                     <a
                       key={l.label}
                       className={styles.linkBtn}
@@ -68,70 +67,112 @@ export default function PersonDetail({person}: {person: Member}): JSX.Element {
                   <span className={styles.na}>No public links yet (N/A)</span>
                 )}
               </div>
-            </aside>
-
-            {/* Detailed sections */}
-            <div>
-              <div className={styles.section}>
-                <h2>Biography</h2>
-                <p>{p.bio || NA}</p>
-              </div>
-
-              <div className={styles.section}>
-                <h2>Research interests</h2>
-                {p.researchAreas && p.researchAreas.length > 0 ? (
-                  <TagList tags={p.researchAreas} />
-                ) : p.interests ? (
-                  <p>{p.interests}</p>
-                ) : (
-                  <p>{NA}</p>
-                )}
-              </div>
-
-              <div className={styles.section}>
-                <h2>Education</h2>
-                {p.education && p.education.length > 0 ? (
-                  <ul>
-                    {p.education.map((e) => (
-                      <li key={e}>{e}</li>
-                    ))}
-                  </ul>
-                ) : (
-                  <p>{NA}</p>
-                )}
-              </div>
-
-              <div className={styles.section}>
-                <h2>Projects</h2>
-                {p.projects && p.projects.length > 0 ? (
-                  <ul>
-                    {p.projects.map((pr) => (
-                      <li key={pr.label}>
-                        {pr.to ? <Link to={pr.to}>{pr.label}</Link> : pr.label}
-                      </li>
-                    ))}
-                  </ul>
-                ) : (
-                  <p>{NA}</p>
-                )}
-              </div>
-
-              <div className={styles.section}>
-                <h2>Publications</h2>
-                {p.publicationsUrl ? (
-                  <p>
-                    <a
-                      href={p.publicationsUrl}
-                      target="_blank"
-                      rel="noopener noreferrer">
-                      View publications →
-                    </a>
-                  </p>
-                ) : (
-                  <p>{NA}</p>
-                )}
-              </div>
             </div>
+          </div>
+        </Container>
+      </header>
+
+      {/* ---- Sections ---- */}
+      <Section variant="surface">
+        <Container>
+          <div className={styles.body}>
+            <Block title="Biography">
+              {has(p.bio) ? <p>{p.bio}</p> : <p>{NA}</p>}
+            </Block>
+
+            <Block title="Research interests">
+              {has(p.researchAreas) ? (
+                <TagList tags={p.researchAreas!} />
+              ) : has(p.interests) ? (
+                <p>{p.interests}</p>
+              ) : (
+                <p>{NA}</p>
+              )}
+            </Block>
+
+            <Block title="Education">
+              {has(p.education) ? (
+                <div className={styles.cards}>
+                  {p.education!.map((e) => (
+                    <div key={e.degree} className={styles.eduCard}>
+                      <div className={styles.eduDegree}>{e.degree}</div>
+                      <div className={styles.eduInst}>{e.institution || NA}</div>
+                      {e.years && <div className={styles.eduYears}>{e.years}</div>}
+                    </div>
+                  ))}
+                </div>
+              ) : (
+                <p>{NA}</p>
+              )}
+            </Block>
+
+            <Block title="Experience">
+              {has(p.experience) ? (
+                <ul className={styles.timeline}>
+                  {p.experience!.map((x) => (
+                    <li key={`${x.title}-${x.period ?? ''}`} className={styles.tItem}>
+                      <div className={styles.tPeriod}>{x.period || '—'}</div>
+                      <div className={styles.tBody}>
+                        <div className={styles.tTitle}>{x.title}</div>
+                        {x.org && <div className={styles.tOrg}>{x.org}</div>}
+                        {x.description && <p className={styles.tDesc}>{x.description}</p>}
+                      </div>
+                    </li>
+                  ))}
+                </ul>
+              ) : (
+                <p>{NA}</p>
+              )}
+            </Block>
+
+            <Block title="Awards & Certifications">
+              {has(p.awards) ? (
+                <ul className={styles.awards}>
+                  {p.awards!.map((a) => (
+                    <li key={a.title}>
+                      <strong>{a.title}</strong>
+                      {a.org ? ` — ${a.org}` : ''}
+                      {a.year ? ` (${a.year})` : ''}
+                    </li>
+                  ))}
+                </ul>
+              ) : (
+                <p>{NA}</p>
+              )}
+            </Block>
+
+            <Block title="Projects">
+              {has(p.projects) ? (
+                <ul>
+                  {p.projects!.map((pr) => (
+                    <li key={pr.label}>
+                      {pr.to ? <Link to={pr.to}>{pr.label}</Link> : pr.label}
+                    </li>
+                  ))}
+                </ul>
+              ) : (
+                <p>{NA}</p>
+              )}
+            </Block>
+
+            <Block title="Publications">
+              {p.publicationsUrl ? (
+                <p>
+                  <a
+                    href={p.publicationsUrl}
+                    target="_blank"
+                    rel="noopener noreferrer">
+                    View publications →
+                  </a>
+                </p>
+              ) : (
+                <p>{NA}</p>
+              )}
+            </Block>
+
+            <p className={styles.back}>
+              <Link to="/people">← Back to People</Link>
+            </p>
           </div>
         </Container>
       </Section>
