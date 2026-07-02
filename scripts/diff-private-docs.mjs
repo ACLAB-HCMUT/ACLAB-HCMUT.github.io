@@ -15,7 +15,7 @@ import {
   PLAINTEXT_DIR,
   REVIEW_DIR,
 } from './lib/format.mjs';
-import {deriveMasterKey, decryptString, fromB64} from './lib/crypto.mjs';
+import {deriveMasterKey, decryptString, decryptBuffer, fromB64} from './lib/crypto.mjs';
 import {decryptManifest} from './lib/docs.mjs';
 import {askPassword, getUsernameFromArgs} from './lib/prompt.mjs';
 
@@ -79,9 +79,16 @@ async function main() {
   let changed = 0;
   for (const entry of entries) {
     const env = JSON.parse(fs.readFileSync(path.join(ENC_ROOT, entry.file), 'utf8'));
-    const committed = decryptString(masterKey, env);
     const outPath = path.join(REVIEW_DIR, entry.path);
     fs.mkdirSync(path.dirname(outPath), {recursive: true});
+
+    // Images: decrypt to bytes, no text diff.
+    if (entry.type === 'asset') {
+      fs.writeFileSync(outPath, decryptBuffer(masterKey, env));
+      continue;
+    }
+
+    const committed = decryptString(masterKey, env);
     fs.writeFileSync(outPath, committed);
 
     const workingPath = path.join(PLAINTEXT_DIR, entry.path);

@@ -26,8 +26,8 @@ scripts). Only ciphertext is ever committed or deployed.
 docs/protected/            # plaintext internal docs — GITIGNORED + excluded
                            #   from the docs build (never rendered/indexed)
 static/protected/          # committed & deployed ciphertext:
-  ├─ manifest.json         #   encrypted list of docs (titles/paths)
-  └─ docs/**/*.md.enc      #   one AES-256-GCM envelope per document
+  ├─ manifest.json         #   encrypted list of docs + images (type/mime)
+  └─ docs/**/*.enc         #   one AES-256-GCM envelope per file (.md and images)
 src/pages/internal.tsx     # /internal — client-side unlock + viewer
 src/lib/protectedCrypto.ts # browser Web Crypto (mirrors scripts/lib/crypto.mjs)
 scripts/                    # docs:* CLI tools (plain Node, no extra deps)
@@ -44,6 +44,9 @@ scripts/                    # docs:* CLI tools (plain Node, no extra deps)
 
 Every file has a **unique salt and IV** and an **authentication tag**. Each
 envelope records its format version, algorithm, and logical path for migrations.
+**Images** (`png/jpg/jpeg/gif/webp/avif/svg`) placed under `docs/protected/` are
+encrypted as binary the same way; in the browser a doc's relative `<img>` is
+decrypted on demand into an in-memory blob URL (revoked on lock).
 A wrong password (or tampered file) fails authentication and is reported with a
 **single generic error** — it never reveals whether the password was wrong or
 the file was corrupt.

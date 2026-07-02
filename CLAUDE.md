@@ -19,6 +19,8 @@ deployed to `https://aclab-hcmut.github.io` (GitHub Pages, org `ACLAB-HCMUT`).
 - **Deploy:** `.github/workflows/deploy.yml` auto-builds + deploys on push to `main` (`npm ci` →
   build). Requires Settings → Pages → Source = "GitHub Actions". `build/` is generated — **never
   edit or commit it** (legacy-tracked; keep it out of new commits).
+- **Private docs:** `docs:decrypt` / `docs:encrypt` / `docs:verify` / `docs:check` / `docs:clean`
+  / `docs:diff-private` — see **Encrypted internal docs** below.
 
 ## Architecture & system requirements
 - **Static site, no backend.** Everything is prerendered at build time and served from GitHub
@@ -65,6 +67,37 @@ deployed to `https://aclab-hcmut.github.io` (GitHub Pages, org `ACLAB-HCMUT`).
   - Blog `blog/` → **News & Events** (`/blog`).
 - **Config** `docusaurus.config.ts`. **Ambient types** `src/types/*.d.ts`. **Static assets**
   `static/` (member photos `static/img/people/`; models/boards/posters `static/assets/`).
+
+## Encrypted internal docs (private)
+Client-side–encrypted internal docs for a static site (no backend/DB/auth server). Only ciphertext
+is ever committed or deployed; decryption happens in the browser (or locally via scripts) after a
+password is entered. **Never write the password into any file (incl. this one), env, CLI arg, or
+git.** Prompted interactively only.
+- **Plaintext source** `docs/protected/**/*.md` — **gitignored** AND **excluded from the docs
+  build** (`docs` preset `exclude: ['protected/**']`) so it's never rendered, indexed, or in
+  sitemap/RSS. Exists only transiently between `docs:decrypt` and `docs:encrypt`.
+- **Committed ciphertext** `static/protected/` → served at `/protected/*`: `manifest.json`
+  (encrypted list of docs+images) + `docs/**/*.{md,png,jpg,…}.enc` (one AES-256-GCM envelope per
+  file, unique salt+IV+tag, versioned). Images are encrypted as **binary**; manifest entries carry
+  `type: 'doc'|'asset'` (+ `mime` for assets). In the browser, a doc's relative `<img src>` is
+  resolved against the doc path, the matching asset is decrypted to an **in-memory blob URL**
+  (revoked on lock) — no plaintext image is ever served.
+- **Crypto** (`scripts/lib/crypto.mjs` ↔ browser `src/lib/protectedCrypto.ts` — keep in sync):
+  `PBKDF2-SHA256(210k, "username:password", master salt)` → **deriveBits** → HKDF key; per file
+  `HKDF-SHA256(per-file salt, info=path)` → **AES-256-GCM**. Wrong password/tamper → auth failure →
+  **single generic error** (never "wrong password" vs "corrupt"). ⚠️ Browser MUST use PBKDF2
+  `deriveBits`→`importKey('HKDF')`; deriving an HKDF key via PBKDF2 `deriveKey` throws.
+- **Viewer** `src/pages/internal.tsx` (`/internal`, navbar "Internal Docs 🔒"): SSR-safe
+  `BrowserOnly`; unlock screen → in-memory-only on-demand decryption (reload = locked; nothing in
+  localStorage/IndexedDB); lock menu. Uses `marked` (now a **declared dependency**) to render.
+- **Scripts** (plain Node `.mjs`, no `tsx`): `docs:decrypt` (restore plaintext), `docs:encrypt`
+  (encrypt→verify→atomic replace→remove plaintext→cleanup orphans), `docs:verify` (round-trip +
+  missing/orphan), `docs:check` (block staged/leaked plaintext), `docs:clean`, `docs:diff-private`
+  (→ gitignored `.private-review/`, never upload).
+- **Protection** pre-commit hook via `.githooks/` (installed by `prepare` = `install-hooks.mjs`,
+  no husky) runs `docs:check`; gitignore covers `docs/protected/`, `.private-*`, `*.key`, `.env`,
+  `credentials.json`. Limitations documented in `README.md` (not per-user auth; password strength
+  is everything; no revocation).
 
 ## Design patterns (follow these; don't reinvent)
 - **Barrel UI kit.** Components live in small files; `src/components/index.tsx` only re-exports.

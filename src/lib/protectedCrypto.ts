@@ -27,7 +27,13 @@ export type Manifest = {
   body: EncEnvelope | {info: string; salt: string; iv: string; ct: string};
 };
 
-export type ManifestEntry = {path: string; title: string; file: string};
+export type ManifestEntry = {
+  type?: 'doc' | 'asset';
+  path: string;
+  title?: string;
+  file: string;
+  mime?: string;
+};
 
 function b64ToBytes(b64: string): Uint8Array {
   const bin = atob(b64);
@@ -88,18 +94,25 @@ async function deriveFileKey(
   );
 }
 
+/** Decrypt one envelope to raw bytes. Rejects on wrong key / tamper. */
+export async function decryptEnvelopeBytes(
+  masterKey: CryptoKey,
+  env: EncEnvelope,
+): Promise<ArrayBuffer> {
+  const key = await deriveFileKey(masterKey, env.salt, env.info);
+  return crypto.subtle.decrypt(
+    {name: 'AES-GCM', iv: b64ToBytes(env.iv) as BufferSource, tagLength: 128},
+    key,
+    b64ToBytes(env.ct) as BufferSource,
+  );
+}
+
 /** Decrypt one envelope to a UTF-8 string. Rejects on wrong key / tamper. */
 export async function decryptEnvelope(
   masterKey: CryptoKey,
   env: EncEnvelope,
 ): Promise<string> {
-  const key = await deriveFileKey(masterKey, env.salt, env.info);
-  const plain = await crypto.subtle.decrypt(
-    {name: 'AES-GCM', iv: b64ToBytes(env.iv) as BufferSource, tagLength: 128},
-    key,
-    b64ToBytes(env.ct) as BufferSource,
-  );
-  return new TextDecoder().decode(plain);
+  return new TextDecoder().decode(await decryptEnvelopeBytes(masterKey, env));
 }
 
 /** Decrypt the manifest body into its entry list. Rejects on wrong password. */

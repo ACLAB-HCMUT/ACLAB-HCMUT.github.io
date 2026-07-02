@@ -52,19 +52,16 @@ function deriveFileKey(masterKey, fileSalt, info) {
 }
 
 /**
- * Encrypt a UTF-8 string. `info` binds the ciphertext to a logical path so a
- * file cannot be silently swapped for another. Returns a self-describing
- * envelope safe to commit.
+ * Encrypt arbitrary bytes (text OR binary, e.g. images). `info` binds the
+ * ciphertext to a logical path so a file cannot be silently swapped for
+ * another. Returns a self-describing envelope safe to commit.
  */
-export function encryptString(masterKey, plaintext, info) {
+export function encryptBuffer(masterKey, buf, info) {
   const fileSalt = crypto.randomBytes(16);
   const iv = crypto.randomBytes(12);
   const key = deriveFileKey(masterKey, fileSalt, info);
   const cipher = crypto.createCipheriv('aes-256-gcm', key, iv);
-  const enc = Buffer.concat([
-    cipher.update(Buffer.from(plaintext, 'utf8')),
-    cipher.final(),
-  ]);
+  const enc = Buffer.concat([cipher.update(buf), cipher.final()]);
   const tag = cipher.getAuthTag();
   return {
     v: FORMAT_VERSION,
@@ -77,20 +74,25 @@ export function encryptString(masterKey, plaintext, info) {
   };
 }
 
-/** Decrypt an envelope back to a UTF-8 string. Throws on wrong key / tamper. */
-export function decryptString(masterKey, env) {
+/** Decrypt an envelope back to raw bytes. Throws on wrong key / tamper. */
+export function decryptBuffer(masterKey, env) {
   const key = deriveFileKey(masterKey, fromB64(env.salt), env.info);
   const buf = fromB64(env.ct);
   const tag = buf.subarray(buf.length - 16);
   const data = buf.subarray(0, buf.length - 16);
-  const decipher = crypto.createDecipheriv(
-    'aes-256-gcm',
-    key,
-    fromB64(env.iv),
-  );
+  const decipher = crypto.createDecipheriv('aes-256-gcm', key, fromB64(env.iv));
   decipher.setAuthTag(tag);
-  const out = Buffer.concat([decipher.update(data), decipher.final()]);
-  return out.toString('utf8');
+  return Buffer.concat([decipher.update(data), decipher.final()]);
+}
+
+/** Encrypt a UTF-8 string (thin wrapper over encryptBuffer). */
+export function encryptString(masterKey, plaintext, info) {
+  return encryptBuffer(masterKey, Buffer.from(plaintext, 'utf8'), info);
+}
+
+/** Decrypt an envelope back to a UTF-8 string. Throws on wrong key / tamper. */
+export function decryptString(masterKey, env) {
+  return decryptBuffer(masterKey, env).toString('utf8');
 }
 
 /** Structural sanity check for an envelope (no decryption). */

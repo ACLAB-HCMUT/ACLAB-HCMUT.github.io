@@ -4,27 +4,34 @@
 import fs from 'node:fs';
 import path from 'node:path';
 import {execFileSync} from 'node:child_process';
-import {ROOT, PLAINTEXT_DIR} from './format.mjs';
+import {ROOT, PLAINTEXT_DIR, IMAGE_EXT} from './format.mjs';
 import {encryptString, decryptString} from './crypto.mjs';
 
 /** POSIX-style relative path from a base dir (stable across OSes). */
 export const toPosix = (p) => p.split(path.sep).join('/');
 
-/** All *.md / *.mdx under PLAINTEXT_DIR, as POSIX paths relative to it. */
-export function listPlaintextDocs() {
+/** Files under PLAINTEXT_DIR matching `test`, as POSIX paths relative to it. */
+function listBy(test) {
   if (!fs.existsSync(PLAINTEXT_DIR)) return [];
   const out = [];
   const walk = (dir) => {
     for (const entry of fs.readdirSync(dir, {withFileTypes: true})) {
       const full = path.join(dir, entry.name);
       if (entry.isDirectory()) walk(full);
-      else if (/\.mdx?$/i.test(entry.name))
+      else if (test(entry.name))
         out.push(toPosix(path.relative(PLAINTEXT_DIR, full)));
     }
   };
   walk(PLAINTEXT_DIR);
   return out.sort();
 }
+
+/** All *.md / *.mdx under PLAINTEXT_DIR, as POSIX paths relative to it. */
+export const listPlaintextDocs = () => listBy((n) => /\.mdx?$/i.test(n));
+
+/** All private image assets under PLAINTEXT_DIR (encrypted as binary). */
+export const listPlaintextAssets = () =>
+  listBy((n) => IMAGE_EXT.includes(n.slice(n.lastIndexOf('.')).toLowerCase()));
 
 /** Split a leading `---\n...\n---` YAML-ish front matter block from body. */
 export function splitFrontMatter(raw) {

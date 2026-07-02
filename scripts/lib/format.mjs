@@ -29,6 +29,21 @@ export const SUBKDF = {name: 'HKDF', hash: 'SHA-256'};
 export const CIPHER = 'AES-256-GCM';
 export const DEFAULT_USERNAME = 'aclab';
 
+// Private image/asset types (encrypted as binary alongside the markdown).
+export const IMAGE_MIME = {
+  '.png': 'image/png',
+  '.jpg': 'image/jpeg',
+  '.jpeg': 'image/jpeg',
+  '.gif': 'image/gif',
+  '.webp': 'image/webp',
+  '.avif': 'image/avif',
+  '.svg': 'image/svg+xml',
+};
+export const IMAGE_EXT = Object.keys(IMAGE_MIME);
+export const mimeFor = (p) =>
+  IMAGE_MIME[p.slice(p.lastIndexOf('.')).toLowerCase()] ||
+  'application/octet-stream';
+
 // File extensions treated as private plaintext (never committable as-is).
 export const PRIVATE_PLAINTEXT_EXT = [
   '.md',
@@ -38,9 +53,7 @@ export const PRIVATE_PLAINTEXT_EXT = [
   '.xlsx',
   '.kicad_sch',
   '.kicad_pcb',
-  '.png',
-  '.jpg',
-  '.jpeg',
+  ...IMAGE_EXT,
 ];
 
 // Private/secret path fragments (POSIX-style) that must never be committed.

@@ -8,7 +8,7 @@
 import fs from 'node:fs';
 import path from 'node:path';
 import {ENC_ROOT, ENC_DOCS_DIR, MANIFEST_PATH} from './lib/format.mjs';
-import {deriveMasterKey, decryptString, isValidEnvelope, fromB64} from './lib/crypto.mjs';
+import {deriveMasterKey, decryptBuffer, isValidEnvelope, fromB64} from './lib/crypto.mjs';
 import {decryptManifest} from './lib/docs.mjs';
 import {askPassword, getUsernameFromArgs} from './lib/prompt.mjs';
 
@@ -62,7 +62,7 @@ async function main() {
     const env = JSON.parse(fs.readFileSync(encPath, 'utf8'));
     if (!isValidEnvelope(env)) fail(`Invalid envelope metadata: ${entry.file}`);
     try {
-      decryptString(masterKey, env);
+      decryptBuffer(masterKey, env); // auth-checks docs and image assets alike
     } catch {
       fail(`Failed to decrypt: ${entry.file}`);
     }

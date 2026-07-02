@@ -13,7 +13,12 @@ import {
   MANIFEST_PATH,
   PLAINTEXT_DIR,
 } from './lib/format.mjs';
-import {deriveMasterKey, decryptString, fromB64} from './lib/crypto.mjs';
+import {
+  deriveMasterKey,
+  decryptString,
+  decryptBuffer,
+  fromB64,
+} from './lib/crypto.mjs';
 import {askPassword, getUsernameFromArgs} from './lib/prompt.mjs';
 import {decryptManifest} from './lib/docs.mjs';
 
@@ -62,7 +67,11 @@ async function main() {
     const env = JSON.parse(fs.readFileSync(encPath, 'utf8'));
     let plaintext;
     try {
-      plaintext = decryptString(masterKey, env);
+      // Assets are binary (images); docs are UTF-8 markdown.
+      plaintext =
+        entry.type === 'asset'
+          ? decryptBuffer(masterKey, env)
+          : decryptString(masterKey, env);
     } catch {
       fail(`Unable to decrypt "${entry.path}" — file may be corrupt.`);
     }

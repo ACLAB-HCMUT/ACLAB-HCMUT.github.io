@@ -20,17 +20,21 @@ import {
   MANIFEST_PATH,
   PLAINTEXT_DIR,
   KDF,
+  mimeFor,
 } from './lib/format.mjs';
 import {
   deriveMasterKey,
   newMasterSalt,
   encryptString,
   decryptString,
+  encryptBuffer,
+  decryptBuffer,
   b64,
 } from './lib/crypto.mjs';
 import {askPasswordConfirmed, getUsernameFromArgs} from './lib/prompt.mjs';
 import {
   listPlaintextDocs,
+  listPlaintextAssets,
   titleFor,
   encFileFor,
   buildManifestEnvelope,
@@ -46,13 +50,16 @@ const fail = (msg) => {
 async function main() {
   console.log('Checking private documentation changes...');
   const docs = listPlaintextDocs();
-  if (docs.length === 0) {
+  const assets = listPlaintextAssets();
+  if (docs.length === 0 && assets.length === 0) {
     fail(
       `No plaintext docs found in ${path.relative(process.cwd(), PLAINTEXT_DIR)}/.\n` +
         `  Run "npm run docs:decrypt" first, or add .md files there.`,
     );
   }
-  console.log(`${docs.length} private file(s) found.\n`);
+  console.log(
+    `${docs.length} document(s) + ${assets.length} image(s) found.\n`,
+  );
 
   const username = getUsernameFromArgs();
   const password = await askPasswordConfirmed();
@@ -82,7 +89,29 @@ async function main() {
     fs.writeFileSync(tmpPath, JSON.stringify(env));
     fs.renameSync(tmpPath, outPath); // atomic replace
     written.add(encRel);
-    entries.push({path: rel, title: titleFor(rel, raw), file: `docs/${encRel}`});
+    entries.push({
+      type: 'doc',
+      path: rel,
+      title: titleFor(rel, raw),
+      file: `docs/${encRel}`,
+    });
+  }
+
+  // Encrypt private images as binary (round-trip verified before replacing).
+  for (const rel of assets) {
+    const raw = fs.readFileSync(path.join(PLAINTEXT_DIR, rel));
+    const env = encryptBuffer(masterKey, raw, rel);
+    if (!decryptBuffer(masterKey, env).equals(raw)) {
+      fail(`Verification failed for ${rel} — aborting, nothing was changed.`);
+    }
+    const encRel = encFileFor(rel);
+    const outPath = path.join(ENC_DOCS_DIR, encRel);
+    const tmpPath = `${outPath}.tmp`;
+    fs.mkdirSync(path.dirname(outPath), {recursive: true});
+    fs.writeFileSync(tmpPath, JSON.stringify(env));
+    fs.renameSync(tmpPath, outPath);
+    written.add(encRel);
+    entries.push({type: 'asset', path: rel, mime: mimeFor(rel), file: `docs/${encRel}`});
   }
 
   console.log('Verifying encrypted output...');
@@ -114,7 +143,9 @@ async function main() {
   }
 
   console.log('\n✔ Encryption completed successfully.');
-  console.log(`  ${entries.length} doc(s) -> ${path.relative(process.cwd(), ENC_ROOT)}/`);
+  console.log(
+    `  ${docs.length} document(s) + ${assets.length} image(s) -> ${path.relative(process.cwd(), ENC_ROOT)}/`,
+  );
   console.log('  Commit only the encrypted output:');
   console.log('    git add static/protected/ && git commit -m "docs: update internal docs"');
   printGitStatus();

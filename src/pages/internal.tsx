@@ -8,7 +8,7 @@
 // Documents are decrypted ON DEMAND when opened and cached only in a React ref
 // (memory) for the session.
 
-import React, {useCallback, useEffect, useRef, useState} from 'react';
+import React, {useCallback, useEffect, useMemo, useRef, useState} from 'react';
 import Layout from '@theme/Layout';
 import BrowserOnly from '@docusaurus/BrowserOnly';
 import useBaseUrl from '@docusaurus/useBaseUrl';
@@ -17,11 +17,37 @@ import {
   deriveMasterKey,
   decryptManifest,
   decryptEnvelope,
+  decryptEnvelopeBytes,
   type Manifest,
   type ManifestEntry,
   type EncEnvelope,
 } from '../lib/protectedCrypto';
 import styles from './internal.module.css';
+
+/** Resolve a relative image src against a doc's directory (POSIX, normalized). */
+function resolveRelative(docPath: string, src: string): string {
+  const baseParts = docPath.split('/').slice(0, -1);
+  for (const seg of src.split('/')) {
+    if (seg === '' || seg === '.') continue;
+    if (seg === '..') baseParts.pop();
+    else baseParts.push(seg);
+  }
+  return baseParts.join('/');
+}
+
+// True for srcs we must NOT rewrite (already absolute / external / inline).
+const isExternalSrc = (src: string) =>
+  /^(https?:|data:|blob:|mailto:|#|\/)/i.test(src);
+
+// Move relative <img src> to data-enc-src so the browser doesn't 404 before we
+// swap in the decrypted blob URL.
+function deferEncryptedImages(html: string): string {
+  return html.replace(
+    /<img\b([^>]*?)\ssrc="([^"]*)"([^>]*)>/gi,
+    (m, pre, src, post) =>
+      isExternalSrc(src) ? m : `<img${pre} data-enc-src="${src}"${post}>`,
+  );
+}
 
 const GENERIC_ERROR = translate({
   id: 'internal.error.generic',
@@ -56,6 +82,50 @@ function InternalDocsApp(): JSX.Element {
 
   // In-memory only decrypted-doc cache (rendered HTML by path).
   const docCache = useRef<Map<string, string>>(new Map());
+  // In-memory blob URLs for decrypted images (by asset path). Revoked on lock.
+  const assetUrls = useRef<Map<string, string>>(new Map());
+  const articleRef = useRef<HTMLElement | null>(null);
+
+  // Encrypted image assets, keyed by their path for relative-src lookup.
+  const assetMap = useMemo(() => {
+    const m = new Map<string, ManifestEntry>();
+    for (const e of session?.entries ?? [])
+      if (e.type === 'asset') m.set(e.path, e);
+    return m;
+  }, [session]);
+
+  const docEntries = useMemo(
+    () => (session?.entries ?? []).filter((e) => e.type !== 'asset'),
+    [session],
+  );
+
+  const revokeAssets = useCallback(() => {
+    for (const url of assetUrls.current.values()) URL.revokeObjectURL(url);
+    assetUrls.current.clear();
+  }, []);
+
+  // Decrypt one image asset to an in-memory blob URL (cached for the session).
+  const assetUrl = useCallback(
+    async (assetPath: string): Promise<string | null> => {
+      if (!session) return null;
+      const cached = assetUrls.current.get(assetPath);
+      if (cached) return cached;
+      const entry = assetMap.get(assetPath);
+      if (!entry) return null;
+      const res = await fetch(protectedBase + entry.file.replace(/^docs\//, 'docs/'), {
+        cache: 'no-store',
+      });
+      if (!res.ok) return null;
+      const env = (await res.json()) as EncEnvelope;
+      const bytes = await decryptEnvelopeBytes(session.masterKey, env);
+      const url = URL.createObjectURL(
+        new Blob([bytes], {type: entry.mime || 'application/octet-stream'}),
+      );
+      assetUrls.current.set(assetPath, url);
+      return url;
+    },
+    [session, assetMap, protectedBase],
+  );
 
   const unlock = useCallback(
     async (e?: React.FormEvent) => {
@@ -103,7 +173,9 @@ function InternalDocsApp(): JSX.Element {
         const {marked} = await import('marked');
         // Content is authored by trusted admins (same people who hold the
         // password); rendered as HTML in memory only.
-        const rendered = await marked.parse(stripFrontMatter(markdown));
+        const rendered = deferEncryptedImages(
+          await marked.parse(stripFrontMatter(markdown)),
+        );
         docCache.current.set(entry.path, rendered);
         setHtml(rendered);
       } catch {
@@ -116,23 +188,53 @@ function InternalDocsApp(): JSX.Element {
     [session, protectedBase],
   );
 
+  // After doc HTML mounts, decrypt & swap in each deferred image (in memory).
+  useEffect(() => {
+    const root = articleRef.current;
+    if (!root || !activePath) return;
+    let cancelled = false;
+    const imgs = Array.from(
+      root.querySelectorAll<HTMLImageElement>('img[data-enc-src]'),
+    );
+    for (const img of imgs) {
+      const rel = img.getAttribute('data-enc-src') || '';
+      const resolved = resolveRelative(activePath, rel);
+      assetUrl(resolved)
+        .then((url) => {
+          if (!cancelled && url) {
+            img.src = url;
+            img.removeAttribute('data-enc-src');
+          }
+        })
+        .catch(() => {});
+    }
+    return () => {
+      cancelled = true;
+    };
+  }, [html, activePath, assetUrl]);
+
+  // Revoke all blob URLs when the component unmounts.
+  useEffect(() => () => revokeAssets(), [revokeAssets]);
+
   const lockNow = useCallback(() => {
-    // Clear derived key, entries, decrypted cache, and navigation state.
+    // Clear derived key, entries, decrypted caches, blob URLs, and nav state.
     docCache.current.clear();
+    revokeAssets();
     setSession(null);
     setActivePath(null);
     setHtml('');
     setMenuOpen(false);
     setPassword('');
     setError('');
-  }, []);
+  }, [revokeAssets]);
 
   const clearCache = useCallback(() => {
     docCache.current.clear();
+    revokeAssets();
     setHtml('');
     setActivePath(null);
     setMenuOpen(false);
-  }, []);
+  }, [revokeAssets]);
 
   // ---- locked: unlock screen ----
   if (!session) {
@@ -219,7 +321,7 @@ function InternalDocsApp(): JSX.Element {
   }
 
   // ---- unlocked ----
-  const active = session.entries.find((e) => e.path === activePath) ?? null;
+  const active = docEntries.find((e) => e.path === activePath) ?? null;
   return (
     <div className={styles.wrap}>
       <div className={styles.topbar}>
@@ -260,7 +362,7 @@ function InternalDocsApp(): JSX.Element {
           <h2>
             <Translate id="internal.sidebar">Internal Docs</Translate>
           </h2>
-          {session.entries.map((entry) => (
+          {docEntries.map((entry) => (
             <button
               key={entry.path}
               className={`${styles.navItem} ${
@@ -289,7 +391,11 @@ function InternalDocsApp(): JSX.Element {
             </p>
           )}
           {!docBusy && active && (
-            <article className="markdown" dangerouslySetInnerHTML={{__html: html}} />
+            <article
+              ref={articleRef}
+              className="markdown"
+              dangerouslySetInnerHTML={{__html: html}}
+            />
           )}
         </div>
       </div>
