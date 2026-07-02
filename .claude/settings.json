@@ -49,7 +49,12 @@
       "Bash(npm install *)",
       "Bash(rm -f /tmp/browsertest.mjs /tmp/browsertest2.mjs /tmp/gfitest.mjs /tmp/finaltest.mjs)",
       "Bash(ls build/protected/)",
-      "Bash(ls build/vi/protected/)"
+      "Bash(ls build/vi/protected/)",
+      "Bash(ls .private-review .private-workspace private-docs)",
+      "Bash(ls build/protected/*.json build/vi/protected/*.json)",
+      "Bash(grep -E \"^build/|docs/protected/|credentials|\\\\.env$\")",
+      "Bash(echo \"=== exit $? ===\")",
+      "PowerShell($env:GIT_USER=\"caotiendattx\"; $env:DEPLOYMENT_BRANCH=\"gh-pages\"; npm run deploy 2>&1 | Select-Object -Last 40)"
     ]
   }
 }
