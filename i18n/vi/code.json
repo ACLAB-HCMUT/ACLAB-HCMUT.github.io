@@ -1,4 +1,22 @@
 {
+  "internal.pageTitle": {"message": "Tài liệu nội bộ"},
+  "internal.title": {"message": "Tài liệu nội bộ"},
+  "internal.blurb": {"message": "Nội dung này được mã hóa và chỉ có thể giải mã cục bộ trong trình duyệt của bạn. Mật khẩu không được gửi đến máy chủ hay lưu trữ bởi trang web này."},
+  "internal.username": {"message": "Tên đăng nhập"},
+  "internal.password": {"message": "Mật khẩu"},
+  "internal.unlock": {"message": "Mở khóa tài liệu nội bộ"},
+  "internal.unlocking": {"message": "Đang giải mã an toàn trong trình duyệt của bạn..."},
+  "internal.decrypting": {"message": "Đang giải mã an toàn trong trình duyệt của bạn..."},
+  "internal.contact": {"message": "Cần quyền truy cập? Liên hệ quản trị viên ACLAB để nhận mật khẩu tài liệu."},
+  "internal.error.generic": {"message": "Không thể mở khóa tài liệu này. Vui lòng kiểm tra mật khẩu và thử lại."},
+  "internal.unlocked": {"message": "Đã mở khóa nội bộ"},
+  "internal.menu": {"message": "Menu"},
+  "internal.lockNow": {"message": "Khóa ngay"},
+  "internal.clearCache": {"message": "Xóa bộ nhớ đã giải mã"},
+  "internal.aboutAccess": {"message": "Về quyền truy cập"},
+  "internal.about": {"message": "Tài liệu này được mã hóa phía trình duyệt. Bất kỳ ai có mật khẩu đều có thể giải mã. Liên hệ quản trị viên ACLAB để được cấp quyền."},
+  "internal.sidebar": {"message": "Tài liệu nội bộ"},
+  "internal.pick": {"message": "Chọn một tài liệu ở thanh bên để giải mã và đọc."},
   "theme.ErrorPageContent.title": {
     "message": "Trang này đã gặp lỗi.",
     "description": "The title of the fallback page when the page crashed"

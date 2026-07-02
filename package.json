@@ -12,7 +12,14 @@
     "serve": "docusaurus serve",
     "write-translations": "docusaurus write-translations",
     "write-heading-ids": "docusaurus write-heading-ids",
-    "typecheck": "tsc"
+    "typecheck": "tsc",
+    "docs:decrypt": "node scripts/decrypt-docs.mjs",
+    "docs:encrypt": "node scripts/encrypt-docs.mjs",
+    "docs:clean": "node scripts/clean-private-docs.mjs",
+    "docs:check": "node scripts/check-no-plaintext.mjs",
+    "docs:verify": "node scripts/verify-private-docs.mjs",
+    "docs:diff-private": "node scripts/diff-private-docs.mjs",
+    "prepare": "node scripts/install-hooks.mjs"
   },
   "dependencies": {
     "@docusaurus/core": "3.6.3",
@@ -20,6 +27,7 @@
     "@mdx-js/react": "^3.0.0",
     "clsx": "^2.0.0",
     "jszip": "^3.10.1",
+    "marked": "^15.0.12",
     "online-3d-viewer": "^0.18.0",
     "pcb-stackup": "^4.2.8",
     "prism-react-renderer": "^2.3.0",

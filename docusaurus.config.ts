@@ -90,6 +90,12 @@ const config: Config = {
         docs: {
           path: 'docs',
           routeBasePath: 'docs',
+          // Private docs live (locally, gitignored) under docs/protected/. They
+          // must NEVER be rendered or indexed into the public site — only their
+          // AES-256-GCM ciphertext under static/protected/ is served. Excluding
+          // the folder guarantees no plaintext HTML / search index / sitemap /
+          // RSS entry is generated even if a contributor has decrypted locally.
+          exclude: ['protected/**'],
           sidebarPath: './sidebars.ts',
           editUrl:
             'https://github.com/ACLAB-HCMUT/ACLAB-HCMUT.github.io/tree/main/',
@@ -156,6 +162,7 @@ const config: Config = {
           position: 'left',
           label: 'Student Guide',
         },
+        {to: '/internal', label: 'Internal Docs 🔒', position: 'left'},
         {to: '/contact', label: 'Contact', position: 'left'},
         {type: 'localeDropdown', position: 'right'},
         {

@@ -18,3 +18,16 @@
 npm-debug.log*
 yarn-debug.log*
 yarn-error.log*
+
+# Private documentation — plaintext workspaces (NEVER commit these)
+docs/protected/
+.private-workspace/
+.private-review/
+private-docs/
+
+# Keys / secrets
+*.key
+*.agekey
+*.secret
+.env
+credentials.json

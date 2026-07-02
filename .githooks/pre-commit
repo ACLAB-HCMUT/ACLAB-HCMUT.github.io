@@ -1,0 +1,5 @@
+#!/bin/sh
+# Blocks commits that would leak private plaintext documentation.
+# Installed by `npm run prepare` (git config core.hooksPath .githooks).
+# Runs the same detection as `npm run docs:check`.
+node scripts/check-no-plaintext.mjs || exit 1
