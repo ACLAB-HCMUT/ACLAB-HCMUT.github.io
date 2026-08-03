@@ -1,0 +1,8 @@
+{
+  "label": "Firmware Engineering",
+  "position": 9,
+  "link": {
+    "type": "doc",
+    "id": "processes/firmware-engineering/index"
+  }
+}
